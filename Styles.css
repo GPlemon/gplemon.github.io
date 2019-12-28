@@ -1,0 +1,65 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family:  'Arial Narrow Bold', sans-serif
+}
+
+
+
+a{
+   text-decoration: none !important;
+}
+
+.list-group-item {
+    color: rgb(0, 115, 255);
+    background-color: rgb(255, 255, 255);
+}
+.colors{
+color: rgb(0, 115, 255) !important;
+background-color: rgb(255, 255, 255) !important;
+}
+
+.my-list {
+    display: grid;
+    grid-auto-columns: auto;
+    
+    -webkit-transition-duration: 0.1s;
+    /* Safari */
+    transition-duration: 0.1s;
+    
+    grid-template-rows: 1fr;
+     font-family: 'Oxygen',
+     sans-serif;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    background-color: gainsboro;
+    font-size: 126px;
+    
+    letter-spacing: 2px;
+}
+.my-list div{
+
+ font: 10px sans-serif;
+ 
+ text-align: right;
+ padding: 10px;
+ margin: 1px;
+ transition: all 0.1s ease-in-out;
+ color: rgb(255, 255, 255);
+}
+
+.w3-container{
+    transition: all 0.2s ease;
+}
+
+
+
+
+
