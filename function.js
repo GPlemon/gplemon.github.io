@@ -1,6 +1,11 @@
+function fadeIn(){
+  $(".action-btn ").toggle(() => {
+    showThis();
+    $("").fadeOut(1000, "");
+  });
+};
 
-
-var listClass = ".w3-container";
+var listClass = ".w3-container,.action-btn";
 
 var data = [];
 var input = 4;
@@ -13,30 +18,31 @@ function inputUpdate(){
 }
 
 
-
 function showThis(){ d3.selectAll(listClass)
                        .transition()
-                       .duration(1250)
+                       .duration(500)
 
                        .style("transform", "translate(0px)")
+                       
 
                        .delay(function(d, i) {
                          if (i % 2 === 0) {
-                           return i * 300;
+                           return i * 200;
                          } else {
-                           return i * 50;
+                           return i * 100;
                          }
-                       })
+                       });
                        
                         moveControlPanel(0,1); 
+                        
                        }
   
 function hideThis(){
   d3.selectAll(listClass)
     .transition()
-    .duration(850)
+    .duration(1250)
 
-    .style("transform", "translate(8000px)")
+    .style("transform", "translate(5000px)")
 
     .delay(function(d, i) {
       if (i % 2 === 0) {
@@ -46,8 +52,11 @@ function hideThis(){
       }
     });
   moveControlPanel(100, 0.5);
-}
   
+}
+
+
+
 const moveControlPanel = (x,y) =>
   d3
     .selectAll("#app-control")
@@ -93,3 +102,4 @@ $.each(selectValues, function(key, value) {
 });
 
 */
+
