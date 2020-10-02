@@ -1,34 +1,43 @@
 $("#projects").hide()
 
-$("#parent0").click(function() {
+
+
+$("#parent0").hover(function() {
     $("#para0").toggle("slow", function() {
 
     })
 })
-$("#parent1").click(function() {
+$("#parent1").hover(function() {
     $("#para1").toggle("slow", function() {})
 })
-$("#parent2").click(function() {
+$("#parent2").hover(function() {
     $("#para2").toggle("slow", function() {})
 })
-$("#parent3").click(function() {
+$("#parent3").hover(function() {
     $("#para3").toggle("slow", function() {})
 })
-$("#parent4").click(function() {
+$("#parent4").hover(function() {
     $("#para4").toggle("slow", function() {})
 })
-for (var i = 0; i <= 4; i++) {
-    $("#para" + i).hide();
+$("#parent5").hover(function() {
+    $("#para5").toggle("slow", function() {})
+})
+for (var i = 0; i <= 5; i++) {
+
+    $("#para" + i).fadeOut();
+
 }
 
 
 
 function fadeIn() {
-    $(".action-btn ").toggle(() => {
+    $("#action-btn").toggle(() => {
+        $("#projects").hide();
         showThis();
+        $("#tab-title-projects").hide();
 
-        $("").fadeOut(1000, "");
-        $("#projects").fadeOut();
+
+
     });
 
 
@@ -36,7 +45,7 @@ function fadeIn() {
 };
 
 
-var listClass = ".w3-container,.action-btn";
+var listClass = ".w3-container,#action-btn,body > div:nth-child(4)";
 var data = [];
 var input = 4;
 
@@ -55,6 +64,7 @@ function inputUpdate() {
 
 function showThis() {
 
+    $("#tab-title").show();
     d3.selectAll(listClass)
         .transition()
         .duration(500)
@@ -69,27 +79,29 @@ function showThis() {
         }
     });
     moveControlPanel(0, 1);
+
 }
 
 //hide the main webpage cover.
 function hideThis() {
-    $("#projects").fadeIn();
-    $("body").css("backgroundColor", "var('--pink')")
+    $("#projects,#tab-title-projects").fadeIn("slow");
+    $("#tab-title").hide();
+
 
     d3.selectAll(listClass)
         .transition()
         .duration(1250)
-        .style("transform", "skewX(30deg)")
-        .style("transform", "translate(5000px)")
+
+    .style("transform", "translate(5000px)")
 
     .delay(function(d, i) {
         if (i % 2 === 0) {
             return i * 200;
         } else {
-            return i * 100;
+            return i * 40;
         }
     });
-    moveControlPanel(100, 0.2);
+    moveControlPanel(30, 0.2);
 
 }
 

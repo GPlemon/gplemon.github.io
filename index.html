@@ -20,67 +20,28 @@
 
 
 
+<!-- Top menu on small screens -->
+<header class=" w3-top shadow container-fluid indexl ">
+    <h3 class="tabs "></h3>
 
-
-<body class="container-fluid">
-
-    <div id="background-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url('Cool.png'); opacity: 1;"></div>
-
-    <div id="projects">
-        <div>
-            <div class="my-list">
-                <h2 id="parent0">Budget App</h2>
-                <p id="para0">A simple easy to use money management tool.</p>
-            </div>
-        </div>
-        <!-- Sidebar/menu -->
-        <div>
-            <div class="my-list">
-                <h2 id="parent1">Blaze Game</h2>
-                <p id="para1">Available on the Google App Store.</p>
-            </div>
-        </div>
-        <div>
-            <div class="my-list">
-                <h2 id="parent2">Pip Calculator</h2>
-                <p id="para2">Exchange rate movement is measured by pips</p>
-            </div>
-        </div>
-        <div>
-            <div class="my-list">
-                <h2 id="parent3">Medieval World Project</h2>
-                <p id="para3">Private AI and large data project</p>
-            </div>
-        </div>
-
-        <div>
-            <div class="my-list">
-                <h2 id="parent4">Ketpoc.com</h2>
-                <p id="para4">A e-commerce technology store</p>
-            </div>
-        </div>
-    </div>
+    <h3 id="tab-title-projects" class="tabs hidden font-weight-light mt-4 text-white w3-animate-opacity">Projects</h3>
+    <h3 id="tab-title" class="tabs font-weight-light mt-4 text-white w3-animate-opacity">Main Menu</h3>
 
     <div>
-        </nav>
 
-        <!-- Top menu on small screens -->
-        <header class=" w3-top w3-medium w3-padding-16 shadow">
-
-
+        <div>
             <div>
-                <div>
-                    <div>
 
-                        <button class="btn btn-link w3-right">
-                            <button class="btn btn-outline-light action-btn hidden" onclick="hideThis();">Show<div
+                <button class="btn btn-link w3-right ">
+                            <button id="action-btn" class="btn btn-outline-light action-btn  hidden w3-animate-zoom" onclick="hideThis();">Show<div
                                 style="font-size: small !important;white-space: nowrap;display: inline; "> worked on
                                 projects</div>
                         </button>
 
 
-                        <div class="btn btn-group-sm" onclick="fadeIn()">
-                            <svg version="1.1" id="Capa_2" x="0px" y="0px" width="42px" width="42px" viewBox="0 0 463 463" style="enable-background:new 0 0 463 463;">
+
+                <div class="btn btn-group-sm w3-animate-zoom" onclick="fadeIn()">
+                    <svg version="1.1" id="Capa_2" x="0px" y="0px" width="42px" width="42px" viewBox="0 0 463 463" style="enable-background:new 0 0 463 463;">
                                 <g>
                                     <path
                                         d="M175.5,0h-136C17.72,0,0,17.72,0,39.5v136C0,197.28,17.72,215,39.5,215h136c21.78,0,39.5-17.72,39.5-39.5v-136   C215,17.72,197.28,0,175.5,0z M200,175.5c0,13.509-10.991,24.5-24.5,24.5h-136C25.991,200,15,189.009,15,175.5v-136   C15,25.991,25.991,15,39.5,15h136c13.509,0,24.5,10.991,24.5,24.5V175.5z" />
@@ -92,19 +53,70 @@
                                         d="M423.5,248h-136c-21.78,0-39.5,17.72-39.5,39.5v136c0,21.78,17.72,39.5,39.5,39.5h136c21.78,0,39.5-17.72,39.5-39.5v-136   C463,265.72,445.28,248,423.5,248z M448,423.5c0,13.509-10.991,24.5-24.5,24.5h-136c-13.509,0-24.5-10.991-24.5-24.5v-136   c0-13.509,10.991-24.5,24.5-24.5h136c13.509,0,24.5,10.991,24.5,24.5V423.5z" />
                                 </g>
                             </svg>
-                            <div>
+                    <div>
 
 
-                            </div>
-
-                        </div>
-                        </button>
                     </div>
-                </div>
 
+                </div>
+                </button>
 
             </div>
-        </header>
+        </div>
+
+
+    </div>
+</header>
+
+
+<body class="container-fluid">
+
+    <div id="background-image" class=""></div>
+
+    <div id="projects" class="sticky w3-animate-zoom" style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url('Cool.png'); opacity: 1; background-position: right bottom;">
+        <div>
+            <div id="parent0" class="my-list">
+                <h3 class="w3-animate-top w3-animate-opacity">Budget App</h3>
+                <p id="para0">A simple easy to use money management tool. For tracking your money.</p>
+            </div>
+        </div>
+        <!-- Sidebar/menu -->
+        <div>
+            <div id="parent1" class="my-list">
+                <h3 class="w3-animate-top w3-animate-opacity">Blaze Game</h3>
+                <p id="para1">Available on the Google App Store. Made with Unity.</p>
+            </div>
+        </div>
+        <div>
+            <div id="parent2" class="my-list">
+                <h3 class="w3-animate-top w3-animate-opacity">Pip Calculator</32>
+                    <p id="para2">Exchange rate movement is measured by pips.</p>
+            </div>
+        </div>
+        <div>
+            <div id="parent3" class="my-list">
+                <h3 class="w3-animate-top w3-animate-opacity">Medieval World Project</h3>
+                <p id="para3">Private AI and large data project.</p>
+            </div>
+        </div>
+
+        <div>
+            <div id="parent4" class="my-list">
+                <h3 class="w3-animate-top w3-animate-opacity">Ketpoc.com</h3>
+                <p id="para4">A e-commerce technology store.</p>
+            </div>
+        </div>
+        <div>
+            <div id="parent5" class="my-list">
+                <h3 class="w3-animate-top w3-animate-opacity">Battle Sim Calculator</h3>
+                <p id="para5">Calculates simulated battle outputs.</p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        </nav>
+
 
         <!-- Overlay effect when opening sidebar on small screens -->
         <div class="w3-overlay w3-animate-opacity bg-darker shadow " onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay">
@@ -135,36 +147,36 @@
 
 
             <!-- About section -->
-            <div class="w3-container   w3-padding-32" id="about">
+            <div class="container  w3-padding-32 " id="about">
 
-                <h4><b>About Me</b></h4>
-                <div class="p-4 m-3  rounded shadow row ">
+                <h4 class="font-weight-light mt-4 text-white"><b>About Me</b></h4>
+                <div class="pt-4 mb-4 rounded shadow row index ">
 
 
-                    <div class="container-fluid col-6 w3-justify  p-2 rounded" style="max-width:600px">
+                    <div class="container-fluid col-12 w3-justify p-2 rounded " style="max-width:800px">
 
-                        <h4>Gabrielius Pocevicius</h4>
+                        <h4 class="font-weight-light mt-4 ">Hi, I'm Gabrielius Pocevicius</h4>
                         <br>
-                        <p>Hi, I'm a young professional who has passion for Software Development, Graphic Design and Trading
+                        <p class="font-weight-light mt-4">A young professional who has passion for Software Development, Graphic Design and Forex/CFD Trading.
                         </p>
                         <br>
-                        <p>I have 3 years of experience working and experimenting with web technologies. I have worked from Shopify stores to android mobile apps and games.</p>
-                        <p>I speak two languages fluently, served in the army and enjoy sports such as running, swimming and football.</p>
+                        <p>Hi, I have 3 years of experience working and experimenting with web technologies. I have worked on Shopify stores to android mobile apps and games.</p>
+                        <p>I speak two languages fluently, served in the military and enjoy sports such as running, swimming and football.</p>
                         <p>In my free time and at work I program applications that may change the future for the better.
                         </p>
 
                         <h3 class='gmail' id="copytext">
-                            <div id="copybtn">poceviciusgabrielius@gmail.com</div>
+                            <div id="copybtn" class="font-weight-light mt-4 text-center">poceviciusgabrielius@gmail.com</div>
                         </h3>
 
 
 
 
 
-                        <div class="my-2 col w3-animate-zoom card-header text-white">
-                            <h4 class="p-1 my-1 ">Technical Skills</h4>
+                        <div class="my-2 col w3-animate-zoom card-header text-white ">
+                            <h4 class="p-1 my-1 font-weight-light mt-4 ">Technical Skills</h4>
 
-                            <div class=" mx-2 p-2 ">
+                            <div class="  ">
                                 <p class="  p-3 mb-2 ">Javascript
 
                                     <svg width="35" height="35" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet"><path d="M0 0h256v256H0V0z" fill="#F7DF1E"/><path d="M67.312 213.932l19.59-11.856c3.78 6.701 7.218 12.371 15.465 12.371 7.905 0 12.89-3.092 12.89-15.12v-81.798h24.057v82.138c0 24.917-14.606 36.259-35.916 36.259-19.245 0-30.416-9.967-36.087-21.996M152.381 211.354l19.588-11.341c5.157 8.421 11.859 14.607 23.715 14.607 9.969 0 16.325-4.984 16.325-11.858 0-8.248-6.53-11.17-17.528-15.98l-6.013-2.58c-17.357-7.387-28.87-16.667-28.87-36.257 0-18.044 13.747-31.792 35.228-31.792 15.294 0 26.292 5.328 34.196 19.247L210.29 147.43c-4.125-7.389-8.591-10.31-15.465-10.31-7.046 0-11.514 4.468-11.514 10.31 0 7.217 4.468 10.14 14.778 14.608l6.014 2.577c20.45 8.765 31.963 17.7 31.963 37.804 0 21.654-17.012 33.51-39.867 33.51-22.339 0-36.774-10.654-43.819-24.574"/></svg>
@@ -337,46 +349,70 @@
 
 
                                 <!--About you Section -->
-                                <div class="container shadow text-justify text-center ">
-                                    <h3>Experience</h3>
-                                    <div class="container">
+                                <div class="container-fluid ">
+                                    <h3 class="pl-3 pt-3 font-weight-light mt-4">Experience</h3>
+                                    <div>
                                         <div class="row">
-                                            <div class="col">
-                                                <h4>Work History</h4>
+                                            <div class="col m-4">
+                                                <h4 class="font-weight-light mt-4">Work History</h4>
                                                 <div class="col">
-                                                    <li>Junior Front End Engineer Ketpoc Industries Inc. - January 2018 to March 2019</li>
-                                                    <li>Lithuanian Armed Forces, Juozas Vitkus Engineer Battalion (JVEB)</li>
-                                                    <li>2 Pixel Studios, Mobile App C# Developer</li>
+
+                                                    <p>Junior Front End Engineer Ketpoc Industries Inc. - January 2018 to March 2019</p>
+                                                    <p>Lithuanian Armed Forces, Juozas Vitkus Engineer Battalion (JVEB)</p>
+                                                    <p>2 Pixel Studios, Mobile App C# Developer</p>
+                                                    <p>Had Created, hosted and maintained 2PixelStudios.com using WordPress framework.</p>
+
                                                 </div>
                                             </div>
-                                            <div class="col">
-                                                <h4>Work experience</h4>
+                                            <div class="col m-4">
+                                                <h4 class="font-weight-light mt-4">Work History</h4>
+                                                <div class="col">
+
+                                                    <p>Junior Front End Engineer Ketpoc Industries Inc. - January 2018 to March 2019</p>
+                                                    <p>Lithuanian Armed Forces, Juozas Vitkus Engineer Battalion (JVEB)</p>
+                                                    <p>2 Pixel Studios, Mobile App C# Developer</p>
+                                                    <p>Had Created, hosted and maintained 2PixelStudios.com using WordPress framework.</p>
+
+                                                </div>
+                                            </div>
+                                            <div class="col m-4 mt-4 ">
+                                                <h4 class="font-weight-light mt-4">Work experience</h4>
                                                 <div class="col">
                                                     <p>
                                                         I have 3 years experience working as Frontend Engineer.
                                                     </p>
                                                     <p>
-                                                        I have 7 years experience working as Asset Game Designer.
+                                                        I have 8 years experience working as Asset Game Designer.
                                                     </p>
                                                     <p>
                                                         My position in a small team was to design a sleek eCommerce online Store with using the Shopify platform.
                                                     </p>
                                                 </div>
+                                                <div class="container col p-4 m-4">
+                                                    <h4 class="font-weight-light mt-4">Technology Knowledge
+                                                    </h4>
+                                                    <p class="p-4">
+                                                        Worked intensively with Shopify API, Github repositories, and Unity 3D.
+                                                    </p>
+                                                    <div class="col">
+                                                        <p>
+                                                            Mastered JavaScript knows it with ease. Mastered HTML, XML and AJAX. Mastered CSS and SCSS. Learned how to solve Front End specific problems.
+                                                            <h3 class='gmail col-12 text-justify text-center m-2' id="copytext">
+                                                                <div class="font-weight-light mt-4" id="copybtn">poceviciusgabrielius@gmail.com</div>
+                                                            </h3>
+                                                        </p>
+                                                    </div>
+                                                </div>
+
 
                                             </div>
-                                            <div class="w-100"></div>
-                                            <p>
-                                                Worked intensively with Shopify API, Github repositories, and Unity 3D.
-                                            </p>
-                                            <div class="col">
-                                                <p>
-                                                    Mastered JavaScript and TypeScript. Mastered HTML, XML and AJAX. Mastered CSS and SCSS. Learned how to solve Front End specific problems.
-                                                </p>
+
+
+                                            <div>
+
                                             </div>
 
-                                            <h3 class='gmail col-12 text-justify text-center m-2' id="copytext">
-                                                <div id="copybtn">poceviciusgabrielius@gmail.com</div>
-                                            </h3>
+
 
                                         </div>
                                     </div>
@@ -402,8 +438,8 @@
 
         <div>
 
-            <embed class="pdf" src="data\UdacityCertificate.pdf" width="800px" height="1000px">
-            <embed class="pdf" src="data\Gabrielius Pocevicius_Python.pdf" width="800px" height="1000px">
+            <embed class="pdf" src="data\UdacityCertificate.pdf" width="50%" height="500px">
+            <embed class="pdf" src="data\Gabrielius Pocevicius_Python.pdf" width="50%" height="500px">
         </div>
 
         <!-- Contact section -->
@@ -435,13 +471,13 @@
 
         -->
         <!-- Footer -->
-        <footer class="">
-            <div class="row">
-                <div class="col-lg-12 footer">
+        <footer class="container-fluid">
+            <div>
+                <div class="">
 
-                    <div class="p-3 m-2 rounded shadow bg-g">
-                        <h5>INFO</h5>
-                        <p>Find me on linkedin, facebook or dev</p>
+                    <div class="p-3  ">
+                        <h5 class="font-weight-light mt-4">CONTACT INFORMATION</h5>
+                        <h6 class="font-weight-light mt-4">Find me on linkedin, facebook or dev </h6>
 
 
 
@@ -468,6 +504,13 @@
 
                                 </svg>
                         </a>
+                        <a href="https://github.com/gabrieliusPocevicius">
+                            <svg height="54px" width="54px" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true">
+                            <path  fill="white"
+                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+                            </path>
+                        </svg>
+                        </a>
                     </div>
 
 
@@ -475,7 +518,7 @@
             </div>
         </footer>
 
-        <div class="w3-black w3-center w3-padding-24 ">Powered by
+        <div class="  w3-padding-24 font-weight-light mt-4">
 
             <svg class="d-block container" width="54px" height="54px" viewBox="0 0 612 612" xmlns="http://www.w3.org/2000/svg" focusable="false">
                     <path fill="currentColor"
@@ -487,11 +530,7 @@
 
                 </svg>
 
-            <svg height="54px" width="54px" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true">
-                    <path stroke="black" fill="white"
-                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
-                    </path>
-                </svg>
+
 
         </div>
 
