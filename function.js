@@ -1,27 +1,41 @@
 $("#projects").hide()
 
 
-
-$("#parent0").hover(function() {
-    $("#para0").toggle("slow", function() {
-
+$("#parent0").on("mouseenter", () => {
+        $("#para0").slideDown("slow", function() {})
     })
-})
-$("#parent1").hover(function() {
-    $("#para1").toggle("slow", function() {})
-})
-$("#parent2").hover(function() {
-    $("#para2").toggle("slow", function() {})
-})
-$("#parent3").hover(function() {
-    $("#para3").toggle("slow", function() {})
-})
-$("#parent4").hover(function() {
-    $("#para4").toggle("slow", function() {})
-})
-$("#parent5").hover(function() {
-    $("#para5").toggle("slow", function() {})
-})
+    .on("mouseleave", () => { $("#para0").slideUp("slow", function() {}) })
+
+
+$("#parent1").on("mouseenter", () => {
+        $("#para1").slideDown("slow", function() {})
+    })
+    .on("mouseleave", () => { $("#para1").slideUp("slow", function() {}) })
+
+
+$("#parent2").on("mouseenter", () => {
+        $("#para2").slideDown("slow", function() {})
+    })
+    .on("mouseleave", () => { $("#para2").slideUp("slow", function() {}) })
+
+$("#parent3").on("mouseenter", () => {
+        $("#para3").slideDown("slow", function() {})
+    })
+    .on("mouseleave", () => { $("#para3").slideUp("slow", function() {}) })
+
+$("#parent4").on("mouseenter", () => {
+        $("#para4").slideDown("slow", function() {})
+    })
+    .on("mouseleave", () => { $("#para4").slideUp("slow", function() {}) })
+
+$("#parent5").on("mouseenter", () => {
+        $("#para5").slideDown("slow", function() {})
+    })
+    .on("mouseleave", () => { $("#para5").slideUp("slow", function() {}) })
+
+
+
+//5
 for (var i = 0; i <= 5; i++) {
 
     $("#para" + i).fadeOut();

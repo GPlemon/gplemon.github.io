@@ -21,7 +21,7 @@
 
 
 <!-- Top menu on small screens -->
-<header class=" w3-top shadow container-fluid indexl ">
+<header class=" w3-top shadow-sm container-fluid indexl ">
     <h3 class="tabs "></h3>
 
     <h3 id="tab-title-projects" class="tabs hidden font-weight-light mt-4 text-white w3-animate-opacity">Projects</h3>
@@ -36,6 +36,8 @@
                             <button id="action-btn" class="btn btn-outline-light action-btn  hidden w3-animate-zoom" onclick="hideThis();">Show<div
                                 style="font-size: small !important;white-space: nowrap;display: inline; "> worked on
                                 projects</div>
+
+
                         </button>
 
 
@@ -71,45 +73,45 @@
 
 <body class="container-fluid">
 
-    <div id="background-image" class=""></div>
+    <div id="background-image" class="w3-animate-zoom"></div>
 
-    <div id="projects" class="sticky w3-animate-zoom" style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url('Cool.png'); opacity: 1; background-position: right bottom;">
+    <div id="projects" class="sticky w3-animate-zoom text-dark">
         <div>
-            <div id="parent0" class="my-list">
+            <div id="parent0" class="my-list ">
                 <h3 class="w3-animate-top w3-animate-opacity">Budget App</h3>
-                <p id="para0">A simple easy to use money management tool. For tracking your money.</p>
+                <h6 class="w3-animate-right" id="para0">A simple easy to use money management tool. For tracking your money.</h6>
             </div>
         </div>
         <!-- Sidebar/menu -->
         <div>
             <div id="parent1" class="my-list">
                 <h3 class="w3-animate-top w3-animate-opacity">Blaze Game</h3>
-                <p id="para1">Available on the Google App Store. Made with Unity.</p>
+                <h6 class="w3-animate-right" id="para1">Available on the Google App Store. Made with Unity.</h6>
             </div>
         </div>
         <div>
             <div id="parent2" class="my-list">
-                <h3 class="w3-animate-top w3-animate-opacity">Pip Calculator</32>
-                    <p id="para2">Exchange rate movement is measured by pips.</p>
+                <h3 class="w3-animate-top w3-animate-opacity">Pip Calculator</h3>
+                <h6 class="w3-animate-right" id="para2">Exchange rate movement is measured by pips.</h6>
             </div>
         </div>
         <div>
             <div id="parent3" class="my-list">
                 <h3 class="w3-animate-top w3-animate-opacity">Medieval World Project</h3>
-                <p id="para3">Private AI and large data project.</p>
+                <h6 class="w3-animate-right" id="para3">Private AI and large data project.</h6>
             </div>
         </div>
 
         <div>
             <div id="parent4" class="my-list">
                 <h3 class="w3-animate-top w3-animate-opacity">Ketpoc.com</h3>
-                <p id="para4">A e-commerce technology store.</p>
+                <h6 class="w3-animate-right" id="para4">A e-commerce technology store.</h6>
             </div>
         </div>
         <div>
             <div id="parent5" class="my-list">
                 <h3 class="w3-animate-top w3-animate-opacity">Battle Sim Calculator</h3>
-                <p id="para5">Calculates simulated battle outputs.</p>
+                <h6 class="w3-animate-right" id="para5">Calculates simulated battle outputs.</h6>
             </div>
         </div>
     </div>
@@ -119,12 +121,12 @@
 
 
         <!-- Overlay effect when opening sidebar on small screens -->
-        <div class="w3-overlay w3-animate-opacity bg-darker shadow " onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay">
+        <div class="w3-overlay w3-animate-opacity bg-darker shadow-lg " onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay">
 
         </div>
 
         <!-- !PAGE CONTENT! -->
-        <div class="container-fluid w3-main w3-content" style="max-width:1600px;margin-top:83px">
+        <div class="container-fluid w3-main w3-content " style="max-width:1600px;margin-top:83px">
 
 
             <!-- Modal for full size images on click-->
@@ -142,12 +144,10 @@
 
 
 
-
-
-
-
             <!-- About section -->
-            <div class="container  w3-padding-32 " id="about">
+
+
+            <div class="container w3-padding-32 " id="about">
 
                 <h4 class="font-weight-light mt-4 text-white"><b>About Me</b></h4>
                 <div class="pt-4 mb-4 rounded shadow row index ">
