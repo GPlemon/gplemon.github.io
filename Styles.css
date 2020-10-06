@@ -187,14 +187,27 @@ input {
 }
 
 .bg-g:nth-child(n) {
-    background: linear-gradient(90deg, rgb(180, 58, 58) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    background-color: var(--dark);
     border-radius: 0px 0px 5px 0px;
     transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+.info {
+    color: #343a40;
+}
+
 .bg-g:nth-child(n):hover {
-    background: linear-gradient(90deg, rgb(180, 58, 58) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
     transition: all 0.1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.bg-light {
+    border-radius: 0px 5px 5px 0px;
+    background-color: var(--white) !important;
+    color: var(--blue) !important;
+    font-size: larger;
+    border-top: var(--white) outset 3px;
+    border-bottom: var(--white) outset 3px;
+    filter: contrast()(1px);
 }
 
 .gmail {
@@ -301,8 +314,8 @@ header {
 }
 
 body {
-    background: #007bff;
-    background: linear-gradient(to right, #0062E6, #33AEFF);
+    background: #004c9c;
+    background: linear-gradient(to right, #003f91, #004e83);
 }
 
 .index {
@@ -311,12 +324,29 @@ body {
     z-index: 0 !important;
 }
 
+.space {
+    /* 16 * 0.0625 = 1px */
+    letter-spacing: 0.0625em;
+}
+
+.space-v {
+    /* 16 * 0.0625 = 1px */
+    letter-spacing: 0.325em !important;
+}
+
 .indexl {
-    background: #0077ff !important;
+    background: #002a5a !important;
     position: relative;
-    top: 0;
+    ;
     z-index: 999 !important;
     left: 0;
+    top: -2px !important;
+    transition: all 1s ease;
+}
+
+.indexl:hover {
+    top: -2px;
+    transition: all 1s ease-in-out;
 }
 
 #parent0 {
@@ -336,25 +366,32 @@ body {
 
 #projects:before {
     content: " ";
-    background: linear-gradient(to bottom, #e64100, #ffc933);
+    background: linear-gradient(to bottom, var(--light), var(--light));
     box-shadow: #003881 0px 0px 10000px 0px;
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
     top: 0;
-    width: 40%;
+    width: 40% !important;
     height: 90%;
     z-index: 0;
     filter: blur(10px);
     transform: translateY(200px);
-    transition: 0.6s all cubic-bezier(0.165, 0.84, 0.44, 1) repeat;
+    transition: 30s all ease;
+}
+
+#projects:hover:before {
+    width: 45% !important;
+    height: 90%;
+    z-index: 0;
+    transition: 50s all ease-in-out;
 }
 
 #projects:after {
     content: " ";
     border-radius: 0%;
-    background: linear-gradient(to top, var(--white), var(--white)) !important;
+    background: linear-gradient(to top, var(--light), var(--light)) !important;
     filter: blur(10px);
     position: absolute;
     left: 0;
@@ -379,15 +416,19 @@ body {
 }
 
 .parallax {
+    position: absolute;
+    top: 0;
     /* The image used */
-    background-image: url("img_parallax.jpg");
+    background-image: url("Cool.png");
     /* Set a specific height */
-    height: 500px;
+    height: 100%;
+    width: 100%;
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: 99999;
 }
 
 #projects>* {
@@ -397,6 +438,12 @@ body {
     text-align: center;
     line-height: 75px;
     font-size: 30px;
+    transition: 0, 3s all;
+}
+
+.my-container {
+    position: absolute;
+    min-width: 100%;
 }
 
 #parent0::after {
@@ -412,6 +459,7 @@ body {
     height: 150%;
     z-index: 0;
     filter: blur(3px);
+    transition: 0, 3s all;
 }
 
 #parent0:hover::after {

@@ -1,5 +1,9 @@
 $("#projects").hide()
 
+$("#cert1,#cert2").hide();
+$("#cert-btn").on("click", function() {
+    $("#cert1,#cert2").toggle("easing");
+});
 
 $("#parent0").on("mouseenter", () => {
         $("#para0").slideDown("slow", function() {})
@@ -59,7 +63,7 @@ function fadeIn() {
 };
 
 
-var listClass = ".w3-container,#action-btn,body > div:nth-child(4)";
+var listClass = ".w3-container,#action-btn,body > div:nth-child(4),#certs";
 var data = [];
 var input = 4;
 
@@ -97,7 +101,10 @@ function showThis() {
 }
 
 //hide the main webpage cover.
+
+
 function hideThis() {
+
     $("#projects,#tab-title-projects").fadeIn("slow");
     $("#tab-title").hide();
 
@@ -166,25 +173,28 @@ $.each(selectValues, function(key, value) {
 });
 
 */
-const answer = document.getElementById("copyResult");
-const copy = document.getElementById("copybtn");
-const selection = window.getSelection();
-const range = document.createRange();
-const textToCopy = document.getElementById("copytext")
+function copy() {
+    const answer = document.getElementById("copyResult");
+    const copy = document.getElementById("copybtn");
+    const selection = window.getSelection();
+    const range = document.createRange();
+    const textToCopy = document.getElementById("copytext")
 
-copy.addEventListener('click', function(e) {
-    range.selectNodeContents(textToCopy);
-    selection.removeAllRanges();
-    selection.addRange(range);
-    const successful = document.execCommand('copy');
-    if (successful) {
-        answer.innerHTML = 'Copied!';
-    } else {
-        answer.innerHTML = 'Unable to copy!';
-    }
-    window.getSelection().removeAllRanges()
-});
+    copy.addEventListener('click', function(e) {
+        range.selectNodeContents(textToCopy);
+        selection.removeAllRanges();
+        selection.addRange(range);
+        const successful = document.execCommand('copy');
+        if (successful) {
+            answer.innerHTML = 'Copied!';
+        } else {
+            answer.innerHTML = 'Unable to copy!';
+        }
+        window.getSelection().removeAllRanges()
+    });
 
+}
+copy();
 
 
 var array1 = [1, 1, 3, 5];
