@@ -1,3 +1,28 @@
+// init controller
+var controller = new ScrollMagic.Controller();
+
+// create a scene
+/* new ScrollMagic.Scene({
+        duration: 50, // the scene should last for a scroll distance of 100px
+        offset: 10 // start this scene after scrolling for 50px
+    })
+    .setPin('.sticky-element') // pins the element for the the scene's duration
+    .addTo(controller); // assign the scene to the controller
+
+
+ */
+// build scene
+var scene = new ScrollMagic.Scene({
+        triggerElement: "#trigger1"
+    })
+    .setTween("#animate1", 0.5, { backgroundColor: "green", scale: 2.5 }) // trigger a TweenMax.to tween
+    .addIndicators({ name: "1 (duration: 0)" }) // add indicators (requires plugin)
+    .addTo(controller);
+
+
+
+
+
 $("#projects").hide()
 
 $("#cert1,#cert2").hide();
