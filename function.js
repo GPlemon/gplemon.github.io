@@ -1,5 +1,5 @@
 // init controller
-var controller = new ScrollMagic.Controller();
+//var controller = new ScrollMagic.Controller();
 
 // create a scene
 /* new ScrollMagic.Scene({
@@ -12,19 +12,17 @@ var controller = new ScrollMagic.Controller();
 
  */
 // build scene
-var scene = new ScrollMagic.Scene({
-        triggerElement: "#trigger1"
-    })
-    .setTween("#animate1", 0.5, { backgroundColor: "green", scale: 2.5 }) // trigger a TweenMax.to tween
-    .addIndicators({ name: "1 (duration: 0)" }) // add indicators (requires plugin)
+/* var scene = new ScrollMagic.Scene({
+    triggerElement: "#trigger1"
+})
+
+.addIndicators({ name: "1 (duration: 0)" }) // add indicators (requires plugin)
     .addTo(controller);
 
+ */
 
 
-
-
-$("#projects").hide()
-
+$("#projects").hide();
 $("#cert1,#cert2").hide();
 $("#cert-btn").on("click", function() {
     $("#cert1,#cert2").toggle("easing");

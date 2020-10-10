@@ -24,11 +24,16 @@
 
 
 <!-- Top menu on small screens -->
-<header class=" w3-top shadow-sm indexl ">
-    <h3 class="tabs "></h3>
+<header id="trigger1" class="panel red w3-top shadow-sm indexl ">
+    <img id="cv-logo" src="CV_logo.png" width="64" height="64" />
+    <h3 class=" tabs "></h3>
 
 
-    <h3 id="tab-title-projects" class="tabs hidden font-weight-light mt-4 text-white w3-animate-opacity space">Projects</h3>
+
+
+
+
+    <h3 id="tab-title-projects" class=" tabs hidden font-weight-light mt-4 text-white w3-animate-opacity space">Projects</h3>
     <h3 id="tab-title" class="tabs font-weight-light mt-4 text-white w3-animate-opacity space">Main Menu</h3>
 
     <div>
@@ -36,7 +41,7 @@
         <div>
             <div>
 
-                <button class="btn btn-link w3-right ">
+                <button class=" btn btn-link w3-right ">
                             <button id="action-btn" class="btn btn-outline-light action-btn  hidden w3-animate-zoom" onclick="hideThis();">Show<div
                                 style="font-size: small !important;white-space: nowrap;display: inline; "> worked on
                                 projects</div>
@@ -46,7 +51,7 @@
 
 
 
-                <div class="btn btn-group-sm w3-animate-zoom" onclick="fadeIn()">
+                <div class=" btn btn-group-sm w3-animate-zoom" onclick="fadeIn()">
                     <svg version="1.1" id="Capa_2" x="0px" y="0px" width="42px" width="42px" viewBox="0 0 463 463" style="enable-background:new 0 0 463 463;">
                                 <g>
                                     <path
@@ -72,6 +77,7 @@
 
 
     </div>
+
 </header>
 
 
@@ -92,7 +98,7 @@
 
     <div id="background-image" class="w3-animate-zoom"></div>
 
-    <div id="projects" class="sticky w3-animate-zoom text-dark">
+    <div id="projects" class=" sticky w3-animate-zoom text-dark">
         <div>
             <div id="parent0" class="my-list">
                 <h3 class="w3-animate-top w3-animate-opacity font-weight-light space-v">Budget App</h3>
@@ -110,18 +116,10 @@
         </div>
 
 
-        <div class="spacer s2"></div>
-        <div id="trigger1" class="spacer s0"></div>
-        <div id="animate1" class="box2 skin">
-            <p>You wouldn't like me, when I'm angry!</p>
-            <a href="#" class="viewsource">view source</a>
-        </div>
-        <div class="spacer s2"></div>
-
         <!-- Sidebar/menu -->
 
         <div>
-            <div id="parent1" class="my-list">
+            <div id="parent1" class=" my-list">
                 <h3 class="w3-animate-top w3-animate-opacity font-weight-light space-v">Blaze Game</h3>
                 <h6 class="w3-animate-right" id="para1">Available on the Google App Store. Made with Unity.
                     <div class="mt-3 bg-primary rounded">
@@ -198,8 +196,9 @@
         </nav>
 
 
+
         <!-- Overlay effect when opening sidebar on small screens -->
-        <div class="w3-overlay w3-animate-opacity bg-darker shadow-lg " onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay">
+        <div class=" w3-overlay w3-animate-opacity bg-darker shadow-lg " onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay">
 
         </div>
 
@@ -208,7 +207,7 @@
 
 
             <!-- Modal for full size images on click-->
-            <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+            <div id="modal01" class="box w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
                 <span class="w3-button btn-dark w3-small w3-display-topright"> <svg width="54" height="54"
                         fill-rule="evenodd" clip-rule="evenodd">
                         <path d="M11 11v-11h1v11h11v1h-11v11h-1v-11h-11v-1h11z" /></svg></span>
@@ -221,7 +220,9 @@
             <!-- About section -->
 
 
-            <div class="container w3-padding-32  col-7" id="about">
+
+
+            <div class=" container w3-padding-32  col-7" id="about">
                 <h4 class="font-weight-light  text-white spaced"><b>About Me</b></h4>
                 <div class="pt-4 mb-4 rounded shadow  index ">
 
@@ -317,7 +318,7 @@
 
                                                     </footer>
                                                 </h4>
-                                                <div class="col">
+                                                <div class="col ">
                                                     <h1 class="text-center font-weight-light text-light">How</h1>
                                                     <p>I can create, design and ship any niche website within couple of days.</p>
                                                     <p>I can provide maintain, debug existing code from your projects.</p>
@@ -368,15 +369,15 @@
 
             <!-- Bar Section -->
 
-            <div class="container w3-padding-32  col-3" id="about">
+            <div class=" container w3-padding-32  col-3" id="about">
 
 
                 <div class="pt-4 mb-4 rounded shadow row index ">
 
 
 
-                    <div class="my-2 col w3-animate-zoom card-header text-white ">
-                        <h4 class="p-1 my-1 font-weight-light mt-4 ">Technical Skills</h4>
+                    <div id="red" class="my-2 col w3-animate-zoom card-header text-white ">
+                        <h4 id="red-content" class="p-1 my-1 font-weight-light mt-4 ">Technical Skills</h4>
 
                         <div class="  ">
                             <p class="  p-3 mb-2 ">Javascript
@@ -568,12 +569,12 @@
 
 
 
-    <div id="certs" class="text-center shadow-sm container">
+    <div id="certs" class=" text-center shadow-sm container">
 
 
         <div class="container">
             <button id="cert-btn" class="mb-3 mt-3 btn btn-outline-light">Show Certificates</button>
-            <h3 class="font-weight-light mt-4 text-white mb-5 p-4">Certificates<img class="m-2" src="https://img.icons8.com/ios/60/000000/certificate.png" style="filter: invert();" width="30px" height="30px" /></h3>
+            <h3 id="cert-title" class="font-weight-light mt-4 text-white mb-5 p-4">Certificates<img class="m-2" src="https://img.icons8.com/ios/60/000000/certificate.png" style="filter: invert();" width="30px" height="30px" /></h3>
 
             <div class="row">
 
@@ -592,9 +593,9 @@
 
 
     </div>
-    <footer class="my-container">
+    <footer class="  my-container">
         <div>
-            <div class="">
+            <div>
 
                 <div class=" p-4 shadow-sm  rounded">
                     <h5 class="font-weight-light mt-4">CONTACT INFORMATION</h5>
@@ -653,6 +654,9 @@
         </div>
 
     </footer>
+
+
+
     <!-- Contact section -->
 
     <!--
@@ -709,12 +713,26 @@
     </script>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 
 
 
 
+
 <script src="function.js"></script>
+<script src="animations.js"></script>
 
 
 
