@@ -1,3 +1,8 @@
+* {
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+}
+
 :root {
     --blue: #007bff;
     --indigo: #6610f2;
@@ -33,27 +38,6 @@
     color: rgb(12, 12, 12);
 }
 
-* {
-    -webkit-font-smoothing: antialiased !important;
-    -moz-osx-font-smoothing: grayscale !important;
-}
-
-* {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.m-2>h3:nth-child(1) {
-    color: var(--white);
-}
-
-html {
-    font-size: 16px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 200;
-    line-height: 1.5;
-}
-
 html,
 body,
 h1,
@@ -62,8 +46,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Arial Narrow Bold', sans-serif;
-    color: var(--white) !important;
+    color: var(--white);
 }
 
 h6,
@@ -119,15 +102,11 @@ input {
     /* Safari */
     transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
     grid-template-rows: 1fr;
-    font-family: 'Oxygen', sans-serif;
-    color: white;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    font-size: 126px;
     letter-spacing: 2px;
     margin-top: 3px;
-    max-width: 250px;
     margin: 0.1em;
     flex: auto;
 }
@@ -146,7 +125,6 @@ input {
 }
 
 .my-list div {
-    font: 10px sans-serif;
     text-align: right;
     padding: 10px;
     margin: 1px;
@@ -165,6 +143,7 @@ input {
 }
 
 #Capa_1 {
+    margin-left: 8px;
     position: relative;
     z-index: 9999999;
     padding: 4px;
@@ -183,12 +162,24 @@ input {
 }
 
 .bg-darker {
-    background-color: rgb(243, 243, 243);
+    background-color: #0051a8;
+    outline: #00408a solid 1px;
+}
+
+.mainContent {
+    margin-top: 85px;
+    left: 100px;
 }
 
 .bg-g:nth-child(n) {
     background-color: var(--dark);
-    border-radius: 0px 0px 5px 0px;
+    border-radius: 0px 5px 5px 0px;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.bg-g:nth-child(n):hover {
+    background-color: #313436;
+    border-radius: 0px 5px 5px 0px;
     transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
@@ -212,50 +203,24 @@ input {
 
 .gmail {
     color: whitesmoke !important;
-    max-width: 340px;
     text-align: center;
     border-radius: 4px;
     padding: 4px;
     cursor: copy;
+    transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .gmail:hover {
-    background-color: var(--info);
+    background-color: rgb(15, 15, 15);
     border-radius: 4px;
     padding: 4px;
     cursor: copy;
     border-radius: 4px;
-}
-
-p {
-    font-size: small;
+    transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 body>div:nth-child(4)>footer>div>div>div>h6 {
     color: whitesmoke !important;
-}
-
-#background-image {
-    height: 500px;
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background: #007bff;
-    background: linear-gradient(to right, #0062E6, #33AEFF);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 20%;
-    margin: 0;
-    opacity: 1 !important;
-    z-index: 1;
-    left: 0;
-    padding: 0;
-    position: fixed;
-    top: 0;
-    transition: opacity 700 ms;
-    width: 100%;
-    transition: all 0.1s linear;
 }
 
 .pdf {
@@ -315,7 +280,7 @@ header {
 
 body {
     background: #004c9c;
-    background: linear-gradient(to right, #003f91, #004e83);
+    /*#004c9c*/
 }
 
 .index {

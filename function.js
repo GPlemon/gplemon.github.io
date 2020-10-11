@@ -28,6 +28,12 @@ $("#cert-btn").on("click", function() {
     $("#cert1,#cert2").toggle("easing");
 });
 
+for (var i = 0; i <= 5; i++) {
+
+    $("#para" + i).hide();
+
+}
+
 $("#parent0").on("mouseenter", () => {
         $("#para0").slideDown("slow", function() {})
     })
@@ -60,15 +66,7 @@ $("#parent5").on("mouseenter", () => {
     })
     .on("mouseleave", () => { $("#para5").slideUp("slow", function() {}) })
 
-
-
 //5
-for (var i = 0; i <= 5; i++) {
-
-    $("#para" + i).fadeOut();
-
-}
-
 
 
 function fadeIn() {
@@ -76,29 +74,17 @@ function fadeIn() {
         $("#projects").hide();
         showThis();
         $("#tab-title-projects").hide();
-
-
-
     });
-
-
-
 };
 
 
 var listClass = ".w3-container,#action-btn,body > div:nth-child(4),#certs";
-var data = [];
+
 var input = 4;
 
 
 
 
-function inputUpdate() {
-    for (let i = 1; i < input + 1; i++) {
-        data.push(i);
-    }
-    return data;
-}
 
 
 
@@ -128,7 +114,7 @@ function showThis() {
 
 function hideThis() {
 
-    $("#projects,#tab-title-projects").fadeIn("slow");
+    $("#projects,#tab-title-projects").show();
     $("#tab-title").hide();
 
 
@@ -136,7 +122,7 @@ function hideThis() {
         .transition()
         .duration(1250)
 
-    .style("transform", "translate(5000px)")
+
 
     .delay(function(d, i) {
         if (i % 2 === 0) {
@@ -144,7 +130,7 @@ function hideThis() {
         } else {
             return i * 40;
         }
-    });
+    }).style("transform", "translate(5000px)")
     moveControlPanel(30, 0.2);
 
 }
@@ -220,7 +206,7 @@ function copy() {
 copy();
 
 
-var array1 = [1, 1, 3, 5];
+/* var array1 = [1, 1, 3, 5];
 var array2 = [1, 1, 34, 56];
 
 var inter = array1.filter(value => array2.includes(value));
@@ -231,4 +217,23 @@ var merge = array1.concat(array2).filter(values => inter.includes(values));
 
 console.log(typeof inter);
 
-console.log(merge);
+console.log(merge); */
+
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+    document.getElementById("img01").src = element.src;
+    document.getElementById("modal01").style.display = "block";
+    var captionText = document.getElementById("caption");
+    captionText.innerHTML = element.alt;
+}
