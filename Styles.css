@@ -307,8 +307,12 @@ body {
     left: 0;
     top: -2px !important;
     transition: all 1s ease;
+    
 }
+.panel{
+    opacity: 0.5;
 
+}
 .footer {
     background: #002a5a !important;
     left: 0;
