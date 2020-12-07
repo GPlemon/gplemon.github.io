@@ -1,3 +1,7 @@
+
+
+
+
 // init controller
 //var controller = new ScrollMagic.Controller();
 
@@ -84,13 +88,15 @@ var input = 4;
 
 
 
-
+function scrollToTop() {
+    return window.scrollTo({top: 10000}, {'behaviour': 'smooth'});
+}
 
 
 
 
 function showThis() {
-
+    
     $("#tab-title").show();
     d3.selectAll(listClass)
         .transition()
@@ -100,6 +106,7 @@ function showThis() {
 
     .delay(function(d, i) {
         if (i % 2 === 0) {
+           
             return i * 200;
         } else {
             return i * 100;
@@ -113,10 +120,10 @@ function showThis() {
 
 
 function hideThis() {
-
+    scrollToTop();
     $("#projects,#tab-title-projects").show();
     $("#tab-title").hide();
-
+   
 
     d3.selectAll(listClass)
         .transition()

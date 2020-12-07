@@ -323,16 +323,12 @@ body {
     transition: all 1s ease-in-out;
 }
 
-#parent0 {
-    background-color: rgba(255, 255, 255, 0.034);
-}
 
-#parent0:hover {
-    transition: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    background-color: rgba(255, 255, 255, 0.178);
-}
+
+
 
 #projects {
+    
     display: flex;
     margin-top: 350px;
     transition: 1s all;
@@ -340,14 +336,14 @@ body {
 
 #projects:before {
     content: " ";
-    background: linear-gradient(to bottom, var(--light), var(--light));
+    background: rgb(8, 8, 8);
     box-shadow: #003881 0px 0px 10000px 0px;
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
     top: 0;
-    width: 40% !important;
+    width: 100% !important;
     height: 90%;
     z-index: 0;
     filter: blur(10px);
@@ -364,100 +360,47 @@ body {
 
 #projects:after {
     content: " ";
-    border-radius: 0%;
-    background: linear-gradient(to top, var(--light), var(--light)) !important;
+    border-radius: 0px;
+    background: black;
     filter: blur(10px);
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 100;
+    
     top: 100;
-    width: 150%;
-    height: 150%;
+
+    height: 100%;
     z-index: -1;
     filter: blur(10px);
     transition: 2s all ease-in-out !important;
     /* Set a specific height */
 }
 
-#projects:hover:after {
+ #projects:hover:after {
     content: " ";
     filter: blur(10px);
     width: 150%;
     height: 150%;
     z-index: -1;
     transition: 3s all ease-in-out !important;
-}
+} 
 
 .parallax {
+    /* 
     position: absolute;
     top: 0;
-    /* The image used */
+    
     background-image: url("Cool.png");
-    /* Set a specific height */
+    
     height: 100%;
     width: 100%;
-    /* Create the parallax scrolling effect */
+    
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 99999;
-}
-
-#projects>* {
-    color: white;
-    width: 100%;
-    margin: 10px;
-    text-align: center;
-    line-height: 75px;
-    font-size: 30px;
-    transition: 0, 3s all;
-}
-
-.my-container {
-    position: absolute;
-    min-width: 100%;
-}
-
-#parent0::after {
-    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19);
-    content: "";
-    border-radius: 0%;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    width: 0%;
-    height: 150%;
-    z-index: 0;
-    filter: blur(3px);
-    transition: 0, 3s all;
-}
-
-#parent0:hover::after {
-    box-shadow: 0 4px 8px 0 rgba(255, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 98, 255, 0.19);
-    content: " ";
-    border-radius: 0%;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    width: 999%;
-    height: 999%;
-    z-index: 0;
-    transition: 0, 3s all;
-}
-
-#parent0 {
-    transition: all 1s ease-in-out;
-}
-
-#parent0:hover {
-    background-color: #ffffff;
-    transition: all 1s ease-in-out;
+    */
 }
 
 #cv-logo {
@@ -467,3 +410,31 @@ body {
     left: 0;
     right: 0;
 }
+
+
+#projects>* {
+    color: white;
+    width: 100%;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+    transition: ease 3s all;
+}
+
+.my-container {
+    position: absolute;
+    min-width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
