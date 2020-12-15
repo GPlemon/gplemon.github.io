@@ -216,7 +216,7 @@ const binSearch = (array, target)=>{
 //right inclusive
 
 
-const combinations = (elements) =>{
+/* const combinations = (elements) =>{
     if(elements.length === 0) return [[]];
     const firstEl = elements[0];
     const rest = elements.slice(1);
@@ -232,6 +232,73 @@ const combinations = (elements) =>{
     return [...combsWithOutFirst, ...combsWithFirst];
 }
 
-console.log(combinations(['a', 'b', 'c'])); 
+console.log(combinations(['a', 'b', 'c']));  */
+
+
+
+//HCF
+
+function gcd_two_numbers(x, y) {
+    if ((typeof x !== 'number') || (typeof y !== 'number')) 
+      return false;
+    x = Math.abs(x);
+    y = Math.abs(y);
+    while(y) {
+      var t = y;
+      console.log('t - ' +t);
+      y = x % y;
+      console.log('y - '+y);
+      x = t;
+      console.log('x -'+x);
+    }
+    return x;
+  }
+  
+
+  //console.log('answer' + gcd_two_numbers(4, 6));
+
+
+
+
+/* 
+
+  function max(input) {
+      if(toString.call())
+  } */
+
+
+
+
+
+const array1 = ['a', 'b', 'c'];
+
+const iterator1 = array1.entries();
+
+console.log(iterator1.next().value);
+// expected output: Array [0, "a"]
+
+console.log(iterator1.next().value);
+// expected output: Array [1, "b"]
+
+
+
+
+const binarySearch = (array, target) => {
+    const left = [0];
+    const right = array[array.length - 1];
+    while (left < right) {
+        const mid  = Math.floor(left + right) / 2;
+        if(target === array[mid]){
+            return mid;
+        }
+        if(target < array[mid]){
+            right = mid - 1;
+        }else{
+            left = mid + 1;
+        }   
+    }
+    return false;
+}
+
 
 
