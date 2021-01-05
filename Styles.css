@@ -324,7 +324,9 @@ body {
 }
 
 
-
+h3, h6{
+    color: #f8f9fa !important;
+}
 
 
 #projects {
@@ -334,56 +336,7 @@ body {
     transition: 1s all;
 }
 
-#projects:before {
-    content: " ";
-    background: rgb(8, 8, 8);
-    box-shadow: #003881 0px 0px 10000px 0px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    width: 100% !important;
-    height: 90%;
-    z-index: 0;
-    filter: blur(10px);
-    transform: translateY(200px);
-    transition: 30s all ease;
-}
 
-#projects:hover:before {
-    width: 45% !important;
-    height: 90%;
-    z-index: 0;
-    transition: 50s all ease-in-out;
-}
-
-#projects:after {
-    content: " ";
-    border-radius: 0px;
-    background: black;
-    filter: blur(10px);
-    position: absolute;
-    left: 0;
-    right: 0;
-    
-    top: 100;
-
-    height: 100%;
-    z-index: -1;
-    filter: blur(10px);
-    transition: 2s all ease-in-out !important;
-    /* Set a specific height */
-}
-
- #projects:hover:after {
-    content: " ";
-    filter: blur(10px);
-    width: 150%;
-    height: 150%;
-    z-index: -1;
-    transition: 3s all ease-in-out !important;
-} 
 
 .parallax {
     /* 
