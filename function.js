@@ -32,7 +32,7 @@ $("#cert-btn").on("click", function() {
     $("#cert1,#cert2").toggle("easing");
 });
 
-for (var i = 0; i <= 5; i++) {
+for (let i = 0; i <= 7; i++) {
 
     $("#para" + i).hide();
 
@@ -69,6 +69,20 @@ $("#parent5").on("mouseenter", () => {
         $("#para5").slideDown("slow", function() {})
     })
     .on("mouseleave", () => { $("#para5").slideUp("slow", function() {}) })
+
+
+    $("#parent6").on("mouseenter", () => {
+        $("#para6").slideDown("slow", function() {})
+    })
+    .on("mouseleave", () => { $("#para6").slideUp("slow", function() {}) })
+
+    $("#parent7").on("mouseenter", () => {
+        $("#para7").slideDown("slow", function() {})
+    })
+    .on("mouseleave", () => { $("#para7").slideUp("slow", function() {}) })
+
+
+
 
 //5
 
