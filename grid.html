@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<style>
+    .container{
+        max-width:50em;
+        display: grid;
+        grid-template-columns:  1fr 1fr 1fr;
+        grid-template-rows: 1fr ;
+    }
+    .item1{
+        background-color: aquamarine;
+        grid-area: "nav";
+    }
+    .item2{
+        background-color: blue;
+        grid-area: "main";
+    }
+    .item3{
+        background-color: orange;
+        grid-area: "ad";
+    }
+    .item4{
+        background-color: gray;
+        grid-area: "footer"; 
+    }
+
+@supports (grid-area: auto){
+
+}
+
+</style>
+<body>
+    <div class="container">
+        <div class="item1">
+1
+        </div>
+        <div class="item2">
+2
+        </div>
+        <div class="item3">
+3
+        </div>
+        <div class="item4">
+4
+        </div>
+
+    </div>
+</body>
+</html>

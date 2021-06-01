@@ -38,6 +38,20 @@
     color: rgb(12, 12, 12);
 }
 
+html{
+    box-sizing: border-box;
+}
+
+.my-grid{
+    display: grid;
+    grid-template-columns: 1fr minmax(10em, 20em) 1fr;
+    grid-template-rows: auto 1fr 3fr;
+}
+.item{
+    grid-column: 2/3;
+    grid-row: 2/ 3
+}
+
 html,
 body,
 h1,
@@ -317,6 +331,8 @@ body {
     background: #002a5a !important;
     left: 0;
 }
+
+
 
 .indexl:hover {
     top: -2px;
