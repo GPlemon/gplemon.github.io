@@ -27,11 +27,23 @@
 
 
 $("#projects").hide();
-$("#cert1,#cert2").hide();
+
+function toggleCerts(numberOfCerts) {
+
+  for(let i = 0; i < numberOfCerts; i++){
+    let ids = `#cert${i}`;
+    $(ids).hide();
+    $("#cert-btn").on("click", function () {
+      $(ids).toggle("easing");
+    });
+  }
+}
+toggleCerts(10);
+/* $("#cert1,#cert2").hide();
 $("#cert-btn").on("click", function() {
     $("#cert1,#cert2").toggle("easing");
 });
-
+ */
 for (let i = 0; i <= 7; i++) {
 
     $("#para" + i).hide();
