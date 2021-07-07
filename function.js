@@ -38,7 +38,7 @@ function toggleCerts(numberOfCerts) {
     });
   }
 }
-toggleCerts(12);
+toggleCerts(15);
 /* $("#cert1,#cert2").hide();
 $("#cert-btn").on("click", function() {
     $("#cert1,#cert2").toggle("easing");
