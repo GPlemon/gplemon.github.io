@@ -104,13 +104,15 @@ $( "#Capa_2" ).on('click', ()=>{
 
   if(click === 0){
       $( "#Capa_2" ).css( {
-        padding: '6px',
-        rotate:'45deg'
+        padding: '2px',
+        
+        rotate:'180deg'
       } )
       ++click;
   }else{
     $( "#Capa_2" ).css( {
       padding: '0px',
+      
       rotate: '0deg'
     } )
     click = 0;
@@ -172,7 +174,7 @@ function hideThis() {
 
     d3.selectAll(listClass)
         .transition()
-        .duration(1250)
+        .duration(500)
 
 
 
@@ -182,8 +184,8 @@ function hideThis() {
         } else {
             return i * 40;
         }
-    }).style("transform", "translate(5000px)")
-    moveControlPanel(30, 0.2);
+    }).style("transform", "translate(-200px)")
+    /* moveControlPanel(30, 0.2); */
 
 }
 
