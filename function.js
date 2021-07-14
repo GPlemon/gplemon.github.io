@@ -98,6 +98,25 @@ $("#parent5").on("mouseenter", () => {
 
 //5
 
+let click = 0;
+
+$( "#Capa_2" ).on('click', ()=>{
+
+  if(click === 0){
+      $( "#Capa_2" ).css( {
+        padding: '6px',
+        rotate:'45deg'
+      } )
+      ++click;
+  }else{
+    $( "#Capa_2" ).css( {
+      padding: '0px',
+      rotate: '0deg'
+    } )
+    click = 0;
+  }
+
+});
 
 function fadeIn() {
     $("#action-btn").toggle(() => {

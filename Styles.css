@@ -170,16 +170,26 @@ input {
     transform: scale(1.2) !important;
 }
 
+
+#certs{
+  height: 160vh;
+  width: 100%;
+}
+
+
 #Capa_2:active {
     transition: 0.2s all ease !important;
-    transform: scale(0.9) !important;
+    transform: scale(0.8) !important;
 }
 
 .bg-darker {
-    background-color: #0051a8;
+    background-color: #161616;
     outline: #00408a solid 1px;
 }
-
+body {
+  background: #131313;
+  /*#004c9c*/
+}
 .mainContent {
     margin-top: 85px;
     left: 100px;
@@ -292,10 +302,7 @@ header {
     flex-shrink: none;
 }
 
-body {
-    background: #004c9c;
-    /*#004c9c*/
-}
+
 
 .index {
     position: relative;
