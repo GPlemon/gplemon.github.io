@@ -51,80 +51,72 @@ for (let i = 0; i <= 7; i++) {
 }
 
 $("#parent0").on("mouseenter", () => {
-        $("#para0").slideDown("slow", function() {})
+        $("#para0").slideDown("slow")
     })
-    .on("mouseleave", () => { $("#para0").slideUp("slow", function() {}) })
+    .on("mouseleave", () => { $("#para0").slideUp("slow") })
 
 
 $("#parent1").on("mouseenter", () => {
-        $("#para1").slideDown("slow", function() {})
+        $("#para1").slideDown("slow")
     })
-    .on("mouseleave", () => { $("#para1").slideUp("slow", function() {}) })
+    .on("mouseleave", () => { $("#para1").slideUp("slow") })
 
 
 $("#parent2").on("mouseenter", () => {
-        $("#para2").slideDown("slow", function() {})
+        $("#para2").slideDown("slow")
     })
-    .on("mouseleave", () => { $("#para2").slideUp("slow", function() {}) })
+    .on("mouseleave", () => { $("#para2").slideUp("slow") })
 
 $("#parent3").on("mouseenter", () => {
-        $("#para3").slideDown("slow", function() {})
+        $("#para3").slideDown("slow")
     })
-    .on("mouseleave", () => { $("#para3").slideUp("slow", function() {}) })
+    .on("mouseleave", () => { $("#para3").slideUp("slow") })
 
 $("#parent4").on("mouseenter", () => {
-        $("#para4").slideDown("slow", function() {})
+        $("#para4").slideDown("slow")
     })
-    .on("mouseleave", () => { $("#para4").slideUp("slow", function() {}) })
+    .on("mouseleave", () => { $("#para4").slideUp("slow") })
 
 $("#parent5").on("mouseenter", () => {
-        $("#para5").slideDown("slow", function() {})
+        $("#para5").slideDown("slow")
     })
-    .on("mouseleave", () => { $("#para5").slideUp("slow", function() {}) })
+    .on("mouseleave", () => { $("#para5").slideUp("slow") })
 
 
     $("#parent6").on("mouseenter", () => {
-        $("#para6").slideDown("slow", function() {})
+        $("#para6").slideDown("slow")
     })
-    .on("mouseleave", () => { $("#para6").slideUp("slow", function() {}) })
+    .on("mouseleave", () => { $("#para6").slideUp("slow") })
 
     $("#parent7").on("mouseenter", () => {
-        $("#para7").slideDown("slow", function() {})
+        $("#para7").slideDown("slow")
     })
-    .on("mouseleave", () => { $("#para7").slideUp("slow", function() {}) })
+    .on("mouseleave", () => { $("#para7").slideUp("slow") })
 
 
 
 
 //5
 
-let click = 0;
 
-$( "#Capa_2" ).on('click', ()=>{
+$( '#tab-title-projects' ).hide();
 
-  if(click === 0){
-      $( "#Capa_2" ).css( {
-        padding: '2px',
-        
-        rotate:'180deg'
-      } )
-      ++click;
-  }else{
-    $( "#Capa_2" ).css( {
-      padding: '0px',
-      
-      rotate: '0deg'
-    } )
-    click = 0;
-  }
-
-});
+$( '#tab-title' ).on( 'click', ( e ) => {
+  e.preventDefault();
+  $('#cert-btn').hide();
+})
+$( '#tab-title-projects' ).on( 'click', ( e ) => {
+  e.preventDefault();
+  $('#cert-btn').slideDown(1000);
+})
 
 function fadeIn() {
-    $("#action-btn").toggle(() => {
-        $("#projects").hide();
+    
+    $( "#action-btn,#tab-title-projects" ).toggle( () => {
+        $("#projects").hide('slow');
         showThis();
-        $("#tab-title-projects").hide();
+        $("#tab-title-projects").hide('slow');
+       
     });
 };
 
@@ -170,13 +162,10 @@ function hideThis() {
     scrollToTop();
     $("#projects,#tab-title-projects").show();
     $("#tab-title").hide();
-   
 
     d3.selectAll(listClass)
         .transition()
         .duration(500)
-
-
 
     .delay(function(d, i) {
         if (i % 2 === 0) {
@@ -257,7 +246,7 @@ function copy() {
     });
 
 }
-copy();
+//copy();
 
 
 /* var array1 = [1, 1, 3, 5];
