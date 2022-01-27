@@ -1,7 +1,3 @@
-
-
-
-
 // init controller
 //var controller = new ScrollMagic.Controller();
 
@@ -30,14 +26,15 @@ $("#projects").hide();
 
 function toggleCerts(numberOfCerts) {
 
-  for(let i = 0; i < numberOfCerts; i++){
-    let ids = `#cert${i}`;
-    $(ids).hide();
-    $("#cert-btn").on("click", function () {
-      $(ids).toggle("easing");
-    });
-  }
+    for (let i = 0; i < numberOfCerts; ++i) {
+        let ids = `#cert${i}`;
+        $(ids).hide('easing');
+        $("#cert-btn").on("click", function() {
+            $(ids).toggle("easing");
+        });
+    }
 }
+
 toggleCerts(15);
 /* $("#cert1,#cert2").hide();
 $("#cert-btn").on("click", function() {
@@ -83,12 +80,12 @@ $("#parent5").on("mouseenter", () => {
     .on("mouseleave", () => { $("#para5").slideUp("slow") })
 
 
-    $("#parent6").on("mouseenter", () => {
+$("#parent6").on("mouseenter", () => {
         $("#para6").slideDown("slow")
     })
     .on("mouseleave", () => { $("#para6").slideUp("slow") })
 
-    $("#parent7").on("mouseenter", () => {
+$("#parent7").on("mouseenter", () => {
         $("#para7").slideDown("slow")
     })
     .on("mouseleave", () => { $("#para7").slideUp("slow") })
@@ -99,24 +96,25 @@ $("#parent5").on("mouseenter", () => {
 //5
 
 
-$( '#tab-title-projects' ).hide();
+$('#tab-title-projects').hide();
 
-$( '#tab-title' ).on( 'click', ( e ) => {
-  e.preventDefault();
-  $('#cert-btn').hide();
+$('#tab-title').on('click', (e) => {
+    e.preventDefault();
+    $('#cert-btn').hide('slow');
 })
-$( '#tab-title-projects' ).on( 'click', ( e ) => {
-  e.preventDefault();
-  $('#cert-btn').slideDown(1000);
+$('#tab-title-projects').on('click', (e) => {
+    e.preventDefault();
+    $('#cert-btn').slideDown(1000);
 })
 
 function fadeIn() {
-    
-    $( "#action-btn,#tab-title-projects" ).toggle( () => {
-        $("#projects").hide('slow');
-        showThis();
+
+    $("#action-btn,#tab-title-projects").toggle(() => {
+        $("#projects").hide();
         $("#tab-title-projects").hide('slow');
-       
+
+        showThis();
+        $("#tab-title").show();
     });
 };
 
@@ -128,30 +126,30 @@ var input = 4;
 
 
 function scrollToTop() {
-    return window.scrollTo({top: 10000}, {'behaviour': 'smooth'});
+    return window.scrollTo({ top: 10000 }, { 'behaviour': 'smooth' });
 }
 
 
 
 
 function showThis() {
-    
-    $("#tab-title").show();
-    d3.selectAll(listClass)
-        .transition()
-        .duration(500)
 
-    .style("transform", "translate(0px)")
 
-    .delay(function(d, i) {
-        if (i % 2 === 0) {
-           
-            return i * 200;
-        } else {
-            return i * 100;
-        }
-    });
-    moveControlPanel(0, 1);
+    /*     d3.selectAll(listClass)
+            .transition()
+            .duration(3500)
+
+        .style("transform", "translate(0px)")
+
+        .delay(function(d, i) {
+            if (i % 2 === 0) {
+               
+                return i * 200;
+            } else {
+                return i * 100;
+            }
+        });
+        moveControlPanel(0, 1); */
 
 }
 
@@ -163,17 +161,17 @@ function hideThis() {
     $("#projects,#tab-title-projects").show();
     $("#tab-title").hide();
 
-    d3.selectAll(listClass)
-        .transition()
-        .duration(500)
+    /*     d3.selectAll(listClass)
+            .transition()
+            .duration(500)
 
-    .delay(function(d, i) {
-        if (i % 2 === 0) {
-            return i * 200;
-        } else {
-            return i * 40;
-        }
-    }).style("transform", "translate(-200px)")
+        .delay(function(d, i) {
+            if (i % 2 === 0) {
+                return i * 200;
+            } else {
+                return i * 40;
+            }
+        }).style("transform", "translate(0px)") */
     /* moveControlPanel(30, 0.2); */
 
 }
@@ -181,72 +179,72 @@ function hideThis() {
 
 
 const moveControlPanel = (x, y) =>
-    d3
-    .selectAll("#app-control")
-    .transition()
-    .duration(850)
+    /*     d3
+        .selectAll("#app-control")
+        .transition()
+        .duration(850)
 
-.style("transform", "translate(" + x + "px)")
-    .style("opacity", y)
-    .delay(function(d, i) {
-        if (i % 2 === 0) {
-            return i * 200;
-        } else {
-            return i * 100;
-        }
+    .style("transform", "translate(" + x + "px)")
+        .style("opacity", y)
+        .delay(function(d, i) {
+            if (i % 2 === 0) {
+                return i * 200;
+            } else {
+                return i * 100;
+            }
+        }); */
+
+
+
+
+    /*
+    $("#selectBox option[value='option1']").remove();
+    $("#selectBox").append('<option value="option6">option6</option>');
+
+
+    // $("select")
+    //   .children("option:not(:first)")
+    //   .remove();
+
+
+    var selectValues = {
+
+      "name": 1000
+
+    }
+    document.addEventListener("DOMContentLoaded")
+
+    $.each(selectValues, function(key, value) {
+      $("#mySelect").append(
+        $("<option></option>")
+          .attr("value", key)
+          .text(value)
+      );
     });
 
+    */
+    function copy() {
+        const answer = document.getElementById("copyResult");
+        const copy = document.getElementById("copybtn");
+        const selection = window.getSelection();
+        const range = document.createRange();
+        const textToCopy = document.getElementById("copytext")
 
+        copy.addEventListener('click', function(e) {
+            range.selectNodeContents(textToCopy);
+            selection.removeAllRanges();
+            selection.addRange(range);
+            const successful = document.execCommand('copy');
+            if (successful) {
+                answer.innerHTML = 'Copied!';
+            } else {
+                answer.innerHTML = 'Unable to copy!';
+            }
+            window.getSelection().removeAllRanges()
+        });
 
-
-/*
-$("#selectBox option[value='option1']").remove();
-$("#selectBox").append('<option value="option6">option6</option>');
-
-
-// $("select")
-//   .children("option:not(:first)")
-//   .remove();
-
-
-var selectValues = {
-
-  "name": 1000
-
-}
-document.addEventListener("DOMContentLoaded")
-
-$.each(selectValues, function(key, value) {
-  $("#mySelect").append(
-    $("<option></option>")
-      .attr("value", key)
-      .text(value)
-  );
-});
-
-*/
-function copy() {
-    const answer = document.getElementById("copyResult");
-    const copy = document.getElementById("copybtn");
-    const selection = window.getSelection();
-    const range = document.createRange();
-    const textToCopy = document.getElementById("copytext")
-
-    copy.addEventListener('click', function(e) {
-        range.selectNodeContents(textToCopy);
-        selection.removeAllRanges();
-        selection.addRange(range);
-        const successful = document.execCommand('copy');
-        if (successful) {
-            answer.innerHTML = 'Copied!';
-        } else {
-            answer.innerHTML = 'Unable to copy!';
-        }
-        window.getSelection().removeAllRanges()
-    });
-
-}
-//copy();
+    }
+    //copy();
 
 
 /* var array1 = [1, 1, 3, 5];
