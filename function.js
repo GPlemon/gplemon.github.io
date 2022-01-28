@@ -22,71 +22,12 @@
  */
 
 
-$("#projects").hide();
-
-function toggleCerts(numberOfCerts) {
-
-    for (let i = 0; i < numberOfCerts; ++i) {
-        let ids = `#cert${i}`;
-        $(ids).hide('easing');
-        $("#cert-btn").on("click", function() {
-            $(ids).toggle("easing");
-        });
-    }
-}
-
-toggleCerts(15);
-/* $("#cert1,#cert2").hide();
-$("#cert-btn").on("click", function() {
-    $("#cert1,#cert2").toggle("easing");
-});
- */
-for (let i = 0; i <= 7; i++) {
-    $("#para" + i).hide();
-}
-
-$("#parent0").on("mouseenter", () => {
-        $("#para0").slideDown("slow")
-    })
-    .on("mouseleave", () => { $("#para0").slideUp("slow") })
+//$("#projects").hide();
 
 
-$("#parent1").on("mouseenter", () => {
-        $("#para1").slideDown("slow")
-    })
-    .on("mouseleave", () => { $("#para1").slideUp("slow") })
 
 
-$("#parent2").on("mouseenter", () => {
-        $("#para2").slideDown("slow")
-    })
-    .on("mouseleave", () => { $("#para2").slideUp("slow") })
 
-$("#parent3").on("mouseenter", () => {
-        $("#para3").slideDown("slow")
-    })
-    .on("mouseleave", () => { $("#para3").slideUp("slow") })
-
-$("#parent4").on("mouseenter", () => {
-        $("#para4").slideDown("slow")
-    })
-    .on("mouseleave", () => { $("#para4").slideUp("slow") })
-
-$("#parent5").on("mouseenter", () => {
-        $("#para5").slideDown("slow")
-    })
-    .on("mouseleave", () => { $("#para5").slideUp("slow") })
-
-
-$("#parent6").on("mouseenter", () => {
-        $("#para6").slideDown("slow")
-    })
-    .on("mouseleave", () => { $("#para6").slideUp("slow") })
-
-$("#parent7").on("mouseenter", () => {
-        $("#para7").slideDown("slow")
-    })
-    .on("mouseleave", () => { $("#para7").slideUp("slow") })
 
 //5
 
@@ -94,11 +35,12 @@ $('#tab-title-projects').hide();
 
 $('#tab-title').on('click', (e) => {
     e.preventDefault();
-    $('#cert-btn').hide('slow');
+    gsap.to('#cert-btn', { duration: 0.5, y: 100 })
 })
 $('#tab-title-projects').on('click', (e) => {
     e.preventDefault();
-    $('#cert-btn').slideDown(1000);
+    //$('#cert-btn').slideDown(1000);
+    gsap.to('#cert-btn', { duration: 0.5, y: 0 })
 })
 
 function fadeIn() {
@@ -106,11 +48,10 @@ function fadeIn() {
     $("#action-btn,#tab-title-projects").toggle(() => {
         $("#projects").hide();
         $("#tab-title-projects").hide('slow');
-
         //showThis();
         $("#tab-title").show();
     });
-};
+}
 
 
 var listClass = ".w3-container,#action-btn,body > div:nth-child(4),#certs";
