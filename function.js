@@ -42,9 +42,7 @@ $("#cert-btn").on("click", function() {
 });
  */
 for (let i = 0; i <= 7; i++) {
-
     $("#para" + i).hide();
-
 }
 
 $("#parent0").on("mouseenter", () => {
@@ -90,11 +88,7 @@ $("#parent7").on("mouseenter", () => {
     })
     .on("mouseleave", () => { $("#para7").slideUp("slow") })
 
-
-
-
 //5
-
 
 $('#tab-title-projects').hide();
 
@@ -113,7 +107,7 @@ function fadeIn() {
         $("#projects").hide();
         $("#tab-title-projects").hide('slow');
 
-        showThis();
+        //showThis();
         $("#tab-title").show();
     });
 };
@@ -131,30 +125,7 @@ function scrollToTop() {
 
 
 
-
-function showThis() {
-
-
-    /*     d3.selectAll(listClass)
-            .transition()
-            .duration(3500)
-
-        .style("transform", "translate(0px)")
-
-        .delay(function(d, i) {
-            if (i % 2 === 0) {
-               
-                return i * 200;
-            } else {
-                return i * 100;
-            }
-        });
-        moveControlPanel(0, 1); */
-
-}
-
 //hide the main webpage cover.
-
 
 function hideThis() {
     scrollToTop();
