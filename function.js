@@ -1,3 +1,32 @@
+/* let user = { name: "gabrieliusPocevicius" }
+
+async function showAvatar() {
+
+
+    // read github user
+    let githubResponse = await fetch(`https://api.github.com/users/${user.name}`);
+    let githubUser = await githubResponse.json();
+
+
+
+    console.log(githubUser.avatar_url)
+        // show the avatar
+    let img = document.createElement('img');
+    img.src = githubUser.avatar_url;
+    img.className = "avatar";
+    document.body.append(img);
+
+    // wait 3 seconds
+    await new Promise((resolve, reject) => setTimeout(resolve, 3000));
+
+    //img.remove();
+
+    return githubUser;
+}
+
+showAvatar(); */
+
+
 // init controller
 //var controller = new ScrollMagic.Controller();
 
@@ -35,28 +64,27 @@ $('#tab-title-projects').hide();
 
 $('#tab-title').on('click', (e) => {
     e.preventDefault();
-    gsap.to('#cert-btn', { duration: 0.5, y: 100 })
+    //gsap.to('#cert-btn', { duration: 0.5, y: 100 })
 })
+
 $('#tab-title-projects').on('click', (e) => {
     e.preventDefault();
-    //$('#cert-btn').slideDown(1000);
-    gsap.to('#cert-btn', { duration: 0.5, y: 0 })
+
+    //gsap.to('#cert-btn', { duration: 0.5, y: 0 })
 })
 
 function fadeIn() {
 
     $("#action-btn,#tab-title-projects").toggle(() => {
         $("#projects").hide();
-        $("#tab-title-projects").hide('slow');
+        $("#tab-title-projects").hide();
         //showThis();
         $("#tab-title").show();
     });
 }
 
 
-var listClass = ".w3-container,#action-btn,body > div:nth-child(4),#certs";
 
-var input = 4;
 
 
 
@@ -72,20 +100,6 @@ function hideThis() {
     scrollToTop();
     $("#projects,#tab-title-projects").show();
     $("#tab-title").hide();
-
-    /*     d3.selectAll(listClass)
-            .transition()
-            .duration(500)
-
-        .delay(function(d, i) {
-            if (i % 2 === 0) {
-                return i * 200;
-            } else {
-                return i * 40;
-            }
-        }).style("transform", "translate(0px)") */
-    /* moveControlPanel(30, 0.2); */
-
 }
 
 
