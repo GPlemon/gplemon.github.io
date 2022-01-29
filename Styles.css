@@ -312,7 +312,8 @@ body>div:nth-child(4)>footer>div>div>div>h6 {
     border: 5px solid #131313;
     text-align: center;
     justify-content: center;
-    border-radius: 50px;
+    /* border-radius: 2em; */
+    background: #131313;
 }
 
 .barStyle {
