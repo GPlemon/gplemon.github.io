@@ -3,6 +3,10 @@ body {
     -moz-osx-font-smoothing: grayscale !important;
 }
 
+.box {
+    border-collapse: collapse;
+}
+
 .avatar {
     height: auto;
 }
