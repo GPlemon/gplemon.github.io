@@ -302,9 +302,10 @@ body {
     transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-body>div:nth-child(4)>footer>div>div>div>h6 {
+
+/* body>div:nth-child(4)>footer>div>div>div>h6 {
     color: whitesmoke !important;
-}
+} */
 
 .pdf {
     /* position: relative; */
@@ -438,7 +439,8 @@ h6 {
     right: 0;
 }
 
-#projects>* {
+
+/* #projects>* {
     color: white;
     width: 100%;
     margin: 10px;
@@ -446,7 +448,7 @@ h6 {
     line-height: 75px;
     font-size: 30px;
     transition: ease 3s all;
-}
+} */
 
 .my-container {
     position: absolute;
