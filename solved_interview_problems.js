@@ -1,12 +1,6 @@
-const fib = (n) => {
-    if (n <= 2) return 1
-    return fib(n - 1) + fib(n - 2)
+const fib = () => {
+
 }
-
-
-//a = [1,2,3,4]
-// b = [3, 4, 5, 6]
-
 
 const sym = (...args) => {
 
@@ -35,8 +29,6 @@ const sym = (...args) => {
 
 //a & b = [3, 4, 5]
 //hoisting
-
-
 
 const A = [1, 2, 3, 4, 5, 6, 7, 8];
 const B = [1, 3, 5, 6, 7, 8, 9];
