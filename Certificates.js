@@ -9,9 +9,10 @@ async function cert(cid = '', path = '') {
     </tr>
     `
     document.getElementById('cert-app').innerHTML += template
+
+
     return;
 }
-
 
 
 cert('', 'data/UdacityCertificate.pdf')
