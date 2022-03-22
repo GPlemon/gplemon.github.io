@@ -3,6 +3,10 @@ body {
     -moz-osx-font-smoothing: grayscale !important;
 }
 
+.shrink {
+    transform: scale(0.7);
+}
+
 .box {
     border-collapse: collapse;
 }
