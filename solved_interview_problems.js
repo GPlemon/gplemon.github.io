@@ -1,5 +1,6 @@
-const fib = () => {
-
+const fib = (n) => {
+    if (n <= 2) return 1
+    return fib(n - 1) + fib(n - 2)
 }
 
 const sym = (...args) => {
@@ -57,7 +58,7 @@ const symmetricDifference = (arr1, arr2) => {
 
 //console.log(symmetricDifference(A, B));
 
-function func(...arg) {
+function symmetricDifference(...arg) {
     let result = []
     let list = []
     for (let i = 0; i < arg.length; i++) {
@@ -82,4 +83,4 @@ function func(...arg) {
 
 }
 
-func([1, 2, 3, 4, 5, 6, 7, 8], [1, 3, 5, 6, 7, 8, 9])
+symmetricDifference([1, 2, 3, 4, 5, 6, 7, 8], [1, 3, 5, 6, 7, 8, 9])
