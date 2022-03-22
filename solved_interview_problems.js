@@ -34,7 +34,6 @@ const sym = (...args) => {
 const A = [1, 2, 3, 4, 5, 6, 7, 8];
 const B = [1, 3, 5, 6, 7, 8, 9];
 
-
 //const diff = [2, 4, 9]
 
 const symmetricDifference = (arr1, arr2) => {
@@ -53,8 +52,6 @@ const symmetricDifference = (arr1, arr2) => {
     }
     return res;
 };
-
-
 
 //console.log(symmetricDifference(A, B));
 
