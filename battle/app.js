@@ -43,8 +43,4 @@ const humans = (_name, _age, _gender) => {
 //git checkout HEAD filename - Discards changes made
 //git reset HEAD filename - Unstages file changes in the staging area.
 //git reset commit_SHA - Resets to a previous commit.
-
-
-
-// some chance in there
-//stash this line
+//Something here
