@@ -1,0 +1,27 @@
+{
+  "name": "gabrieliuspocevicius.github.io",
+  "version": "1.0.0",
+  "description": "Gabrielius web developer website.",
+  "main": "Certificates.js",
+  "dependencies": {
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  },
+  "devDependencies": {
+    "mocha": "^10.0.0"
+  },
+  "scripts": {
+    "test": "mocha",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrieliusPocevicius/gabrieliusPocevicius.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabrieliusPocevicius/gabrieliusPocevicius.github.io/issues"
+  },
+  "homepage": "https://github.com/gabrieliusPocevicius/gabrieliusPocevicius.github.io#readme"
+}
