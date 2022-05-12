@@ -44,10 +44,37 @@ class Male extends Human{
   get relations(){
     return this._relations
   }
+
+  async attempt(self, target){
+    console.log(`${self._name} is attempting ${target._name}`)
+    const result = await attempting(self, target)
+    console.log(result, 'on' , target)
+  }
+
 }
+
+function attempting(self,target){
+  return new Promise((resolve, reject)=>{
+    
+    setTimeout(()=>{
+      if(self._strength > target._strength){
+       return resolve('success')
+      }else{
+        self._health -= target._strength / 2
+       return  resolve('failure')
+      }
+    }, 1000)
+
+  })
+}
+
+
+
 
 let man = new Male('John Doe', 10)
 let man2 = new Male('James Johnson', 23)
+man.attempt(man, man2)
+
 
 function dual(male, male2){
   while(male._health >= 0){
@@ -56,7 +83,6 @@ function dual(male, male2){
   }
   male.status()
   male2.status()
-
   if(male._health > male2._health){
     return console.log(male._name)
   }else if(male2._health > male._health){
@@ -65,7 +91,26 @@ function dual(male, male2){
   return console.log('Tie')
 }
 
-dual(man, man2)
+
+
+
+//dual(man, man2)
+
+function isZero(num){
+  return new Promise((resolve, reject)=>{
+    if(num === 0){
+      resolve('zero')
+    }else{
+      resolve('not zero')
+    }
+  })
+}
+
+//isZero(23).then((value)=> console.log(value))
+
+
+
+
 
 
 
