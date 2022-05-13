@@ -48,7 +48,7 @@ class Male extends Human{
   async attempt(self, target){
     console.log(`${self._name} is attempting ${target._name}`)
     const result = await attempting(self, target)
-    console.log(result, 'on' , target)
+    console.log(result)
   }
 
 }
@@ -58,10 +58,10 @@ function attempting(self,target){
     
     setTimeout(()=>{
       if(self._strength > target._strength){
-       return resolve('success')
+       return resolve(`${self._name} wins`)
       }else{
         self._health -= target._strength / 2
-       return  resolve('failure')
+       return  resolve(`${target._name} wins`)
       }
     }, 1000)
 
@@ -73,7 +73,7 @@ function attempting(self,target){
 
 let man = new Male('John Doe', 10)
 let man2 = new Male('James Johnson', 23)
-man.attempt(man, man2)
+//man.attempt(man, man2)
 
 
 function dual(male, male2){
@@ -110,10 +110,30 @@ function isZero(num){
 
 
 
+const list = []
+let f  =0;
+
+let promise = new Promise((resolve, reject)=>{
+  resolve('success')
+  console.log('promise resolved')
+  ++f 
+})
+let promise1 = new Promise((resolve, reject)=>{
+  resolve('success 1')
+
+})
+let promise2 = new Promise((resolve, reject)=>{
+  resolve('success 2')
+  ++f 
+})
 
 
+const consumer = async () => {
+  const result = await Promise.all([promise, promise1, promise2])
+  console.log('result: ', result)
+  console.log('f: ', f)
+}
 
-
-
+consumer()
 
 
