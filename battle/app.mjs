@@ -134,6 +134,22 @@ const consumer = async () => {
   console.log('f: ', f)
 }
 
-consumer()
+//consumer()
 
+
+const getData = async () => {
+  try {
+      const response = await fetch('https://jsonplaceholder.typicode.com/todos/1',{
+        method: 'POST',
+        body: JSON.stringify({id: 2323})
+      })
+     
+      if(response.ok){
+        const data = await response.json()
+        console.log(data)
+      }
+  } catch (error) {
+    
+  }
+}
 
