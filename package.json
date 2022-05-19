@@ -4,6 +4,7 @@
   "description": "Gabrielius web developer website.",
   "main": "Certificates.js",
   "dependencies": {
+    "@egjs/flicking": "^4.7.0",
     "express": "^4.17.3",
     "nodemon": "^2.0.15"
   },

@@ -10,10 +10,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="Styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@egjs/flicking/dist/flicking.pkgd.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@egjs/flicking/dist/flicking.css"  />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="../solved_interview_problems.js"></script>
+    
     <script async src="../function.js"></script>
     <script src="../Certificates.js" defer></script>
     <script src="../animate.js" defer></script>
@@ -23,32 +25,17 @@
 
 <body id="projects-body" class="py-2 px-2">
     <div class="position-absolute py-2 px-2 small top-0">
-        
-        <br>
-        <code>
-            cd my-react-app
-        </code>
-        <br>
-        <code>
-            git remote add origin https://github.com/username/my-react-app.git
-        </code>
-        <br>
-        <code>
-            git branch -M main
-        </code>
-        <br>
-        <code>
-            git push -u origin main
-        </code>
     </div>
     <!-- Top menu on small screens -->
-
     <!--     <nav class="w-100 mb-5 nav bg-dark px-2 py-2">
     </nav> -->
 
     <main class="container-fluid">
+
+
+
         <section class='row'>
-            <article id="personal-data" class="shadow-lg bg-dark my-4 mx-4 py-4 px-4 col">
+            <article id="personal-data" class="shadow-lg bg-dark my-4 mx-4 py-4 px-4 col-6">
                 <h1>Gabrielius Pocevicius</h1>
                 <h5 class="py-2 col-6 w-100">Mid Full Stack Developer</h5>
                 <span class="text-sm d-inline text-secondary break-words">
@@ -56,113 +43,272 @@
                 </span>
 <br>
 
-                <h5 class="py-2 col-6 w-100">Knowledge---------></h5>
-                <ul class="p-0 list-group urls">
-                    <ol class="list-group-item list-group-item-dark">
-                        <a href="https://javascript.info/" target="_blank">Javascript.info</a>
-                        <span class="link-detail text-light text-sm ">From the basics to advanced topics with simple, but detailed explanations.</span>
-                    </ol>
-                    <ol class="list-group-item list-group-item-dark">
-                        <a href="https://www.patterns.dev/posts/" target="_blank">Patterns</a>
-                        <span class="link-detail text-light text-sm ">Stay up to date on the latest design and performance patterns.</span>
-                    </ol>
-                    <ol class="list-group-item list-group-item-dark">
-                        <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript" target="_blank" >Documentation</a>
-                        <span class="link-detail text-light text-sm ">JavaScript — Dynamic client-side scripting.</span>
-                    </ol>
-                    <ol class="list-group-item list-group-item-dark">
-                        <a href="https://www.codecademy.com">Codecademy</a>
-                        <span class="link-detail text-light text-sm ">Tested coding education.</span>
-                    </ol>
-                    <ol class="list-group-item list-group-item-dark">
-                        <a href="https://riptutorial.com/javascript" target="_blank">Riptutorial</a>
-                        <span class="link-detail text-light text-sm ">Learn programming through books and examples.</span>
-
-                    </ol>
+                
+                    <div id="carousel" class="urls flicking-viewport bg-dark">
                     
-                    <ol class="list-group-item list-group-item-dark">
-                        <a href="https://www.programiz.com" target="_blank">Programiz</a>
-                        <span class="link-detail text-light text-sm ">Learn to code with our beginner-friendly tutorials and examples.</span>
-                    </ol>
-                    <ol class="list-group-item list-group-item-dark">
-                        <a href="https://www.smashingmagazine.com/category/javascript/" target="_blank">Smashing Magazine</a>
-                        <span class="link-detail text-light text-sm ">Useful front-end & UX tips and articles.</span>
-                    </ol>
-                    <ol class="list-group-item list-group-item-dark">
-                        <a href="https://devhints.io/es6" target="_blank">Frontend Cheetsheets</a>
-                        <span class="link-detail text-light text-sm ">Quick snippets and design implementation.</span>
-                    </ol>
-                    <ol class="list-group-item list-group-item-dark">
-                        <a href="https://v8.dev/features" target="_blank">ECMA Features</a>
-                        <span class="link-detail text-light text-sm ">Track the latest development of JavaScript.</span>
-                    </ol>
-                    <ol class="list-group-item list-group-item-dark">
-                        <a href="https://regex101.com/" target="_blank">Regular expressions 101</a>
-                        <span class="link-detail text-light text-sm ">All you need to perform regex matches and implementations.</span>
-                    </ol>
-                    <ol class="list-group-item list-group-item-dark">
-                        <ul class="m-0">
-                            <li><a href="https://vuejs.org/guide/introduction.html" target="_blank">Vue Documentation</a></li>
-                            <span class="link-detail text-light text-sm ">Vue is a framework and ecosystem in frontend development.</span>
-                            <li><a href="https://vueuse.org/guide/" target="_blank">Use Vue Library</a></li>
-                            <span class="link-detail text-light text-sm ">Use Vue extends Vue and provides more functionality.</span>
+                    <div class="flicking-camera ">
+
+                        <!-- JavaScript -->
+                        <ul class=" w-100">
+                            <h3 class="py-2 px-2 display-4">JavaScript</h3>
+                            <p class="small">Useful links for mastering the web's ECMA script.</p>
+                            <div class="ul-list">
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://www.patterns.dev/posts/" target="_blank">Patterns</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">Stay up to date on the latest design and performance patterns.</span>
+                                </ol>
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://javascript.info/" target="_blank">Javascript.info</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">From the basics to advanced topics with simple, but detailed explanations.</span>
+                                </ol>
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript" target="_blank" >Documentation</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">JavaScript — Dynamic client-side scripting.</span>
+                                </ol>
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://www.programiz.com" target="_blank">Programiz</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">Learn to code with our beginner-friendly tutorials and examples.</span>
+                                </ol>
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://www.tabnine.com/code/javascript/" target="_blank">The JavaScript Tutorial</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">Learn the JavaScript programming language from scratch quickly and effectively.</span> 
+                                </ol>
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://v8.dev/features" target="_blank">ECMA Features</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">Track the latest development of JavaScript.</span>
+                                </ol>
+                            </div>
 
                         </ul>
-                        
-                    </ol>
-                    <ol class="list-group-item list-group-item-dark">
-                        <a href="https://vitejs.dev/guide/" target="_blank">Vite Documentation</a>
-                        <span class="link-detail text-light text-sm ">A build tool that aims to provide a faster and leaner development experience for modern web projects. Great for SPAs and MPAs.</span> 
-                    </ol>
-                    <ol class="list-group-item list-group-item-dark">
-                        <ul class="m-0">
-                            <li><a href="https://reactjs.org/docs/" target="_blank">React Documentation</a></li>
-                            <span class="link-detail text-light text-sm ">A JavaScript library for building user interfaces.</span>
-                            <li><a href="https://github.com/enaqx/awesome-react#react-general-tutorials" target="_blank">Awesome React</a></li>
-                            <span class="link-detail text-light text-sm ">A collection of awesome things regarding the React ecosystem.</span> 
+                        <!-- Learning Platforms  -->
+                        <ul class=" w-100">
+                            <h3 class="py-2 px-2 display-4">Platforms</h3>
+                            <p class="small">Useful links for getting recognized certifications.</p>
+                            <div class="ul-list">
+                                <ol class=" list-group-item list-group-item-dark">
+                                    <a href="https://www.codecademy.com">Codecademy</a>
+                                    <br>
+                                    <span class=" link-detail text-light text-sm ">Tested coding education.</span>
+                                </ol>
+                                <ol class=" list-group-item list-group-item-dark">
+                                    <a href="https://www.udacity.com/">Udacity</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">Great for learning all kinds of digital technologies.</span>
+                                </ol>
+
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://www.udemy.com/">Udemy</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">Choose from 185,000 online video courses.</span>
+                                </ol>
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://codeinstitute.net/global/">Code Institute</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">
+                                        Internationally recognised qualification.</span>
+                                </ol>
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://www.edx.org/">Edx</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">
+                                        Start learning from the world’s best institutions.</span>
+                                </ol>
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://www.linkedin.com/learning/">Linkedin Learning</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">
+                                        Grow your skills and advance your career.</span>
+                                </ol>
+    
+
+                            </div>
+
                         </ul>
-                        
-                    </ol>
+                        <!-- Articles -->
+                        <ul class=" w-100">
+                            <h3 class="py-2 px-2 display-4">Articles</h3>
+                            <p class="small">Useful links for gaining deeper insight about most relevant technologies.</p>
+                            <div class="ul-list">
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://www.smashingmagazine.com/category/javascript/" target="_blank">Smashing Magazine</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">Useful front-end & UX tips and articles.</span>
+                                </ol>
 
-                    <ol class="list-group-item list-group-item-dark">
-                        <a href="https://developer.chrome.com/docs/" target="_blank">Chrome developers</a>
-                        <span class="link-detail text-light text-sm ">Build Extensions, publish on the Chrome Web Store, optimize your website, and more.</span> 
-                    </ol>
-                    <ol class="list-group-item list-group-item-dark">
-                        <a href="https://www.tabnine.com/code/javascript/" target="_blank">Tabnine AI search code.</a>
-                        <span class="link-detail text-light text-sm ">Search for implementation that already exists with ease.</span> 
-                    </ol>
-                    <ol class="list-group-item list-group-item-dark">
-                        <a href="https://www.tabnine.com/code/javascript/" target="_blank">The JavaScript Tutorial</a>
-                        <span class="link-detail text-light text-sm ">Learn the JavaScript programming language from scratch quickly and effectively.</span> 
-                    </ol>
-                    <ol class="list-group-item list-group-item-dark">
-                        <a href="https://observablehq.com/tutorials" target="_blank">Data Science and Graphs</a>
-                        <span class="link-detail text-light text-sm ">Level up on visualization techniques or the Observable runtime.</span> 
-                    </ol>
-                    <ol class="list-group-item list-group-item-dark">
-                        <a href="https://www.wappalyzer.com/" target="_blank">Web App Stacks</a>
-                        <span class="link-detail text-light text-sm ">Find out the technology stack of any website.</span> 
-                    </ol>
-                    <ol class="list-group-item list-group-item-dark">
-                        <a href="https://www.wappalyzer.com/" target="_blank">DS && ALgo and Interviews</a>
-                        <span class="link-detail text-light text-sm ">A large collection of knowledge of CS subjects.</span> 
-                    </ol>
-                    <ol class="list-group-item list-group-item-dark">
-                        <a href="https://www.wappalyzer.com/" target="_blank">GoLang Documentation</a>
-                        <span class="link-detail text-light text-sm ">Great place to polish skills about GoLang.</span> 
-                    </ol>
-                    <ol class="list-group-item list-group-item-dark">
-                        <a href="https://greensock.com/docs/v3/GSAP/" target="_blank">GreenSock Docs</a>
-                        <span class="link-detail text-light text-sm ">A list of GSAP functions and plugins for performant animations.</span> 
-                    </ol>
-                    <ol class="list-group-item list-group-item-dark">
-                        <a href="https://surge.sh/" target="_blank">Surge - Simple, web publishing.</a>
-                        <span class="link-detail text-light text-sm ">Static web publishing
-                            for Front-End Developers.</span> 
-                    </ol>
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://www.wappalyzer.com/" target="_blank">DS && Algo and Interviews</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">A large collection of knowledge of CS subjects.</span> 
+                                </ol>
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://www.geeksforgeeks.org/articles-on-programming-languages-gq/" target="_blank">Geeks For Geeks</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">Many articles about Data structures, algorithms, interview preps and more more.</span> 
+                                </ol>
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://www.sciencedaily.com/news/computers_math/computer_programming/" target="_blank">Science Daily</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">Latest research news from technologies and science.</span> 
+                                </ol>
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://www.simplilearn.com/resources/software-development/articles" target="_blank">Simplilearn Articles</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">Simplilearn contains over 6 hundred articles related to programming.</span> 
+                                </ol>
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://medium.com/tag/programming" target="_blank">Medium</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">Medium tag programming articles.</span> 
+                                </ol>
+                            </div>
 
-                </ul>
+
+                        </ul>
+                        <!-- Documentations -->
+                        <ul class=" w-100">
+                            <h3 class="py-2 px-2 display-4">Documentations</h3>
+                            <p class="small">Useful links for various web development documentations.</p>
+                            <div class="ul-list">
+                                <ol class="list-group-item list-group-item-dark">
+                                    <ul class="m-0">
+                                        <li><a href="https://vuejs.org/guide/introduction.html" target="_blank">Vue Documentation</a></li>
+                                        <span class="link-detail text-light text-sm ">Vue is a framework and ecosystem in frontend development.</span>
+                                        <li><a href="https://vueuse.org/guide/" target="_blank">Use Vue Library</a></li>
+                                        <span class="link-detail text-light text-sm ">Use Vue extends Vue and provides more functionality.</span>
+                                    </ul>
+                                    
+                                </ol>
+    
+                                <ol class="list-group-item list-group-item-dark">
+                                    <ul class="m-0">
+                                        <li><a href="https://reactjs.org/docs/" target="_blank">React Documentation</a></li>
+                                        <span class="link-detail text-light text-sm ">A JavaScript library for building user interfaces.</span>
+                                        <li><a href="https://github.com/enaqx/awesome-react#react-general-tutorials" target="_blank">Awesome React</a></li>
+                                        <span class="link-detail text-light text-sm ">A collection of awesome things regarding the React ecosystem.</span> 
+                                    </ul>
+                                    
+                                </ol>
+    
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://www.wappalyzer.com/" target="_blank">GoLang Documentation</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">Great place to polish skills about GoLang.</span> 
+                                </ol>
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://vitejs.dev/guide/" target="_blank">Vite Documentation</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">A build tool that aims to provide a faster and leaner development experience for modern web projects. Great for SPAs and MPAs.</span> 
+                                </ol>
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://docs.python.org/3.12/" target="_blank">Python Documentation</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">This is the official documentation for Python 3.*.</span> 
+                                </ol>
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://docs.python.org/3.12/" target="_blank">GitHub Documentation</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">Learn how to start building, shipping, and maintaining software with GitHub.</span> 
+                                </ol>
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://greensock.com/docs/v3/GSAP/" target="_blank">GreenSock Docs</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">A list of GSAP functions and plugins for performant animations.</span> 
+                                </ol>
+    
+                            </div>
+
+                        </ul>
+                        <!-- Resources -->
+                        <ul class=" w-100">
+                            <h3 class="py-2 px-2 display-4">Resources</h3>
+                            <p class="small">Useful links for various web development resources.</p>
+                            <div class="ul-list">
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://devhints.io/es6" target="_blank">Frontend Cheetsheets</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">Quick snippets and design implementation.</span>
+                                </ol>
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://regex101.com/" target="_blank">Regular expressions 101</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">All you need to perform regex matches and implementations.</span>
+                                </ol>
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://www.tabnine.com/code/javascript/" target="_blank">Tabnine AI search code.</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">Search for implementation that already exists with ease.</span> 
+                                </ol>
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://observablehq.com/tutorials" target="_blank">Data Science and Graphs</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">Level up on visualization techniques or the Observable runtime.</span> 
+                                </ol>
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://www.wappalyzer.com/" target="_blank">Web App Stacks</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">Find out the technology stack of any website.</span> 
+                                </ol>
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://grid.layoutit.com/" target="_blank">Layout It</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">Get the css code for grid layouts platform.</span> 
+                                </ol>
+                            </div>
+
+
+                        </ul>
+
+                        <!-- Publishing -->
+                        <ul class=" w-100">
+                            <h3 class="display-4">Publishing</h3>
+                            <p>Links for ways to publish/host any digital program.</p>
+                            <div class="ul-list">
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://surge.sh/" target="_blank">Surge </a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">Static web publishing
+                                        for Front-End Developers.</span> 
+                                </ol>
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://firebase.google.com/products/hosting/" target="_blank">Firebase Web Hosting</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">Deploy a single-page web app without all the hassle</span> 
+                                </ol>
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://www.netlify.com/" target="_blank">Netlify</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">Spin up a project in seconds.</span> 
+                                </ol>
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://pages.github.com/" target="_blank">Github Pages</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">Just edit, push, and your changes are live.</span> 
+                                </ol>
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://pages.cloudflare.com/">Cloudflare</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">
+                                        Build fast sites in record time.
+                                    </span>
+                                </ol>
+                                <ol class="list-group-item list-group-item-dark">
+                                    <a href="https://aws.amazon.com/">AWS</a>
+                                    <br>
+                                    <span class="link-detail text-light text-sm ">
+                                        Vast collection of hosting options.
+                                    </span>
+                                </ol>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+ 
 
 
                 <!-- <button class="btn btn-outline-secondary">Demo Projects</button> -->
@@ -178,7 +324,7 @@
                     <code class="mx-2 text-secondary">/*The shown status of working technologies have been used in
                         previous projects.*/</code>
                 </div>
-                
+                <br>
                 <code class="text-secondary">//PoC + PoV = (MVP).</code><br>
                 <code class="text-secondary">//Demand + Volatility = Product-market fit.</code>
                 
@@ -295,6 +441,9 @@
 
 
         </section>
+
+
+
 
         <div>
             <code class="position-relative d-block h3 mx-4  text-center  ">Coding Projects

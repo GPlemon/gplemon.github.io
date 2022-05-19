@@ -102,9 +102,18 @@ h3 {
 ul{
     list-style: none;
 }
+
+.ul-list{
+    columns: 2;
+}
 .list-group-item-dark{
-    background-color: #111111ee !important;
-    
+
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #00000000 !important;
+    padding: 24px;
+    flex-wrap: wrap !important;
+
 }
 a{
     color: #fff !important;
@@ -116,22 +125,19 @@ a{
     position: absolute;
     top: 0;
     box-shadow: rgb(31, 31, 31) 0px 0px 40px 1px;
-    scale: 0.6;
-    transition: all 0.3s ease-in-out;
-    height: 900px;
-    overflow-y: scroll;
-    max-height: 900px;
-}
-.urls:hover{
-    /* border-radius: 50px; */
-    position: absolute;
-    top: 0;
-    box-shadow: rgb(15, 15, 15) 0px 0px 40px 1px;
     scale: 1;
     transition: all 0.3s ease-in-out;
-    z-index: 99999;
-    margin-top: 70px;
-    margin-left: -40px;
+    height: 540px;
+    overflow-y: scroll;
+    max-height: 540px;
+}
+.urls:hover{
+    box-shadow: rgb(31, 31, 31) 0px 0px 40px 1px;
+    /* scale: 1.1; */
+    transition: all 0.3s ease-in-out;
+    height: 540px !important;
+    max-height: 540px !important;
+    margin-left: 25px;
 }
 
 .link-details {

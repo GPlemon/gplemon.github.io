@@ -1,3 +1,15 @@
+const flicking = new Flicking("#carousel", {
+    align: "center",
+    circular: true,
+    bound: true,
+    renderOnlyVisible: true,
+    horizontal: true,
+  });
+  setInterval(()=>{flicking.next();},15000)
+  
+
+
+
 let boot = gsap.timeline({ defaults: { ease: "power1.out" } });
 boot.set('div', { autoAlpha: 0, })
     /* setTimeout(() => { */
