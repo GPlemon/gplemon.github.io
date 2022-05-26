@@ -44,6 +44,7 @@ class Male extends Human{
   get relations(){
     return this._relations
   }
+<<<<<<< HEAD
 
   async attempt(self, target){
     console.log(`${self._name} is attempting ${target._name}`)
@@ -75,6 +76,12 @@ let man = new Male('John Doe', 10)
 let man2 = new Male('James Johnson', 23)
 //man.attempt(man, man2)
 
+=======
+}
+
+let man = new Male('John Doe', 10)
+let man2 = new Male('James Johnson', 23)
+>>>>>>> change-title
 
 function dual(male, male2){
   while(male._health >= 0){
@@ -83,6 +90,10 @@ function dual(male, male2){
   }
   male.status()
   male2.status()
+<<<<<<< HEAD
+=======
+
+>>>>>>> change-title
   if(male._health > male2._health){
     return console.log(male._name)
   }else if(male2._health > male._health){
@@ -91,6 +102,7 @@ function dual(male, male2){
   return console.log('Tie')
 }
 
+<<<<<<< HEAD
 
 
 
@@ -153,3 +165,12 @@ const getData = async () => {
   }
 }
 
+=======
+dual(man, man2)
+
+
+
+
+
+
+>>>>>>> change-title
