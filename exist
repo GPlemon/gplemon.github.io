@@ -1,0 +1,584 @@
+[33mcommit 1facd75f3f86e7e598acae5cc441fdeb6d21d995[m[33m ([m[1;36mHEAD -> [m[1;32mnew_branch[m[33m, [m[1;32mmaster[m[33m)[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Thu May 26 12:18:23 2022 +0300
+
+    Something new from the branch
+
+[33mcommit 4d736af649ed27dd36f04cf12d1d6ed04dd0dcd7[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Thu May 26 12:14:20 2022 +0300
+
+    removed 2 lines
+
+[33mcommit c88a4cb9281187f97f39f4ab82055cf316fc69cf[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Thu May 19 19:01:22 2022 +0300
+
+    added egjs package
+
+[33mcommit 52c746984bc539e1ee78f52865617345aab38753[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Wed May 18 21:52:52 2022 +0300
+
+    git commands
+
+[33mcommit 46725c363381976720d91a6710476e3c51016d20[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Wed May 18 21:40:24 2022 +0300
+
+    improvements to portfolio
+
+[33mcommit 09065f2758e0d02f31d51ded392ce1790b9bb4d4[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Wed May 18 20:46:54 2022 +0300
+
+    formated links
+
+[33mcommit cab59238ab190571bb5a84059dfa08ead0c63776[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Wed May 18 20:21:50 2022 +0300
+
+    added public serve model
+
+[33mcommit 7e393ebfdcb529a3faaf056de24d627da4308424[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Tue May 17 13:14:50 2022 +0300
+
+    added resource
+
+[33mcommit ccfedf4a6b5af1a220933093bbc6183e2750c838[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Mon May 16 16:50:55 2022 +0300
+
+    more useful links
+
+[33mcommit 67fa27e4bcf19ce8a2bc88a91332fee1e8f985ca[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Sat May 14 12:26:46 2022 +0300
+
+    updated text
+
+[33mcommit 764c6d438a4b40be8182b290cd4fb75cc6ba81bb[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Sat May 14 12:25:07 2022 +0300
+
+    Another link about regex
+
+[33mcommit ee7af0792524d3e3917023dddbc9f2987b95b781[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Fri May 13 21:39:51 2022 +0300
+
+    Added JavaScript Tuturial link.
+
+[33mcommit 7bdd2f177b0fb980069e253016f98f97bbc19678[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Fri May 13 20:34:08 2022 +0300
+
+    additional useful links
+
+[33mcommit 9d30c05c2dde899e77667feaf9d7c0b67255ad5d[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Fri May 13 13:43:19 2022 +0300
+
+    7.1
+
+[33mcommit 7c7affe96cb794921d674ae4ad9c7ad840022af0[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Thu May 12 15:39:31 2022 +0300
+
+    7
+
+[33mcommit 2d6ddee6b0e396928394266635363dd6e3fcbf14[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Wed May 11 19:10:53 2022 +0300
+
+    Added mocha for testing.
+
+[33mcommit 165ad5755bf618bbe531724b080b2d77007ea993[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Tue May 10 21:56:27 2022 +0300
+
+    master-commit
+
+[33mcommit ec55a72aeed67f821e4f7871c872c54e96342723[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Tue May 10 21:49:00 2022 +0300
+
+    index.html
+
+[33mcommit cb0a7bb5c0be0de374f72dee56384ba0d4c26659[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Tue May 10 20:52:30 2022 +0300
+
+    Squashed commit of the following:
+    
+    commit c5e1969749d80bc851e33ece799fc7e11ef98125
+    Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+    Date:   Tue May 10 20:34:34 2022 +0300
+    
+        7
+    
+    commit cc3036b737d9b54f929c99d66988e52ece36c655
+    Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+    Date:   Mon May 9 13:51:49 2022 +0300
+    
+        change
+
+[33mcommit 3ae0313aff875cd25c721133439e3f5d9d1bf6ae[m
+Merge: d9f9d60 81aafd0
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Mon May 9 13:46:14 2022 +0300
+
+    Merge branch 'master' of https://github.com/gabrieliusPocevicius/gabrieliusPocevicius.github.io
+
+[33mcommit d9f9d60508735c1ddd2ff377d05dd8826b6a3f3d[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Mon May 9 13:46:12 2022 +0300
+
+    done
+
+[33mcommit 0cb4d974c044e0b0c197f652c7a3439b296110c5[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Sat May 7 22:42:26 2022 +0300
+
+    6.91
+
+[33mcommit 81aafd088f6ef0ab4f901ec779be7e5cfcce8a45[m[33m ([m[1;32mlist[m[33m, [m[1;32mc88[m[33m)[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Mon May 9 13:27:34 2022 +0300
+
+    commited to branch
+
+[33mcommit 4cae28678f44c7059e3afecd871ccf9c944bc409[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Mon May 9 13:13:17 2022 +0300
+
+    first commit
+
+[33mcommit c88ecd4cb14ff4ccecf2030e34cde4c39b066ea3[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Sat May 7 22:42:26 2022 +0300
+
+    6.91
+
+[33mcommit aa94e7569c7bfbb4cdaf37faefc845e5acf24136[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Fri May 6 22:12:00 2022 +0300
+
+    6.91
+
+[33mcommit e03c402805cb23ffd7122205b4d07302d2a432bd[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Thu May 5 22:28:33 2022 +0300
+
+    6.9
+
+[33mcommit 2dffc2cea2a20f45c3364f2353ceb0a1601f0f72[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Fri Apr 22 18:55:14 2022 +0300
+
+    6.9
+
+[33mcommit 3813403ac1905a2cd5066fdc5d1481c757888522[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Sun Apr 17 14:41:32 2022 +0300
+
+    added another project
+
+[33mcommit f7bdbd0e965af2ad8eacbc7ecde34ea98be786db[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Fri Mar 25 11:48:31 2022 +0200
+
+    0.75
+
+[33mcommit 75d8b223930a8e9ff28e12939352ae5c56bb4d55[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Wed Mar 23 18:10:42 2022 +0200
+
+    testing purposes
+
+[33mcommit 87e60f781803c79235a7f088f4c0729baefbe137[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Tue Mar 22 23:38:52 2022 +0200
+
+    0.7
+
+[33mcommit 4a4f2deee4a91c568d16d219853b554c66bc341c[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Tue Mar 22 21:29:54 2022 +0200
+
+    0.6
+
+[33mcommit fa63d816b976f2808cd0062f746049c4538f643b[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Tue Mar 22 21:10:23 2022 +0200
+
+    0.6
+
+[33mcommit 71eea884a84ed9dda6d69049021d08ad87bf0853[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Tue Mar 22 19:35:49 2022 +0200
+
+    5.7
+
+[33mcommit abbae3c808a2b1c1b846baf73f2bc77e303d6f3b[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Tue Mar 22 19:28:29 2022 +0200
+
+    5.6
+
+[33mcommit b610deef5885f69d1c756315f85fafe89598d067[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Tue Mar 22 19:21:23 2022 +0200
+
+    5
+
+[33mcommit 38dcc8bcb0786ccdea1e62d397e1cf0c7e366df9[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Tue Mar 22 14:08:05 2022 +0200
+
+    0.5
+
+[33mcommit cf947996ce98537a0b2b7a53da0db532292dc576[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Thu Mar 17 21:13:05 2022 +0200
+
+    9.9
+
+[33mcommit dec8bbfdd8942d5ecae93199cfed997d205c7c08[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Mon Feb 21 20:41:19 2022 +0200
+
+    9.8
+
+[33mcommit 496501f8ee25335694e3d376c5298811142f67c6[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Sat Feb 19 22:17:01 2022 +0200
+
+    9.8
+
+[33mcommit a46cb353dbdf184f7772052a9dbcc3598ffcce7f[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Sun Feb 13 18:09:29 2022 +0200
+
+    9.8
+
+[33mcommit 15041f502aff4c07c8fbaba4b0b1666f31821731[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Sat Feb 12 21:42:03 2022 +0200
+
+    9.7
+
+[33mcommit c24cfd6ab3aac9ac3a5dba4f429b852873ab51ac[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Sat Feb 5 23:57:52 2022 +0200
+
+    9.7
+
+[33mcommit 7f064ed5551d578cd5145dd97c2635bf950f8f20[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Thu Feb 3 22:25:11 2022 +0200
+
+    0.4
+
+[33mcommit e9334aa4e4912c81de7989982ea423b72af3c809[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Mon Jan 31 23:58:01 2022 +0200
+
+    0.4
+
+[33mcommit 3df36768e859911cb14b9453608379e1771f6384[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Sat Jan 29 18:17:23 2022 +0200
+
+    0.4
+
+[33mcommit 1605b1ffe8a1883c234044274785be8f2ea26b1a[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Sat Jan 29 18:16:09 2022 +0200
+
+    0.3
+
+[33mcommit ed59691d7cf6ed372f07d0189412a4774647d1a9[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Sat Jan 29 18:11:42 2022 +0200
+
+    0.4
+
+[33mcommit 0a7a055fe1449d3b28b36d2ce07c2db6a2320b5c[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Sat Jan 29 18:08:23 2022 +0200
+
+    0.4
+
+[33mcommit f6639e18ae474ac1e5c3277878b414468d0780c3[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Sat Jan 29 15:48:24 2022 +0200
+
+    9.7
+
+[33mcommit 9f1cd110beabde846509ab5948ebd3285edcc06b[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Sat Jan 29 15:09:37 2022 +0200
+
+    0.4
+
+[33mcommit 139333e4802afea1b3257e3c0858e8fc3de7d3ad[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Sat Jan 29 01:44:20 2022 +0200
+
+    0.3
+
+[33mcommit c8c7939346c44cccce268dad74f0607443666b58[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Sat Jan 29 00:51:28 2022 +0200
+
+    0.3
+
+[33mcommit d154f06732538e7229ae996f45219cbf13ed24be[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Fri Jan 28 23:26:22 2022 +0200
+
+    0.1
+
+[33mcommit 868684495faa84181d272b58e22cba2f9b819ca8[m
+Author: gabrielius pocevicius <poceviciusgabrielius@gmail.com>
+Date:   Thu Jan 27 22:08:56 2022 +0200
+
+    3.1
+
+[33mcommit 62ce836052b98564846a1914020d817ad7d6e0a6[m
+Author: Gabs Pocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Sun Aug 29 20:12:55 2021 +0300
+
+    3
+
+[33mcommit b1446990f1032a412010b115f2d002099d7265d4[m
+Author: Gabs Pocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Thu Jul 15 02:06:49 2021 +0300
+
+    1
+
+[33mcommit afc9368f8f66328de763216635837b9c7d43d590[m
+Author: Gabs Pocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Thu Jul 15 00:26:00 2021 +0300
+
+    1
+
+[33mcommit 1a369964efb3928b5f7473c6bd51188fe245562d[m
+Author: Gabs Pocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Thu Jul 8 00:16:47 2021 +0300
+
+    0.9
+
+[33mcommit 08d178ea9a5e02781da7cbbc2cef52362deb83a4[m
+Author: Gabs Pocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Thu Jul 1 12:45:58 2021 +0300
+
+    8
+
+[33mcommit 8eb9fd820737868526ed565c8384344a680c75d6[m
+Author: Gabs Pocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Sat Jun 26 20:55:09 2021 +0300
+
+    new Cert
+
+[33mcommit 47b500f27f1f38965ba457f5b0a50f029f53eb12[m
+Author: Gabs Pocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Thu Jun 24 14:08:27 2021 +0300
+
+    8
+
+[33mcommit ff9b8ea847cabae6d7e11164aaf5739924dfd2e2[m
+Author: Gabs Pocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Fri Jun 4 18:59:06 2021 +0300
+
+    6.8
+
+[33mcommit 22d24a9beedc834134df513a927746c89a88aae8[m
+Author: Gabs Pocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Tue Jun 1 18:15:45 2021 +0300
+
+    added grid
+
+[33mcommit 87b4008a9b377001af2877dee3bec8e51dccb631[m
+Author: Gabs Pocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Wed Jan 20 22:28:02 2021 +0200
+
+    6.7
+
+[33mcommit e587fce955f8a7a6e1f5f707b788a96a70da832f[m
+Author: Gabs Pocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Tue Jan 5 18:07:20 2021 +0200
+
+    1.38
+
+[33mcommit 31f9187e5959b6c24b8a462474646bb2f118d461[m
+Author: Gabs Pocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Tue Jan 5 14:12:49 2021 +0200
+
+    1.37
+
+[33mcommit 8db4c94579df392e3f7ad469e4576df0d2f73d30[m
+Author: Gabs Pocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Tue Jan 5 14:10:58 2021 +0200
+
+    1.37
+
+[33mcommit 970f8c5f8d805759ed367d1f7bafdce9b92a53e1[m
+Author: Gabs Pocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Tue Jan 5 13:46:16 2021 +0200
+
+    1.37
+
+[33mcommit 76bf885b9371a74e08b43a9287d2089cf55bd414[m
+Author: Gabs Pocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Tue Jan 5 13:36:52 2021 +0200
+
+    1.37
+
+[33mcommit ac13429b80f328a68e3efe50f20c904226b6db4e[m
+Author: Gabs Pocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Tue Jan 5 13:30:33 2021 +0200
+
+    1.37
+
+[33mcommit e36690b943028d4c92c16764481aaf0dd13b1812[m
+Author: Gabs Pocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Tue Jan 5 13:25:19 2021 +0200
+
+    1.37
+
+[33mcommit 5105d0aa564971729723487163cbf9c9fd6a115a[m
+Author: Gabs Pocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Tue Dec 15 19:00:17 2020 +0200
+
+    1.37
+
+[33mcommit 4c7e21f1dd3b268e3c31620c5528c3ece5dd0f3e[m
+Author: Gabs Pocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Mon Dec 7 17:16:19 2020 +0200
+
+    1.36
+
+[33mcommit 4e9f995a972ac48bd086e7639130ae60b87ada74[m
+Author: Gabs Pocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Mon Dec 7 17:08:34 2020 +0200
+
+    1.36
+
+[33mcommit 2d722ce3f9a0cd68d6ae356e70524ff380e22301[m
+Author: Gabs Pocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Mon Nov 30 01:44:29 2020 +0200
+
+    1.35
+
+[33mcommit 28f4edc1aa1ff64b1897b9f9dc094bde82683df7[m
+Author: gabrieliusPocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Thu Oct 15 02:55:30 2020 +0300
+
+    Update Index
+    
+    Adding more contact information, such as the mobile number.
+
+[33mcommit 7de09d7f79cc9ec6ed443f075ff1da702f125300[m
+Author: gabrieliusPocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Tue Oct 13 23:39:25 2020 +0300
+
+    Patch 1.3
+    
+    Improvement of the footer.
+
+[33mcommit 7494be4f67591090742e70c1f9ab5e9c893e4a62[m
+Author: gabrieliusPocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Sun Oct 11 19:03:34 2020 +0300
+
+    Patch 1.3
+    
+    Increase performance
+
+[33mcommit 0da88eba204924a20daf251fce5161374fe5cb5f[m
+Author: gabrieliusPocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Sat Oct 10 20:15:53 2020 +0300
+
+    Patch1.03
+    
+    Logo added
+
+[33mcommit 7827c63bc0b839ace014296c60d76baf3538d669[m
+Author: gabrieliusPocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Fri Oct 9 18:39:14 2020 +0300
+
+    Added GSAP
+    
+    Added GSAP for animation improvements.
+
+[33mcommit 4f607de8c0a61d99bb2b31949104a65f173098ad[m
+Author: gabrieliusPocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Tue Oct 6 23:19:44 2020 +0300
+
+    Changes 1
+    
+    Added more svgs, more descriptions and more content.
+
+[33mcommit fa91bb96a2d7933a5b575308fb8d5ccbc45734ca[m
+Author: gabrieliusPocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Tue Oct 6 14:22:33 2020 +0300
+
+    Patch 2
+    
+    Dynamic background Images.
+
+[33mcommit 7c9d9a3e9a383d1aa512a8668fd640e9874dd855[m
+Author: gabrieliusPocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Fri Oct 2 13:42:35 2020 +0300
+
+    Patch 1022020
+    
+    Some improvements on the projects display and proformance speed.
+
+[33mcommit af0500ea4c592b70e07acdc32aef0cd4387e1529[m
+Author: gabrieliusPocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Mon Sep 21 23:29:13 2020 +0300
+
+    Patch 2020.9
+    
+    Added sleek web button functionality and visual improvements and stability.
+
+[33mcommit 3f8d7dd551df501d58a7d57ee320172c03f57417[m
+Author: gabrieliusPocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Sun Dec 29 19:42:59 2019 +0200
+
+    Design Improvements
+
+[33mcommit 68eed6e295b824a2039c0fb7847cce84ad6c1345[m
+Author: gabrieliusPocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Sat Dec 28 20:51:36 2019 +0200
+
+    Html index
+    
+    Refernce to external liberaies and classes.
+
+[33mcommit ab8304ef719fc612ade92578a99d318cd49d889b[m
+Author: gabrieliusPocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Fri Nov 1 19:53:47 2019 +0200
+
+    changes
+
+[33mcommit 15413682d40393635084b6b3f2f67cfabc3e5940[m
+Author: gabrieliusPocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Fri Nov 1 19:45:26 2019 +0200
+
+    Initial commit
+
+[33mcommit 82667ab92f3ad912d586edfdb6d93fdce0d8ebcb[m
+Author: gabrieliusPocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Fri Nov 1 19:37:01 2019 +0200
+
+    Set theme jekyll-theme-modernist
+
+[33mcommit fd8a272055230885fbea551893b0e9f543be4a4c[m
+Author: gabrieliusPocevicius <40058873+gabrieliusPocevicius@users.noreply.github.com>
+Date:   Fri Nov 1 16:38:29 2019 +0200
+
+    Initial commit
