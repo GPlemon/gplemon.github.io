@@ -4,6 +4,8 @@
 
 const os = require('os');
 
+require('module').builtinModule
+
 With the os module saved to the os variable, you can call methods like:
 
 -os.type() — to return the computer’s operating system.
