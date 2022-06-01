@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="undefined" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="undefined" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+	<div class="container mt-5 d-flex justify-content-center">
+			<div class="card p-3">
+					<div class="d-flex align-items-center">
+							<div class="image"> <img src="https://pixabay.com/get/g05f26440c68eeb199da9d1d906f8fdaf80943f95d54ac43ac9b6cd65ebd9474debbfc8ec6ce8351501adc6c64d70d83e_1280.png" class="rounded" width="155"> </div>
+							<div class="ml-3 w-100">
+									<h4 class="mb-0 mt-0"><%= user ? user.username : "Guest" %></h4> <span>Learner</span>
+									<div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
+											<div class="d-flex flex-column"> <span class="age">Age</span> <span class="number1">23</span> </div>
+											<div class="d-flex flex-column"> <span class="course-count">Plants Owned</span> <span class="number2">12</span> </div>
+											<div class="d-flex flex-column"> <span class="rating">Rating</span> <span class="number3">8.9</span> </div>
+									</div>
+									<div class="button mt-2 d-flex flex-row align-items-center"> <button class="btn btn-sm btn-outline-primary w-100">Edit</button> <button class="btn btn-sm btn-primary w-100 ml-2">New</button> </div>
+							</div>
+					</div>
+			</div>
+	</div>
+</body>
+</html>
