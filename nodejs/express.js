@@ -222,3 +222,31 @@ app.get('/animals', (req, res, next) => {
     //https://www.taniarascia.com/making-api-requests-postman-curl/
     //http://expressjs.com/en/api.html#req.params
     //http://expressjs.com/en/api.html#req.query
+    //https://eloquentjavascript.net/20_node.html
+    //https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs
+    //https://www.freecodecamp.org/news/going-out-to-eat-and-understanding-the-basics-of-express-js-f034a029fb66/
+
+   //----------------------------------------------------- Error Handling
+/* const express = require('express');
+const app = express();
+
+const foods = ['pasta carbonara', 'bnh m', 'cucumber salad'];
+
+app.get('/foods/:index', (req, res, next) => {
+  if (foods[req.params.index]) {
+    res.send(req.params.index);
+  } else {
+    const err = Error('Invalid index!');
+    err.status = 404;
+    next(err);
+  }
+});
+
+const errorHandler = (err, req, res, next) => {
+  if (!err.status) {
+    err.status = 500;
+  }
+  res.status(err.status).send(err.message);
+} */
+
+app.use(errorHandler);
