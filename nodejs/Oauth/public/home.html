@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+
+<body>
+
+<h1>Home page</h1>
+
+<ul>
+    <li><a href="/login">Login</a></li>
+    <li><a href="/secret" id="secretarea">Secret Area</a></li>
+</ul>
+
+<div id="accesstoken"></div>
+
+</body>
+
+<script>
+
+    const queryString = window.location.search
+    const urlParams = new URLSearchParams(queryString)
+
+    if (urlParams.get('accessToken')) {
+
+        let token = urlParams.get('accessToken')
+        document.getElementById('accesstoken').innerHTML=`<span>Access token: ${token}`
+        history.pushState(null, null, '/')
+        document.getElementById('secretarea').href = `/secret?access_token=${token}`
+
+    }
+
+</script>
+
+</html>
