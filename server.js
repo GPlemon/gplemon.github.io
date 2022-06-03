@@ -3,11 +3,35 @@ import express from 'express';
 import { readFile, readFileSync, writeFile, writeFileSync } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import jsdom from "jsdom";
+const { JSDOM } = jsdom;
+
+
+const dom = new JSDOM(`<!DOCTYPE html><p>Hello world</p>`);
+console.log(dom.window.document.querySelector("p").textContent); // "Hello world"
+
+
+
 const __filename = fileURLToPath(
     import.meta.url);
 const __dirname = path.dirname(__filename);
 
 let app = express()
+
+
+
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+
+})
+
+
+
+app.listen(3000, () => {
+    console.log(`server at http://localhost:${3000}/`)
+})
+
+/* 
 let counter = "10";
 
 try {
@@ -26,7 +50,7 @@ app.get('/', async(req, res) => {
         return data
     });
 
-    console.log('count: ', counter)
+    
     const newCount = parseInt(counter) - 1
 
 
@@ -54,18 +78,4 @@ app.get('/', async(req, res) => {
 
 })
 
-
-
-/* app.use() */
-/* app.get('/', (req, res) => {
-    readFile('./base.html', 'utf-8', (err, html) => {
-        if (err) res.status(500).send('sorry, out of order')
-        res.send(html)
-    })
-}) */
-
-// API
-
-app.listen(3000, () => {
-    console.log(`server at http://localhost:${3000}/`)
-})
+ */
