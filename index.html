@@ -12,10 +12,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@egjs/flicking/dist/flicking.pkgd.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/@egjs/flicking/dist/flicking.css"  />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <script async src="../function.js"></script>
     <script src="../Certificates.js" defer></script>
@@ -36,7 +38,7 @@
 
 
         <section class='row'>
-            <article id="personal-data" class="shadow-lg bg-dark my-4 mx-4 py-4 px-4 col-6">
+            <article id="personal-data" class="shadow-lg bg-dark my-4 mx-4 py-4 px-4 col-6" data-aos="fade-out">
                 <h1>Gabrielius Pocevicius</h1>
                 <h5 class="py-2 col-6 w-100">Mid Full Stack Developer</h5>
                 <span class="text-sm d-inline text-secondary break-words">
@@ -45,12 +47,12 @@
 <br>
 
                 
-                    <div id="carousel" class="urls flicking-viewport bg-dark">
+                    <div id="carousel" class="urls flicking-viewport bg-dark" >
                     
-                    <div class="flicking-camera ">
+                    <div class="flicking-camera " >
 
                         <!-- JavaScript -->
-                        <ul class=" w-100">
+                        <ul class=" w-100" >
                             <h3 class="py-2 px-2 display-4">JavaScript</h3>
                             <p class="small">Useful links for mastering the web's ECMA script.</p>
                             <div class="ul-list">
@@ -311,15 +313,15 @@
                 <!-- <button class="btn btn-outline-secondary">Demo Projects</button> -->
             </article>
 
-            <article id="tech-stack" class="shadow-lg bg-dark my-4 mx-4 py-4 px-4 col">
+            <article id="tech-stack" class="shadow-lg bg-dark my-4 mx-4 py-4 px-4 col" >
 
-                <div class="d-inline-flex">
+                <div class="d-inline-flex"  >
                     <h2>Tech Stack</h2>
-                    Making a universal rendered web application is a lot of work.
+                   
                     <br>
-                    <code class="mx-2 text-secondary">//Favorite Stacks for SaaS, SPAs or PWAs  -> Nuxt | Vue3 || React | Vite | Fastify | Supabase | Nuxt 
+                    <code class="mx-2 text-secondary" data-aos="fade-in">//Favorite Stacks for SaaS, SPAs or PWAs  -> Nuxt | Vue3 || React | Vite | Fastify | Supabase | Nuxt 
                         PUG | MongoDB | Netlify | Figma | Snyk | GSAP</code>
-                    <code class="mx-2 text-secondary">
+                    <code class="mx-2 text-secondary" data-aos="fade-in">
                         Tools and Frameworks I use for Headless Testing and automating tasks/bots.
                         <br>
                         <li>Selenium WebDriver</li>
@@ -339,7 +341,7 @@
 
                 
 
-                <div class="col py-2 px-2 shrink">
+                <div class="col py-2 px-2 shrink"  >
                     <h5>Front End Logic :</h5>
                     
                     <span class="badge-light px-1 py-1 rounded ">JavaScript</span>
@@ -436,7 +438,7 @@
                 <!-- <button class="btn btn-outline-secondary">Demo Projects</button> -->
             </article>
 
-            <article id="achievements" class="shadow-lg bg-dark my-4 mx-4 py-4 px-4 col d-none">
+            <article id="achievements" class="shadow-lg bg-dark my-4 mx-4 py-4 px-4 col d-none" >
                 <h1 class="py-2 col-12 w-100">Interests besides coding</h1>
                 <br>
                 <code>//Note worthy life event loop</code>
@@ -527,9 +529,9 @@
             </div>
         </div>
 
-        <table class="table item a1">
+        <table class="table item a1" >
             <tbody>
-                <tr id='cert-app' class='pdf'>
+                <tr id='cert-app' class='pdf'  data-aos="zoom-in">
                 </tr>
             </tbody>
         </table>
@@ -609,5 +611,8 @@
         </aside>
     </div>
 </footer>
-
+<!-- npm install aos --save -->
 </html>
+<script>
+    AOS.init();
+</script>
