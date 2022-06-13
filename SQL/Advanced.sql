@@ -51,3 +51,43 @@ SELECT pg_size_pretty (pg_total_relation_size('<table_name>'));
     Increase in storage space
     Increase in runtime for Insert/Update/Delete on impacted indexes.
  */
+
+--To specify the order of an index, you can add on the order you want your index sorted in when you create the index.
+SELECT
+    user_name,
+    date_time
+FROM logins
+WHERE date_time >= (NOW() - INTERVAL'1 month')
+ORDER BY date_time DESC;
+
+--If you were running this query regularly you could improve the speed by creating your index like this:
+
+CREATE INDEX logins_date_time_idx ON logins (date_time DESC, user_name);
+
+--e.g
+
+CREATE INDEX customers_state_name_email_address_idx ON customers(state_name, email_address);
+
+EXPLAIN ANALYZE SELECT state_name, email_address
+FROM customers
+WHERE state_name = 'California' OR state_name = 'Ohio'
+ORDER BY state_name DESC, email_address;
+
+CREATE INDEX customers_state_name_email_address_ordered_idx ON customers(state_name DESC, email_address ASC);
+
+EXPLAIN ANALYZE SELECT state_name, email_address
+FROM customers
+WHERE state_name = 'California' OR state_name = 'Ohio'
+ORDER BY state_name DESC, email_address;
+
+
+ALTER TABLE customers ADD PRIMARY KEY (customer_id);
+
+SELECT *
+FROM pg_Indexes
+WHERE tablename = 'customers';
+
+-- the data is physically organized in the table structure to allow for improved search times.
+CREATE INDEX customers_idx ON customers (last_name, first_name);
+
+
