@@ -17,7 +17,6 @@ async function cert(cid = '', path = '') {
 
 cert('', 'data/UdacityCertificate.pdf')
 cert('', 'data/CertificateOfCompletion_Advanced Node.js.pdf')
-
 cert('', 'data/CertificateOfCompletion_CSS Essential Training.pdf')
 cert('', 'data/CertificateOfCompletion_EndtoEnd JavaScript Testing with Cypress.io.pdf')
 cert('', 'data/CertificateOfCompletion_Ethical Hacking with JavaScript.pdf')
