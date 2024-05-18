@@ -11,9 +11,6 @@ $('#tab-title-projects').on('click', (e) => {
 
 })
 
-
-
-
 function scrollToTop() {
     return window.scrollTo({ top: 10000 }, { 'behaviour': 'smooth' });
 }
