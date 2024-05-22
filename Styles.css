@@ -23,6 +23,12 @@ body {
     font-synthesis: none;
 }
 
+.btn-outline-dark {
+    box-shadow: rgb(31, 31, 31) 0px 0px 40px 1px !important;
+    background-color: #0e0e0e68 !important;
+    transition: 0.3s all cubic-bezier(0.19, 1, 0.22, 1);
+}
+
 body::before {
     transform: translateZ(0);
     pointer-events: none;
@@ -35,11 +41,47 @@ body::before {
     width: 100%;
     mix-blend-mode: screen;
     background: url('./images/Alyssa-Skala_x1280.jpg') no-repeat;
-    /*  */
     background-size: 1380px auto;
     background-position: center;
     -webkit-mask-image: radial-gradient(circle closest-side at 50% 50%, rgba(0, 0, 0, 1), transparent 100%);
     mask-image: radial-gradient(circle closest-side at 50% 50%, rgba(0, 0, 0, 0.95), transparent 100%);
+}
+
+
+/* body::after {
+    transform: translateZ(0);
+    pointer-events: none;
+    position: absolute;
+    content: "";
+    z-index: -5;
+    top: -35%;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    mix-blend-mode: screen;
+    background: url('./images/Alyssa-Skala_x1280.jpg') no-repeat;
+    background-size: 1380px auto;
+    background-position: center;
+    -webkit-mask-image: radial-gradient(circle closest-side at 50% 50%, rgba(0, 0, 0, 0.5), transparent 100%);
+    mask-image: radial-gradient(circle closest-side at 50% 50%, rgba(0, 0, 0, 0.5), transparent 100%);
+} */
+
+html::after {
+    transform: translateZ(0);
+    pointer-events: none;
+    position: absolute;
+    content: "";
+    z-index: -5;
+    top: 130%;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    mix-blend-mode: screen;
+    background: url('./images/Alyssa-Skala_x1280.jpg') no-repeat;
+    background-size: 1380px auto;
+    background-position: center;
+    -webkit-mask-image: radial-gradient(circle closest-side at 50% 50%, rgba(0, 0, 0, 0.5), transparent 100%);
+    mask-image: radial-gradient(circle closest-side at 50% 50%, rgba(0, 0, 0, 0.5), transparent 100%);
 }
 
 @media (max-width: 1280px) {
