@@ -5,7 +5,7 @@ async function cert(path = '') {
     let uuid = crypto.randomUUID()
     let template = `
     <tr id="${uuid}">
-        <embed class="pdf item" src="${ path }"  height="275">
+        <embed class="pdf item" src="${ path }"  height="275" width="275">
     </tr>
     `
     document.getElementById('cert-app').innerHTML += template
