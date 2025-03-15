@@ -1,0 +1,82 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gabrielius Pocevicius's Home</title>
+    <link rel="icon" type="image/x-icon" href="/images/CV_logo.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@egjs/flicking/dist/flicking.pkgd.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@egjs/flicking/dist/flicking.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="./src/output.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script async src="../function.js"></script>
+    <script src="../Certificates.js" defer></script>
+    <script src="../animate.js" defer></script>
+    <script src='../technologies.js'>
+    </script>
+
+
+</head>
+
+
+<body class="bg-background text-foreground min-h-screen antialiased">
+    <div class="container mx-auto px-4 py-8 md:py-12">
+      <!-- Header -->
+      <div class="text-center space-y-3 mb-8">
+        <h1 class="text-4xl font-bold tracking-tight text-white">My Certifications</h1>
+        <p class="text-muted-foreground max-w-2xl mx-auto">
+          A collection of professional certifications demonstrating some of my skills and knowledge in various technologies and disciplines.
+        </p>
+      </div>
+      
+      
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap justify-center gap-2 mb-8 p-2">
+        <button class="badge border  px-2 py-1 rounded-0  filter-btn active inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50  hover:bg-primary/90" data-filter="all">All</button>
+        <button class="badge border  px-2 py-1 rounded-0  filter-btn inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 " data-filter="javascript">JavaScript</button>
+        <button class="badge border  px-2 py-1 rounded-0  filter-btn inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 " data-filter="node">Node.js</button>
+        <button class="badge border  px-2 py-1 rounded-0 filter-btn inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 " data-filter="python">Python</button>
+        <button class="badge border  px-2 py-1 rounded-0 filter-btn inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 " data-filter="css">CSS</button>
+        <button class="badge border  px-2 py-1 rounded-0 filter-btn inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 " data-filter="ai">AI</button>
+      </div>
+      
+      <!-- Certificate Flex Container -->
+      <div id="cert-container" class="container flex flex-wrap justify-center gap-6">
+      </div>
+    </div>
+  
+    <!-- Script to initialize the certificate gallery -->
+    <script src="certificates.js"></script>
+    
+    <!-- Script to handle filter button styles -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        
+        filterBtns.forEach(btn => {
+          btn.addEventListener('click', function() {
+            // Remove active classes from all buttons
+            filterBtns.forEach(b => {
+              b.classList.remove('active', 'text-primary-foreground');
+              b.classList.add( 'text-secondary-foreground');
+            });
+            
+            // Add active class to the clicked button
+            this.classList.remove( 'text-secondary-foreground');
+            this.classList.add('active', 'text-primary-foreground');
+          });
+        });
+      });
+    </script>
+  </body>
+  
+  
+  </html>

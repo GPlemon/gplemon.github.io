@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluid Effect Demo</title>
+    <style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: rgb(0, 0, 0);
+    background-size: 100% 100vh;
+    background-attachment: fixed;
+}
+
+        .effect-container {
+            width: 100%;
+            height: 100vh;
+        }
+        
+
+
+    </style>
+</head>
+<body>
+    <!-- Full-width fluid effect -->
+    <div class="effect effect-container h-100" 
+         data-main-title="Fluid Simulation" 
+         data-sub-title="Interactive Demo">
+    </div>
+    
+
+    
+    <!-- Load Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/107/three.min.js"></script>
+    
+    <!-- Load GPUComputationRenderer -->
+    <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r107/examples/js/misc/GPUComputationRenderer.js"></script>
+    
+    <!-- Load the FluidEffect script -->
+    <script src="fluid-effect.js"></script>
+    
+    <script>
+        // Initialize all elements with the "effect" class
+        document.addEventListener('DOMContentLoaded', initializeFluidEffects);
+    </script>
+</body>
+</html>
