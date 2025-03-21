@@ -53,37 +53,36 @@ class FluidEffect {
     initRenderer() {
       this.scene = new THREE.Scene();
       
-      // Get container dimensions
       const rect = this.container.getBoundingClientRect();
       this.width = rect.width;
       this.height = rect.height;
-      console.log(rect.height)
       const aspectRatio = this.width / this.height;
       const camHeight = this.height / 200;
       const camWidth = camHeight * aspectRatio;
       
       this.camera = new THREE.OrthographicCamera(
-        -camWidth / 2, 
-        camWidth / 2, 
-        camHeight / 2,
-        -camHeight / 2, 
-        0.1, 
-        100
+          -camWidth / 2, 
+          camWidth / 2, 
+          camHeight / 2,
+          -camHeight / 2, 
+          0.1, 
+          100
       );
       
       this.camera.position.z = 5;
       this.scene.add(this.camera);
       
       this.renderer = new THREE.WebGLRenderer({
-    antialias: true, // Enables antialiasing
-    alpha: true, // Sets the background to be transparent
-    powerPreference: "high-performance" // Specifies the power preference for the GPU
-});
+          antialias: true,
+          alpha: true,
+          powerPreference: "high-performance"
+      });
       this.renderer.setSize(this.width, this.height);
       this.renderer.domElement.style.position = 'absolute';
       this.renderer.domElement.style.zIndex = '-1';
+      this.renderer.domElement.style.pointerEvents = 'auto'; // Already default, but explicit for clarity
       this.effectContainer.appendChild(this.renderer.domElement);
-    }
+  }
     
     initDebugPlane() {
       const aspectRatio = this.width / this.height;
@@ -142,7 +141,7 @@ class FluidEffect {
         uniform float mouseAmp;
   
         void main() {
-          vec2 cellSize = 1.0 / resolution.xy;
+          vec2 cellSize = 0.999 / resolution.xy;
           vec2 uv = gl_FragCoord.xy * cellSize;
           // heightmapValue.x == height from previous frame
           // heightmapValue.y == height from penultimate frame
@@ -155,8 +154,7 @@ class FluidEffect {
           vec4 east = texture2D(heightmap, uv + vec2(cellSize.x, 0.0));
           vec4 west = texture2D(heightmap, uv + vec2(-cellSize.x, 0.0));
   
-          // https://web.archive.org/web/20080618181901/http://freespace.virgin.net/hugo.elias/graphics/x_water.htm
-          float newHeight = ((north.x + south.x + east.x + west.x) * 0.5 - heightmapValue.y) * viscosityConstant;
+          float newHeight = ((north.x + south.x + east.x + west.x) * 0.49 - heightmapValue.y) * viscosityConstant;
   
           // Mouse influence
           float distToMouse = length((uv - vec2(0.5)) * windowSize - vec2(mousePos.x, -mousePos.y)); //0..windowSize
@@ -235,13 +233,13 @@ class FluidEffect {
       
       // Update camera
       const aspectRatio = this.width / this.height;
-      const camHeight = this.height / 200;
+      const camHeight = this.height / this.width;
       const camWidth = camHeight * aspectRatio;
       
-      this.camera.left = -camWidth / 2;
+      this.camera.left = camWidth / 2;
       this.camera.right = camWidth / 2;
       this.camera.top = camHeight / 2;
-      this.camera.bottom = -camHeight / 2;
+      this.camera.bottom = camHeight / 2;
       this.camera.updateProjectionMatrix();
       
       // Update debug plane
@@ -295,7 +293,7 @@ class FluidEffect {
         mouseSize: parseFloat(element.dataset.mouseSize || 15),
         mouseAmp: parseFloat(element.dataset.mouseAmp || 0.03),
         showTitles: element.dataset.showTitles !== "false",
-        mainTitle: element.dataset.mainTitle || "blue ink",
+        mainTitle: element.dataset.mainTitle || "gold ink",
         subTitle: element.dataset.subTitle || "threejs | fluid sim"
       };
       

@@ -5,45 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fluid Effect Demo</title>
     <style>
-body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    background: rgb(0, 0, 0);
-    background-size: 100% 100vh;
-    background-attachment: fixed;
-}
-
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background: rgb(0, 0, 0);
+            background-size: 100% 100vh;
+            background-attachment: fixed;
+        }
+    
         .effect-container {
             width: 100%;
             height: 100vh;
+            position: relative;
         }
-        
-
-
+    
+        article {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid white;
+            background: transparent;
+            padding: 20px;
+            z-index: 10;
+            pointer-events: none; /* Let mouse events pass through */
+        }
+    
+        h1 {
+            color: white;
+            margin: 0 0 10px 0;
+        }
+    
+        button {
+            border: 1px solid white;
+            color: white;
+            background: transparent;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: color 0.3s;
+            pointer-events: auto; /* Override article's pointer-events: none */
+        }
+    
+        button:hover {
+            color: #ff00ff;
+        }
     </style>
+    <link href="./src/output.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Full-width fluid effect -->
-    <div class="effect effect-container h-100" 
+    <div class="effect effect-container h-100 relative" 
          data-main-title="Fluid Simulation" 
          data-sub-title="Interactive Demo">
+        <article class="border">
+            <h1>Hello World</h1>
+            <button>Click me</button>
+        </article>
     </div>
     
-
-    
-    <!-- Load Three.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/107/three.min.js"></script>
-    
-    <!-- Load GPUComputationRenderer -->
     <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r107/examples/js/misc/GPUComputationRenderer.js"></script>
-    
-    <!-- Load the FluidEffect script -->
     <script src="fluid-effect.js"></script>
     
     <script>
-        // Initialize all elements with the "effect" class
         document.addEventListener('DOMContentLoaded', initializeFluidEffects);
+
+        document.querySelector('button').addEventListener('mousemove', (e) => {
+            const effect = document.querySelector('.effect').fluidEffect;
+            const rect = effect.container.getBoundingClientRect();
+            const x = e.clientX - rect.left - effect.width / 2;
+            const y = e.clientY - rect.top - effect.height / 2;
+            effect.heightmapVariable.material.uniforms['mousePos'].value.set(x, y);
+            effect.heightmapVariable.material.uniforms['mouseAmp'].value = 0.06; // Stronger effect
+        });
+        document.querySelector('button').addEventListener('mouseleave', () => {
+            const effect = document.querySelector('.effect').fluidEffect;
+            effect.heightmapVariable.material.uniforms['mouseAmp'].value = 0.03; // Reset
+        });
     </script>
 </body>
 </html>
