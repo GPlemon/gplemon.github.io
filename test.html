@@ -31,37 +31,14 @@
             z-index: 10;
             pointer-events: none; /* Let mouse events pass through */
         }
-    
-        h1 {
-            color: white;
-            margin: 0 0 10px 0;
-        }
-    
-        button {
-            border: 1px solid white;
-            color: white;
-            background: transparent;
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: color 0.3s;
-            pointer-events: auto; /* Override article's pointer-events: none */
-        }
-    
-        button:hover {
-            color: #ff00ff;
-        }
+        .effect-container {
+        width: 100%;
+        height: 100vh;
+    }
     </style>
-    <link href="./src/output.css" rel="stylesheet">
 </head>
 <body>
-    <div class="effect effect-container h-100 relative" 
-         data-main-title="Fluid Simulation" 
-         data-sub-title="Interactive Demo">
-        <article class="border">
-            <h1>Hello World</h1>
-            <button>Click me</button>
-        </article>
-    </div>
+    <div class="effect effect-container h-100 relative"></div>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/107/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r107/examples/js/misc/GPUComputationRenderer.js"></script>
@@ -69,19 +46,6 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', initializeFluidEffects);
-
-        document.querySelector('button').addEventListener('mousemove', (e) => {
-            const effect = document.querySelector('.effect').fluidEffect;
-            const rect = effect.container.getBoundingClientRect();
-            const x = e.clientX - rect.left - effect.width / 2;
-            const y = e.clientY - rect.top - effect.height / 2;
-            effect.heightmapVariable.material.uniforms['mousePos'].value.set(x, y);
-            effect.heightmapVariable.material.uniforms['mouseAmp'].value = 0.06; // Stronger effect
-        });
-        document.querySelector('button').addEventListener('mouseleave', () => {
-            const effect = document.querySelector('.effect').fluidEffect;
-            effect.heightmapVariable.material.uniforms['mouseAmp'].value = 0.03; // Reset
-        });
     </script>
 </body>
 </html>
