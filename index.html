@@ -1,364 +1,1122 @@
 <!DOCTYPE html>
-<html lang="en" style="overflow-x: hidden;">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gabrielius Pocevicius - Full Stack Engineer</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head> 
-
-
-<script type="module">
-    import { animate, frame, motionValue } from "https://cdn.jsdelivr.net/npm/motion@12/+esm"
-    const ball = document.querySelector(".ball")
-
-    const { top, left, width, height } = ball.getBoundingClientRect()
-    const initialX = left + width / 2
-    const initialY = top + height / 2
-
-    const pointerX = motionValue(0)
-    const pointerY = motionValue(0)
-
-    function springToPointer() {
-        animate(
-            ball,
-            {
-                x: pointerX.get() - initialX,
-                y: pointerY.get() - initialY,
-            },
-            { type: "spring", stiffness:500, damping: 10 }
-        )
-    }
-
-    function scheduleSpringToPointer() {
-        /**
-         * By using `frame.postRender`, we achieve two things:
-         * 1. The animation will be triggered at the end of the animation loop, giving
-         *    any existing spring animations a chance to run for a frame and render.
-         * 2. Debounce the animation to prevent a new one being triggered every pointer
-         *    move, which could be more regular than the animation loop.
-         */
-        frame.postRender(springToPointer)
-    }
-
-    pointerX.on("change", scheduleSpringToPointer)
-    pointerY.on("change", scheduleSpringToPointer)
-
-    document.addEventListener("pointermove", (e) => {
-        pointerX.set(e.clientX)
-        pointerY.set(e.clientY)
-    })
-</script>
-
-<style>
-    .ball {
-        width: 12px;
-        height: 12px;
-        background-color: #000000;
-        border-radius: 50%;
-        z-index: 999999;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabrielius Pocevicius - Full Stack Engineer</title>
+    <meta name="description" content="Full Stack Engineer & AI Trainer specializing in modern JavaScript frameworks, AI technologies, and automation.">
+    <meta name="keywords" content="Full Stack Engineer, JavaScript, Vue.js, React, Node.js, AI, Machine Learning, Web Development">
+    
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #242424;
+            --bg-card: #2a2a2a;
+            --text-primary: #e5e5e5;
+            --text-secondary: #a0a0a0;
+            --accent: #ff6b47;
+            --accent-hover: #ff5533;
+            --border: #3a3a3a;
+        }
         
-    }
-</style>
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+        
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            outline: none;
+        }
+        
+        .card:hover, .card:focus {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            outline: none;
+            box-shadow: 0 10px 30px rgba(255, 107, 71, 0.1);
+        }
+        
+        .accent-text { color: var(--accent); }
+        .accent-bg { background-color: var(--accent); }
+        .accent-hover:hover { background-color: var(--accent-hover); }
+        
+        .glass-bg {
+            background: rgba(42, 42, 42, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+        }
+        
+        .tech-tag {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+            outline: none;
+        }
+        
+        .tech-tag:hover, .tech-tag:focus {
+            border-color: var(--accent);
+            color: var(--text-primary);
+            transform: translateY(-1px);
+            outline: none;
+        }
+        
+        .nav-blur {
+            backdrop-filter: blur(20px);
+            background: rgba(26, 26, 26, 0.9);
+        }
+        
+        .timeline-line {
+            background: linear-gradient(to bottom, var(--accent), transparent);
+        }
+        
+        .project-image {
+            background: linear-gradient(135deg, var(--accent), #ff8866);
+            opacity: 0.8;
+        }
+        
+        .cert-card {
+            transition: all 0.3s ease;
+        }
+        
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 107, 71, 0.15);
+        }
+        
+        .cert-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            pointer-events: none;
+        }
+        
+        .filter-btn {
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            border-color: var(--accent);
+            background: var(--accent);
+            color: white;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 3px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-hover);
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
 
-<div class="ball"></div>
-<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white">
+<body class="leading-relaxed">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 px-6 py-4 transition-all duration-300">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="font-semibold text-xl">
+                <span class="accent-text">G</span>P
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#hero" class="nav-link transition-colors hover:text-orange-400">Home</a>
+                <a href="#about" class="nav-link transition-colors hover:text-orange-400">About</a>
+                <a href="#skills" class="nav-link transition-colors hover:text-orange-400">Skills</a>
+                <a href="#projects" class="nav-link transition-colors hover:text-orange-400">Projects</a>
+                <a href="#certificates" class="nav-link transition-colors hover:text-orange-400">Certificates</a>
+                <a href="#contact" class="nav-link transition-colors hover:text-orange-400">Contact</a>
+            </div>
+            
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden absolute top-full left-0 right-0 glass-bg hidden">
+            <div class="px-6 py-4 space-y-4">
+                <a href="#hero" class="block transition-colors hover:text-orange-400">Home</a>
+                <a href="#about" class="block transition-colors hover:text-orange-400">About</a>
+                <a href="#skills" class="block transition-colors hover:text-orange-400">Skills</a>
+                <a href="#projects" class="block transition-colors hover:text-orange-400">Projects</a>
+                <a href="#certificates" class="block transition-colors hover:text-orange-400">Certificates</a>
+                <a href="#contact" class="block transition-colors hover:text-orange-400">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-  <main class="container mx-auto px-4 py-8 max-w-6xl">
-      <!-- Header Section -->
-      <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          <!-- Profile Info -->
-          <article class="rounded-lg bg-white dark:bg-gray-800 shadow-lg">
-              <div class="p-8">
-                  <h1 class="text-3xl font-bold mb-2">Full Stack Engineer / AI Trainer</h1>
-                  <h2 class="text-xl font-medium text-gray-600 dark:text-gray-300 mb-6">Gabrielius Pocevicius</h2>
-                  <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                      <div class="space-y-4">
-                          <p class="flex items-center">
-                              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-gray-500 dark:text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                              </svg>
-                              Limerick, Ireland
-                          </p>
-                          <p class="flex items-center">
-                              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-gray-500 dark:text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                              </svg>
-                              <code class="font-mono">pocevicius.gabrielius@gmail.com</code>
-                          </p>
-                          <p class="flex items-center">
-                              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-gray-500 dark:text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                              </svg>
-                              <code class="font-mono">353 838727876</code>
-                          </p>
-                      </div>
-                      <div class="mt-4 md:mt-0">
-                          <a href="https://drive.google.com/file/d/1bB3xwU0tijN9CZnUawGFbpnRd49g-7ej/view?usp=sharing" 
-                             target="_blank" 
-                             class="inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm text-sm font-medium text-gray-900 bg-white dark:bg-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-all duration-300">
-                              <span>View CV</span>
-                              <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                              </svg>
-                          </a>
-                      </div>
-                  </div>
-              </div>
-          </article>
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden px-6">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500 rounded-full filter blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-600 rounded-full filter blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+        </div>
+        
+        <div class="relative z-10 text-center max-w-4xl mx-auto opacity-0" id="hero-content">
+            <div class="mb-8">
+                <div class="w-20 h-20 mx-auto mb-6 accent-bg rounded-2xl flex items-center justify-center transform rotate-12">
+                    <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-light mb-4 tracking-tight">
+                Gabrielius<br>
+                <span class="font-semibold accent-text">Pocevicius</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl font-light mb-8 opacity-80" style="color: var(--text-secondary);">
+                Full Stack Engineer & AI Trainer
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center text-lg mb-12" style="color: var(--text-secondary);">
+                <span class="flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                    </svg>
+                    Limerick, Ireland
+                </span>
+                <span class="hidden sm:block">•</span>
+                <a href="mailto:pocevicius.gabrielius@gmail.com" class="hover:text-white transition-colors">
+                    pocevicius.gabrielius@gmail.com
+                </a>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://drive.google.com/file/d/1bB3xwU0tijN9CZnUawGFbpnRd49g-7ej/view?usp=sharing" 
+                   target="_blank" 
+                   class="inline-flex items-center gap-3 accent-bg accent-hover text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-1 focus:outline-none">
+                    <span>Download CV</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                </a>
+                
+                <a href="#projects" 
+                   class="inline-flex items-center gap-3 border border-gray-600 text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:border-orange-400 hover:shadow-lg hover:-translate-y-1 focus:outline-none">
+                    <span>View Work</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
 
-          <!-- Quick Summary -->
-          <article class="rounded-lg bg-white dark:bg-gray-800 shadow-lg">
-              <div class="p-8">
-                  <h2 class="text-xl font-bold mb-4 text-gray-800 dark:text-gray-200">About Me</h2>
-                  <p class="text-gray-700 dark:text-gray-300 mb-6">
-                      Passionate Full Stack Engineer with a focus on modern JavaScript frameworks, AI technologies(MCP protocol integration) and automation (n8n, selenium, and playwright). 
-                      Specializing in building scalable AI applications with clean, maintainable code.
-                      Aspiring to earn a master's degree in computer science.
-                  </p>
-                  <div class="flex flex-wrap gap-2">
-                      <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">Vue.js</span>
-                      <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">React</span>
-                      <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">Node.js</span>
-                      <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">TypeScript</span>
-                      <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">AI training (RLHF)</span>
-                  </div>
-              </div>
-          </article>
-      </section>
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="opacity-0" id="about-text">
+                    <h2 class="text-4xl font-light mb-6">About</h2>
+                    <p class="text-lg leading-relaxed mb-6 opacity-80" style="color: var(--text-secondary);">
+                        Passionate Full Stack Engineer specializing in modern JavaScript frameworks, AI technologies, and automation. 
+                        I focus on building scalable applications with clean, maintainable code.
+                    </p>
+                    <p class="text-lg leading-relaxed opacity-80" style="color: var(--text-secondary);">
+                        Currently exploring opportunities to further my expertise in AI integration and pursuing advanced computer science studies.
+                    </p>
+                    
+                    <div class="mt-8 flex flex-wrap gap-4">
+                        <div class="flex items-center gap-2 text-sm" style="color: var(--text-secondary);">
+                            <svg class="w-4 h-4 accent-text" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            Available for new opportunities
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card p-8 rounded-2xl opacity-0 focus:outline-none" tabindex="0" id="about-card">
+                    <h3 class="font-semibold mb-4">Core Focus</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-tag px-3 py-1 rounded-full text-sm" tabindex="0">Nuxt</span>
+                        <span class="tech-tag px-3 py-1 rounded-full text-sm" tabindex="0">Next</span>
+                        <span class="tech-tag px-3 py-1 rounded-full text-sm" tabindex="0">Node.js</span>
+                        <span class="tech-tag px-3 py-1 rounded-full text-sm" tabindex="0">TypeScript</span>
+                        <span class="tech-tag px-3 py-1 rounded-full text-sm" tabindex="0">AI/ML</span>
+                        <span class="tech-tag px-3 py-1 rounded-full text-sm" tabindex="0">MCP Protocol</span>
+                        <span class="tech-tag px-3 py-1 rounded-full text-sm" tabindex="0">Automation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <!-- Technology Stack -->
-      <section class="mb-12 ">
-          <article id="tech-stack" class="rounded-lg bg-white dark:bg-gray-800 shadow-lg">
-              <div class="p-8">
-                  <h2 class="text-2xl font-bold mb-8 text-gray-800 dark:text-gray-200">Technology Stack</h2>
-                  
-                  <!-- Front End -->
-                  <div class="mb-8">
-                      <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4">Front End Logic</h3>
-                      <div class="flex flex-wrap gap-2">
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">JavaScript</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">TypeScript</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Vue3</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Vite</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">ReactJS</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">JQuery</span>
-                      </div>
-                  </div>
-                  
-                  <!-- Version Control -->
-                  <div class="mb-8">
-                      <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4">Version Control & Package Management</h3>
-                      <div class="flex flex-wrap gap-2">
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Github</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">GitLab</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Git</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Bash</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">npm</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">pnpm</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">cmd</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">bun</span>
-                      </div>
-                  </div>
-                  
-                  <!-- Back End -->
-                  <div class="mb-8">
-                      <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4">Back End Logic</h3>
-                      <div class="flex flex-wrap gap-2">
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Nuxt Server</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Fastify</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Express</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">NodeJS</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Python</span>
-                      </div>
-                  </div>
-                  
-                  <!-- Markup Languages -->
-                  <div class="mb-8">
-                      <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4">Markup Languages</h3>
-                      <div class="flex flex-wrap gap-2">
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">PUG</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">HTML</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">XML</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">JSX</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Markdown</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">YAML</span>
-                      </div>
-                  </div>
-                  
-                  <!-- Styles and Animations -->
-                  <div class="mb-8">
-                      <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4">Style Sheets, Preprocessors and Animations</h3>
-                      <div class="flex flex-wrap gap-2">
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Tailwind</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">CSS</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">SCSS</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Bootstrap 5</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Nuxt UI</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Materialize</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">GSAP</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">D3</span>
-                      </div>
-                  </div>
-                  
-                  <!-- Storage and APIs -->
-                  <div class="mb-8">
-                      <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4">Storage, CDNs & REST APIs</h3>
-                      <div class="flex flex-wrap gap-2">
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Cloudflare Workers KV</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">MongoDB</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Supabase</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Neo4j</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">PostgreSQL</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">SQLite</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Redis</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">GraphQL</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Pinia</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Firestore</span>
-                      </div>
-                  </div>
-                  
-                  <!-- Deployment -->
-                  <div class="mb-8">
-                      <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4">Deployment</h3>
-                      <div class="flex flex-wrap gap-2">
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Cloudflare Pages</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Vercel</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Netlify</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">AWS Amplify</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">CloudFront</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">CloudWatch</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">AppSync</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Github hosting</span>
-                      </div>
-                  </div>
-                  
-                  <!-- IDE -->
-                  <div class="mb-8">
-                      <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4">Preferred Development Environment</h3>
-                      <div class="flex flex-wrap gap-2">
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">VS Code</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Atom</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Visual Studio</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Cloud9</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Gitpod</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Pycharm</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">IDLE Shell</span>
-                      </div>
-                  </div>
-                  
-                  <!-- Automation Tools -->
-                  <div class="mb-8">
-                      <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4">Headless Testing & Automation</h3>
-                      <div class="flex flex-wrap gap-2">
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Selenium WebDriver</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Webdriver.io</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">PhantomJS</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Nightmare</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Headless Chrome</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Puppeteer</span>
-                          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Chai</span>
-                      </div>
-                  </div>
-              </div>
-          </article>
-      </section>
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-6" style="background: var(--bg-secondary);">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-light text-center mb-16 opacity-0" id="skills-title">Technical Stack</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Frontend -->
+                <div class="card p-6 rounded-xl opacity-0 skill-card focus:outline-none" tabindex="0">
+                    <div class="w-10 h-10 accent-bg rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3">Frontend</h3>
+                    <div class="space-y-1 text-sm opacity-80" style="color: var(--text-secondary);">
+                        <div>JavaScript, TypeScript</div>
+                        <div>Vue3, React, Vite</div>
+                        <div>Tailwind, SCSS</div>
+                        <div>GSAP, D3.js</div>
+                    </div>
+                </div>
 
-      <!-- Certificates Section -->
-      <section class="mb-12">
-          <div id="cert-container" class="border rounded-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <!-- Certificate placeholders will be loaded by certificates.js -->
-          </div>
-      </section>
-  </main>
+                <!-- Backend -->
+                <div class="card p-6 rounded-xl opacity-0 skill-card focus:outline-none" tabindex="0">
+                    <div class="w-10 h-10 accent-bg rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3">Backend</h3>
+                    <div class="space-y-1 text-sm opacity-80" style="color: var(--text-secondary);">
+                        <div>Node.js, Python</div>
+                        <div>Fastify, Express</div>
+                        <div>Nuxt Server</div>
+                        <div>REST APIs, GraphQL</div>
+                    </div>
+                </div>
 
-  <!-- Footer -->
-  <footer class="bg-gray-100 dark:bg-gray-800 py-12 mt-16">
-      <div class="container mx-auto px-4">
-          <div class="flex flex-col items-center justify-center space-y-8">
-              <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200">ᓚᘏᗢ</h2>
-              
-              <div class="flex flex-wrap justify-center items-center gap-6">
-                  <!-- GitHub -->
-                  <a href="https://github.com/GPlemon" 
-                     class="transition-transform hover:scale-110 hover:-translate-y-1 duration-300"
-                     aria-label="GitHub Profile">
-                      <div class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white p-3 rounded-full shadow-lg">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                              <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
-                              <path d="M9 18c-4.51 2-5-2-7-2"/>
-                          </svg>
-                      </div>
-                  </a>
-                  
-                  <!-- Dev.to -->
-                  <a href="https://dev.to/gabrieliuspocevicius" 
-                     class="transition-transform hover:scale-110 hover:-translate-y-1 duration-300"
-                     aria-label="Dev.to Profile">
-                      <div class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white p-3 rounded-full shadow-lg">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                              <path d="M7.826 10.083a.784.784 0 0 0-.468-.175h-.701v4.198h.701a.786.786 0 0 0 .469-.175c.155-.117.233-.292.233-.525v-2.798c.001-.233-.079-.408-.234-.525zM19.236 3H4.764C3.791 3 3.002 3.787 3 4.76v14.48c.002.973.791 1.76 1.764 1.76h14.473c.973 0 1.762-.787 1.763-1.76V4.76A1.765 1.765 0 0 0 19.236 3zM9.195 13.414c0 .755-.466 1.901-1.942 1.898H5.389V8.665h1.903c1.424 0 1.902 1.144 1.903 1.899v2.85zm4.045-3.562H11.1v1.544h1.309v1.188H11.1v1.543h2.142v1.188h-2.498a.813.813 0 0 1-.833-.792V9.497a.813.813 0 0 1 .792-.832h2.539l-.002 1.187zm4.165 4.632c-.531 1.235-1.481.99-1.906 0l-1.548-5.818h1.309l1.193 4.569 1.188-4.569h1.31l-1.546 5.818z"/>
-                          </svg>
-                      </div>
-                  </a>
-                  
-                  <!-- LinkedIn -->
-                  <a href="https://www.linkedin.com/in/gabrielius-pocevicius-83344b201/" 
-                     class="transition-transform hover:scale-110 hover:-translate-y-1 duration-300"
-                     aria-label="LinkedIn Profile">
-                      <div class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white p-3 rounded-full shadow-lg">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                              <rect width="4" height="12" x="2" y="9"/>
-                              <circle cx="4" cy="4" r="2"/>
-                          </svg>
-                      </div>
-                  </a>
-              </div>
-              
-              <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">© 2025 Gabrielius Pocevicius</p>
-          </div>
-      </div>
-  </footer>
+                <!-- Database -->
+                <div class="card p-6 rounded-xl opacity-0 skill-card focus:outline-none" tabindex="0">
+                    <div class="w-10 h-10 accent-bg rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3">Database</h3>
+                    <div class="space-y-1 text-sm opacity-80" style="color: var(--text-secondary);">
+                        <div>MongoDB, PostgreSQL</div>
+                        <div>Redis, Neo4j</div>
+                        <div>Supabase, SQLite</div>
+                        <div>Cloudflare KV</div>
+                    </div>
+                </div>
 
-  <!-- Back to Top Button -->
-  <button id="topBtn" class="fixed bottom-8 right-8 opacity-0 invisible bg-gray-800 dark:bg-white text-white dark:text-gray-900 p-3 rounded-full shadow-lg transition-all duration-300">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="18 15 12 9 6 15"></polyline>
-      </svg>
-  </button>
+                <!-- DevOps -->
+                <div class="card p-6 rounded-xl opacity-0 skill-card focus:outline-none" tabindex="0">
+                    <div class="w-10 h-10 accent-bg rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3">Cloud & DevOps</h3>
+                    <div class="space-y-1 text-sm opacity-80" style="color: var(--text-secondary);">
+                        <div>Cloudflare, Vercel</div>
+                        <div>AWS Amplify</div>
+                        <div>Git, GitHub, GitLab</div>
+                        <div>npm, pnpm, bun</div>
+                    </div>
+                </div>
 
-  <!-- Scripts -->
-  <script src="certificates.js"></script>
-  <script>
-      // Back to top button functionality
-      const topButton = document.getElementById('topBtn');
-      
-      window.onscroll = function() {
-          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-              topButton.classList.remove('opacity-0', 'invisible');
-              topButton.classList.add('opacity-100', 'visible');
-          } else {
-              topButton.classList.remove('opacity-100', 'visible');
-              topButton.classList.add('opacity-0', 'invisible');
-          }
-      };
-      
-      topButton.addEventListener('click', function() {
-          document.body.scrollTop = 0; // For Safari
-          document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-      });
-      
-      // Check for dark mode preference
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          document.documentElement.classList.add('dark');
-      }
-      
-      // Allow manual toggle of dark mode
-      function toggleDarkMode() {
-          document.documentElement.classList.toggle('dark');
-      }
-  </script>
-</body>
+                <!-- Testing -->
+                <div class="card p-6 rounded-xl opacity-0 skill-card focus:outline-none" tabindex="0">
+                    <div class="w-10 h-10 accent-bg rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3">Testing & Automation</h3>
+                    <div class="space-y-1 text-sm opacity-80" style="color: var(--text-secondary);">
+                        <div>Selenium, Puppeteer</div>
+                        <div>Playwright, WebDriver.io</div>
+                        <div>n8n, Chai</div>
+                        <div>Headless Testing</div>
+                    </div>
+                </div>
+
+                <!-- AI/Tools -->
+                <div class="card p-6 rounded-xl opacity-0 skill-card focus:outline-none" tabindex="0">
+                    <div class="w-10 h-10 accent-bg rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3">AI & Development</h3>
+                    <div class="space-y-1 text-sm opacity-80" style="color: var(--text-secondary);">
+                        <div>RLHF, MCP Protocol</div>
+                        <div>VS Code, PyCharm</div>
+                        <div>AI Training & Integration</div>
+                        <div>Automation Workflows</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-light text-center mb-16 opacity-0" id="projects-title">Featured Projects</h2>
+            
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 - Artist Portal -->
+                <div class="card rounded-xl overflow-hidden opacity-0 project-card" tabindex="0">
+                    <div class="h-48 overflow-hidden">
+                        <img src="data/projects/artist_portal_rewrite_ compressed.gif" alt="Artist Portal Project" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold mb-2">Artist Portal</h3>
+                        <p class="text-sm opacity-80 mb-4" style="color: var(--text-secondary);">
+                            Comprehensive artist management platform built with modern web technologies, featuring portfolio management and client interaction tools.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag px-2 py-1 rounded text-xs">Vue.js</span>
+                            <span class="tech-tag px-2 py-1 rounded text-xs">Node.js</span>
+                            <span class="tech-tag px-2 py-1 rounded text-xs">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 - Retro Pixel Game -->
+                <div class="card rounded-xl overflow-hidden opacity-0 project-card" tabindex="0">
+                    <div class="h-48 overflow-hidden">
+                        <img src="data/projects/basic_retro_pixel_game.gif" alt="Retro Pixel Game" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold mb-2">Retro Pixel Game</h3>
+                        <p class="text-sm opacity-80 mb-4" style="color: var(--text-secondary);">
+                            Classic retro-style pixel game built with JavaScript and HTML5 Canvas, featuring smooth animations and engaging gameplay mechanics.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag px-2 py-1 rounded text-xs">JavaScript</span>
+                            <span class="tech-tag px-2 py-1 rounded text-xs">HTML5 Canvas</span>
+                            <span class="tech-tag px-2 py-1 rounded text-xs">Game Logic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 - Chess Game -->
+                <div class="card rounded-xl overflow-hidden opacity-0 project-card" tabindex="0">
+                    <div class="h-48 overflow-hidden">
+                        <img src="data/projects/chess_game_rewrite_gif.gif" alt="Chess Game" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold mb-2">Chess Game</h3>
+                        <p class="text-sm opacity-80 mb-4" style="color: var(--text-secondary);">
+                            Interactive chess game with full game logic, move validation, and smooth animations. Features drag-and-drop gameplay.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag px-2 py-1 rounded text-xs">JavaScript</span>
+                            <span class="tech-tag px-2 py-1 rounded text-xs">CSS3</span>
+                            <span class="tech-tag px-2 py-1 rounded text-xs">Game AI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 - Code Editor -->
+                <div class="card rounded-xl overflow-hidden opacity-0 project-card" tabindex="0">
+                    <div class="h-48 overflow-hidden">
+                        <img src="data/projects/coder_rewrite.gif" alt="Code Editor" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold mb-2">Code Editor</h3>
+                        <p class="text-sm opacity-80 mb-4" style="color: var(--text-secondary);">
+                            Feature-rich code editor with syntax highlighting, auto-completion, and real-time collaboration capabilities.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag px-2 py-1 rounded text-xs">React</span>
+                            <span class="tech-tag px-2 py-1 rounded text-xs">Monaco Editor</span>
+                            <span class="tech-tag px-2 py-1 rounded text-xs">WebSocket</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 - Developer Site -->
+                <div class="card rounded-xl overflow-hidden opacity-0 project-card" tabindex="0">
+                    <div class="h-48 overflow-hidden">
+                        <img src="data/projects/coder_site_rewrite.gif" alt="Developer Site" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold mb-2">Developer Portfolio Site</h3>
+                        <p class="text-sm opacity-80 mb-4" style="color: var(--text-secondary);">
+                            Modern developer portfolio showcasing projects, skills, and experience with interactive elements and smooth animations.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag px-2 py-1 rounded text-xs">Next.js</span>
+                            <span class="tech-tag px-2 py-1 rounded text-xs">Tailwind CSS</span>
+                            <span class="tech-tag px-2 py-1 rounded text-xs">Framer Motion</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 - Reading Life Response -->
+                <div class="card rounded-xl overflow-hidden opacity-0 project-card" tabindex="0">
+                    <div class="h-48 overflow-hidden">
+                        <img src="data/projects/gif_rewritten_response_reading_life.gif" alt="Reading Life Response" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold mb-2">Reading Life Tracker</h3>
+                        <p class="text-sm opacity-80 mb-4" style="color: var(--text-secondary);">
+                            Personal reading tracker with book recommendations, progress tracking, and reading statistics visualization.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag px-2 py-1 rounded text-xs">React</span>
+                            <span class="tech-tag px-2 py-1 rounded text-xs">Chart.js</span>
+                            <span class="tech-tag px-2 py-1 rounded text-xs">API Integration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7 - Response System -->
+                <div class="card rounded-xl overflow-hidden opacity-0 project-card" tabindex="0">
+                    <div class="h-48 overflow-hidden">
+                        <img src="data/projects/gif_rewritten_response.gif" alt="Response System" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold mb-2">Interactive Response System</h3>
+                        <p class="text-sm opacity-80 mb-4" style="color: var(--text-secondary);">
+                            Real-time response system with dynamic content generation and user interaction tracking.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag px-2 py-1 rounded text-xs">Node.js</span>
+                            <span class="tech-tag px-2 py-1 rounded text-xs">WebSocket</span>
+                            <span class="tech-tag px-2 py-1 rounded text-xs">Redis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8 - Color Memory Game -->
+                <div class="card rounded-xl overflow-hidden opacity-0 project-card" tabindex="0">
+                    <div class="h-48 overflow-hidden">
+                        <img src="data/projects/rewrite_color_memory_game_gif.gif" alt="Color Memory Game" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold mb-2">Color Memory Game</h3>
+                        <p class="text-sm opacity-80 mb-4" style="color: var(--text-secondary);">
+                            Engaging memory game with colorful animations and progressive difficulty levels to challenge cognitive skills.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag px-2 py-1 rounded text-xs">JavaScript</span>
+                            <span class="tech-tag px-2 py-1 rounded text-xs">CSS Animations</span>
+                            <span class="tech-tag px-2 py-1 rounded text-xs">Game Logic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 9 - Minesweeper Game -->
+                <div class="card rounded-xl overflow-hidden opacity-0 project-card" tabindex="0">
+                    <div class="h-48 overflow-hidden">
+                        <img src="data/projects/rewrite_minesweeper_game_gif.gif" alt="Minesweeper Game" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold mb-2">Minesweeper Game</h3>
+                        <p class="text-sm opacity-80 mb-4" style="color: var(--text-secondary);">
+                            Classic minesweeper game with customizable difficulty levels, timer functionality, and smooth user interface.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag px-2 py-1 rounded text-xs">JavaScript</span>
+                            <span class="tech-tag px-2 py-1 rounded text-xs">DOM Manipulation</span>
+                            <span class="tech-tag px-2 py-1 rounded text-xs">Algorithm</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 10 - Student Dashboard -->
+                <div class="card rounded-xl overflow-hidden opacity-0 project-card" tabindex="0">
+                    <div class="h-48 overflow-hidden">
+                        <img src="data/projects/rewrite_student_dashboard_gif.gif" alt="Student Dashboard" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold mb-2">Student Dashboard</h3>
+                        <p class="text-sm opacity-80 mb-4" style="color: var(--text-secondary);">
+                            Comprehensive student management system with grade tracking, assignment submission, and progress analytics.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag px-2 py-1 rounded text-xs">Vue.js</span>
+                            <span class="tech-tag px-2 py-1 rounded text-xs">Node.js</span>
+                            <span class="tech-tag px-2 py-1 rounded text-xs">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 11 - TikTok Animation -->
+                <div class="card rounded-xl overflow-hidden opacity-0 project-card" tabindex="0">
+                    <div class="h-48 overflow-hidden">
+                        <img src="data/projects/tiktaktoe_Animation.gif" alt="TikTakToe Animation" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold mb-2">Tic-Tac-Toe Animation</h3>
+                        <p class="text-sm opacity-80 mb-4" style="color: var(--text-secondary);">
+                            Animated tic-tac-toe game with smooth transitions, AI opponent, and engaging visual effects.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag px-2 py-1 rounded text-xs">JavaScript</span>
+                            <span class="tech-tag px-2 py-1 rounded text-xs">CSS3 Animations</span>
+                            <span class="tech-tag px-2 py-1 rounded text-xs">Minimax Algorithm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="py-20 px-6" style="background: var(--bg-secondary);">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-light text-center mb-16 opacity-0" id="certificates-title">Certificates</h2>
+            
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12 opacity-0" id="certificate-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="javascript">JavaScript</button>
+                <button class="filter-btn" data-filter="node">Node.js</button>
+                <button class="filter-btn" data-filter="ai">AI/ML</button>
+                <button class="filter-btn" data-filter="css">CSS</button>
+                <button class="filter-btn" data-filter="python">Python</button>
+                <button class="filter-btn" data-filter="database">Database</button>
+                <button class="filter-btn" data-filter="development">Development</button>
+                <button class="filter-btn" data-filter="education">Education</button>
+            </div>
+            
+            <!-- Loading Progress Bar -->
+            <div id="loading-wrapper" class="mb-8 transition-all duration-500">
+                <div class="w-full bg-gray-700 rounded-full h-2">
+                    <div id="loading-indicator" class="accent-bg h-2 rounded-full transition-all duration-300" style="width: 0%" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                    </div>
+                </div>
+                <p class="text-center text-sm mt-2 opacity-60">Loading certificates...</p>
+            </div>
+            
+            <!-- Certificates Grid -->
+            <div id="cert-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Certificates will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-light mb-8 opacity-0" id="contact-title">Let's Connect</h2>
+                <p class="text-lg opacity-80" id="contact-subtitle" style="color: var(--text-secondary);">
+                    Ready to discuss opportunities and innovative projects.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <!-- Contact Form -->
+                <div class="card p-8 rounded-2xl opacity-0" id="contact-form">
+                    <h3 class="font-semibold mb-6">Send a Message</h3>
+                    <div class="space-y-6" id="contactForm">
+                        <div>
+                            <label for="name" class="block text-sm font-medium mb-2">Name</label>
+                            <input type="text" id="name" name="name" required
+                                   class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-600 focus:border-orange-400 focus:outline-none transition-colors"
+                                   style="background: var(--bg-secondary); border-color: var(--border);">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email" id="email" name="email" required
+                                   class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-600 focus:border-orange-400 focus:outline-none transition-colors"
+                                   style="background: var(--bg-secondary); border-color: var(--border);">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" required
+                                      class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-600 focus:border-orange-400 focus:outline-none transition-colors resize-none"
+                                      style="background: var(--bg-secondary); border-color: var(--border);"></textarea>
+                        </div>
+                        <button type="button" onclick="handleFormSubmit()" 
+                                class="w-full accent-bg accent-hover text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                            Send Message
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="space-y-8 opacity-0" id="contact-info">
+                    <div>
+                        <h3 class="font-semibold mb-6">Get in Touch</h3>
+                        <div class="space-y-4">
+                            <a href="mailto:pocevicius.gabrielius@gmail.com" 
+                               class="flex items-center gap-4 p-4 rounded-lg hover:bg-gray-800 transition-colors group"
+                               style="background: var(--bg-secondary);">
+                                <div class="w-10 h-10 accent-bg rounded-lg flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Email</p>
+                                    <p class="text-sm opacity-60">pocevicius.gabrielius@gmail.com</p>
+                                </div>
+                            </a>
+                            
+                            <div class="flex items-center gap-4 p-4 rounded-lg" style="background: var(--bg-secondary);">
+                                <div class="w-10 h-10 accent-bg rounded-lg flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Location</p>
+                                    <p class="text-sm opacity-60">Limerick, Ireland</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-medium mb-4">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/GPlemon" 
+                               class="card group p-3 rounded-xl transition-all duration-300 focus:outline-none" tabindex="0">
+                                <svg class="w-6 h-6 group-hover:text-orange-400 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                            
+                            <a href="https://dev.to/gabrieliuspocevicius" 
+                               class="card group p-3 rounded-xl transition-all duration-300 focus:outline-none" tabindex="0">
+                                <svg class="w-6 h-6 group-hover:text-orange-400 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M7.826 10.083a.784.784 0 0 0-.468-.175h-.701v4.198h.701a.786.786 0 0 0 .469-.175c.155-.117.233-.292.233-.525v-2.798c.001-.233-.079-.408-.234-.525zM19.236 3H4.764C3.791 3 3.002 3.787 3 4.76v14.48c.002.973.791 1.76 1.764 1.76h14.473c.973 0 1.762-.787 1.763-1.76V4.76A1.765 1.765 0 0 0 19.236 3zM9.195 13.414c0 .755-.466 1.901-1.942 1.898H5.389V8.665h1.903c1.424 0 1.902 1.144 1.903 1.899v2.85zm4.045-3.562H11.1v1.544h1.309v1.188H11.1v1.543h2.142v1.188h-2.498a.813.813 0 0 1-.833-.792V9.497a.813.813 0 0 1 .792-.832h2.539l-.002 1.187zm4.165 4.632c-.531 1.235-1.481.99-1.906 0l-1.548-5.818h1.309l1.193 4.569 1.188-4.569h1.31l-1.546 5.818z"/>
+                                </svg>
+                            </a>
+                            
+                            <a href="https://www.linkedin.com/in/gabrielius-pocevicius-83344b201/" 
+                               class="card group p-3 rounded-xl transition-all duration-300 focus:outline-none" tabindex="0">
+                                <svg class="w-6 h-6 group-hover:text-orange-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                    <rect width="4" height="12" x="2" y="9"/>
+                                    <circle cx="4" cy="4" r="2"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center opacity-60" style="color: var(--text-secondary); border-top: 1px solid var(--border);">
+        <p class="text-sm">© 2025 Vici Portal</p>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Certificate data
+        const certificates = [
+            { path: 'data/UdacityCertificate.pdf', title: 'Udacity Certificate', category: 'education' },
+            { path: 'data/Coursera E4WZRUCIBAMB.pdf', title: 'Coursera Certificate', category: 'education' },
+            { path: 'data/CertificateOfCompletion_Master JavaScript.pdf', title: 'Master JavaScript', category: 'javascript' },
+            { path: 'data/CertificateOfCompletion_Career Essentials in Generative AI by Microsoft and LinkedIn.pdf', title: 'Generative AI Essentials', category: 'ai' },
+            { path: 'data/CertificateOfCompletion_Advanced Node.js.pdf', title: 'Advanced Node.js', category: 'node' },
+            { path: 'data/CertificateOfCompletion_CSS Essential Training.pdf', title: 'CSS Essential Training', category: 'css' },
+            { path: 'data/CertificateOfCompletion_EndtoEnd JavaScript Testing with Cypress.io.pdf', title: 'Cypress.io Testing', category: 'javascript' },
+            { path: 'data/CertificateOfCompletion_Ethical Hacking with JavaScript.pdf', title: 'Ethical Hacking', category: 'javascript' },
+            { path: 'data/CertificateOfCompletion_JavaScript Best Practices for Code Formatting.pdf', title: 'JS Code Formatting', category: 'javascript' },
+            { path: 'data/CertificateOfCompletion_JavaScript Best Practices for Data.pdf', title: 'JS Data Practices', category: 'javascript' },
+            { path: 'data/CertificateOfCompletion_JavaScript Security Essentials.pdf', title: 'JS Security', category: 'javascript' },
+            { path: 'data/CertificateOfCompletion_JavaScript TestDriven Development ES6.pdf', title: 'Test-Driven Development', category: 'javascript' },
+            { path: 'data/CertificateOfCompletion_Learning MongoDB.pdf', title: 'MongoDB', category: 'database' },
+            { path: 'data/CertificateOfCompletion_Node.js Design Patterns.pdf', title: 'Node.js Design Patterns', category: 'node' },
+            { path: 'data/CertificateOfCompletion_Responsive Layout.pdf', title: 'Responsive Layout', category: 'css' },
+            { path: 'data/Gabrielius Pocevicius_JavaScript.pdf', title: 'JavaScript Certificate', category: 'javascript' },
+            { path: 'data/Gabrielius Pocevicius_Python.pdf', title: 'Python Certificate', category: 'python' },
+            { path: 'data/CertificateOfCompletion_Search Techniques for Web Developers.pdf', title: 'Search Techniques', category: 'development' },
+            { path: 'data/CertificateOfCompletion_Essential New Skills in Software Engineering.pdf', title: 'Software Engineering Skills', category: 'development' }
+        ];
+
+        let loadedCount = 0;
+        const totalCerts = certificates.length;
+        let currentFilter = 'all';
+
+        // Form submission handler
+        function handleFormSubmit() {
+            const button = document.querySelector('#contactForm button');
+            const originalText = button.textContent;
+            
+            button.textContent = 'Sending...';
+            button.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                button.textContent = 'Message Sent!';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.disabled = false;
+                    // Reset form
+                    document.getElementById('name').value = '';
+                    document.getElementById('email').value = '';
+                    document.getElementById('message').value = '';
+                }, 2000);
+            }, 1000);
+        }
+
+        // Certificate filtering
+        function filterCertificates(category) {
+            const cards = document.querySelectorAll('.cert-card');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            // Update active filter button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            cards.forEach(card => {
+                const cardCategory = card.dataset.categories;
+                if (category === 'all' || cardCategory === category) {
+                    card.style.display = 'block';
+                    gsap.to(card, { opacity: 1, scale: 1, duration: 0.3 });
+                } else {
+                    gsap.to(card, { 
+                        opacity: 0, 
+                        scale: 0.8, 
+                        duration: 0.3, 
+                        onComplete: () => card.style.display = 'none' 
+                    });
+                }
+            });
+        }
+
+        // Update loading progress
+        function updateProgress() {
+            loadedCount++;
+            const progress = Math.round((loadedCount / totalCerts) * 100);
+            
+            const loadingIndicator = document.getElementById('loading-indicator');
+            if (loadingIndicator) {
+                loadingIndicator.style.width = `${progress}%`;
+                loadingIndicator.setAttribute('aria-valuenow', progress);
+                loadingIndicator.textContent = `${progress}%`;
+            }
+            
+            if (loadedCount === totalCerts) {
+                setTimeout(() => {
+                    const loadingWrapper = document.getElementById('loading-wrapper');
+                    if (loadingWrapper) {
+                        loadingWrapper.classList.add('opacity-0', 'h-0', 'mb-0');
+                    }
+                }, 500);
+            }
+        }
+
+        // Create certificate card
+        function createCertificateCard(cert, index) {
+            return new Promise((resolve) => {
+                const card = document.createElement('div');
+                card.className = 'cert-card opacity-0 transform translate-y-4 transition-all duration-300 ease-in-out';
+                card.dataset.categories = cert.category;
+                
+                card.innerHTML = `
+                    <div class="card rounded-lg overflow-hidden">
+                        <div class="relative h-64 overflow-hidden">
+                            <iframe class="cert-iframe" src="${cert.path}"></iframe>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-transparent transform translate-y-full transition-transform duration-300 p-4 flex flex-col justify-end">
+                                <div class="text-emerald-500 font-medium text-sm">${cert.title}</div>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs opacity-60 capitalize">${cert.category}</span>
+                                <a href="${cert.path}" target="_blank" 
+                                   class="accent-bg text-white px-3 py-1 rounded-full text-xs hover:bg-orange-500 transition-colors">
+                                    View Full
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                const certContainer = document.getElementById('cert-container');
+                if (certContainer) {
+                    certContainer.appendChild(card);
+                }
+                
+                // Add hover effect
+                card.addEventListener('mouseenter', function() {
+                    const overlay = this.querySelector('.bg-gradient-to-t');
+                    if (overlay) overlay.classList.remove('translate-y-full');
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    const overlay = this.querySelector('.bg-gradient-to-t');
+                    if (overlay) overlay.classList.add('translate-y-full');
+                });
+                
+                // Staggered animation
+                setTimeout(() => {
+                    card.classList.remove('opacity-0', 'translate-y-4');
+                }, index * 100);
+                
+                setTimeout(() => {
+                    updateProgress();
+                    resolve();
+                }, 200);
+            });
+        }
+
+        // Load all certificates
+        async function loadAllCertificates() {
+            const loadPromises = certificates.map((cert, index) => createCertificateCard(cert, index));
+            await Promise.all(loadPromises);
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load certificates
+            loadAllCertificates();
+            
+            // Filter button event listeners
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    filterCertificates(e.target.dataset.filter);
+                });
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-blur', 'border-b');
+                navbar.style.borderBottomColor = 'var(--border)';
+            } else {
+                navbar.classList.remove('nav-blur', 'border-b');
+            }
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // GSAP Animations
+        
+        // Hero animation
+        gsap.to('#hero-content', {
+            duration: 1.5, 
+            opacity: 1, 
+            y: 0, 
+            ease: 'power3.out'
+        });
+
+        // About section animations
+        gsap.to('#about-text', {
+            scrollTrigger: {
+                trigger: '#about',
+                start: 'top 80%',
+                toggleActions: 'play none none reset'
+            },
+            opacity: 1,
+            x: 0,
+            duration: 1,
+            ease: 'power2.out'
+        });
+
+        gsap.to('#about-card', {
+            scrollTrigger: {
+                trigger: '#about',
+                start: 'top 80%',
+                toggleActions: 'play none none reset'
+            },
+            opacity: 1,
+            x: 0,
+            duration: 1,
+            delay: 0.3,
+            ease: 'power2.out'
+        });
+
+        // Skills section animations
+        gsap.to('#skills-title', {
+            scrollTrigger: {
+                trigger: '#skills',
+                start: 'top 80%',
+                toggleActions: 'play none none reset'
+            },
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: 'power2.out'
+        });
+
+        gsap.utils.toArray('.skill-card').forEach((card, i) => {
+            gsap.to(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 90%',
+                    toggleActions: 'play none none reset'
+                },
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                delay: i * 0.1,
+                ease: 'power2.out'
+            });
+        });
+
+        // Projects section animations
+        gsap.to('#projects-title', {
+            scrollTrigger: {
+                trigger: '#projects',
+                start: 'top 80%',
+                toggleActions: 'play none none reset'
+            },
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: 'power2.out'
+        });
+
+        gsap.utils.toArray('.project-card').forEach((card, i) => {
+            gsap.to(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 90%',
+                    toggleActions: 'play none none reset'
+                },
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                delay: i * 0.2,
+                ease: 'power2.out'
+            });
+        });
+
+        // Certificates section animations
+        gsap.to('#certificates-title', {
+            scrollTrigger: {
+                trigger: '#certificates',
+                start: 'top 80%',
+                toggleActions: 'play none none reset'
+            },
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: 'power2.out'
+        });
+
+        gsap.to('#certificate-filters', {
+            scrollTrigger: {
+                trigger: '#certificates',
+                start: 'top 70%',
+                toggleActions: 'play none none reset'
+            },
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            delay: 0.3,
+            ease: 'power2.out'
+        });
+
+
+        // Contact section animations
+        gsap.utils.toArray('#contact-title, #contact-subtitle, #contact-form, #contact-info').forEach((el, i) => {
+            gsap.to(el, {
+                scrollTrigger: {
+                    trigger: el,
+                    start: 'top 85%',
+                    toggleActions: 'play none none reset'
+                },
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                delay: i * 0.2,
+                ease: 'power2.out'
+            });
+        });
+
+        // Enhanced hover animations
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                gsap.to(card, { scale: 1.02, duration: 0.3, ease: 'power2.out' });
+            });
+            card.addEventListener('mouseleave', () => {
+                gsap.to(card, { scale: 1, duration: 0.3, ease: 'power2.out' });
+            });
+        });
+
+        // Remove outline focus for better UX while maintaining accessibility
+        document.querySelectorAll('a, button, .card, .tech-tag, input, textarea').forEach(el => {
+            el.addEventListener('focus', (e) => { 
+                e.target.style.outline = 'none';
+                e.target.style.boxShadow = '0 0 0 2px var(--accent)';
+            });
+            el.addEventListener('blur', (e) => { 
+                e.target.style.outline = '';
+                e.target.style.boxShadow = '';
+            });
+        });
+
+        // Parallax effect for hero background
+        gsap.to('.absolute.inset-0 > div:first-child', {
+            scrollTrigger: {
+                trigger: '#hero',
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: true
+            },
+            y: -100,
+            rotation: 5,
+            ease: 'none'
+        });
+
+        gsap.to('.absolute.inset-0 > div:last-child', {
+            scrollTrigger: {
+                trigger: '#hero',
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: true
+            },
+            y: 50,
+            rotation: -3,
+            ease: 'none'
+        });
+    </script>
 </html>
+</body>
