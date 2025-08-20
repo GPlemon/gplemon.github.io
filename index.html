@@ -89,7 +89,7 @@
         }
         
         .cert-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(5px);
             box-shadow: 0 15px 40px rgba(255, 107, 71, 0.15);
         }
         
@@ -115,6 +115,36 @@
             border-color: var(--accent);
             background: var(--accent);
             color: white;
+        }
+        
+        /* Enhanced project card animations */
+        .project-card {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            will-change: transform, opacity;
+        }
+        
+        .project-card img {
+            will-change: transform, scale;
+            backface-visibility: hidden;
+        }
+        
+        .project-card.in-view {
+            /* Optimized rendering for cards in view */
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .project-card {
+                transform: none !important;
+            }
+            .project-card img {
+                transform: none !important;
+            }
+        }
+        
+        /* Performance optimizations */
+        .project-card, .skill-card {
+            contain: layout style paint;
         }
         
         /* Custom scrollbar */
@@ -785,13 +815,13 @@
         }
 
         // Certificate filtering
-        function filterCertificates(category) {
-            const cards = document.querySelectorAll('.cert-card');
+        function filterCertificates(category, buttonElement) {
+            const cards = document.querySelectorAll('[data-categories]');
             const filterButtons = document.querySelectorAll('.filter-btn');
             
             // Update active filter button
             filterButtons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            buttonElement.classList.add('active');
             
             cards.forEach(card => {
                 const cardCategory = card.dataset.categories;
@@ -835,7 +865,7 @@
         function createCertificateCard(cert, index) {
             return new Promise((resolve) => {
                 const card = document.createElement('div');
-                card.className = 'cert-card opacity-0 transform translate-y-4 transition-all duration-300 ease-in-out';
+                card.className = 'opacity-0 transform translate-y-4 transition-all duration-300 ease-in-out cert-card';
                 card.dataset.categories = cert.category;
                 
                 card.innerHTML = `
@@ -843,7 +873,7 @@
                         <div class="relative h-64 overflow-hidden">
                             <iframe class="cert-iframe" src="${cert.path}"></iframe>
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-transparent transform translate-y-full transition-transform duration-300 p-4 flex flex-col justify-end">
-                                <div class="text-emerald-500 font-medium text-sm">${cert.title}</div>
+                                <div class="text-black font-medium text-sm">${cert.title}</div>
                             </div>
                         </div>
                         <div class="p-4">
@@ -900,7 +930,8 @@
             // Filter button event listeners
             document.querySelectorAll('.filter-btn').forEach(btn => {
                 btn.addEventListener('click', (e) => {
-                    filterCertificates(e.target.dataset.filter);
+                    const category = e.target.dataset.filter;
+                    filterCertificates(category, e.target);
                 });
             });
         });
@@ -1000,32 +1031,179 @@
             });
         });
 
-        // Projects section animations
+        // Optimized Projects section animations
+        
+        // Enhanced title animation with text reveal effect
+        gsap.set('#projects-title', { opacity: 0, y: 50 });
         gsap.to('#projects-title', {
             scrollTrigger: {
                 trigger: '#projects',
                 start: 'top 80%',
+                end: 'top 50%',
                 toggleActions: 'play none none reset'
             },
             opacity: 1,
             y: 0,
-            duration: 0.8,
-            ease: 'power2.out'
+            duration: 1,
+            ease: 'power3.out'
         });
 
-        gsap.utils.toArray('.project-card').forEach((card, i) => {
-            gsap.to(card, {
-                scrollTrigger: {
-                    trigger: card,
-                    start: 'top 90%',
-                    toggleActions: 'play none none reset'
-                },
+        // Advanced project cards animation with improved performance
+        gsap.set('.project-card', { 
+            opacity: 0, 
+            y: 80,
+            scale: 0.8,
+            rotationX: 15
+        });
+
+        // Create timeline for better performance and control
+        const projectTimeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: '#projects .grid',
+                start: 'top 85%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none reset'
+            }
+        });
+
+        // Animate project cards in batches for better performance
+        const projectCards = gsap.utils.toArray('.project-card');
+        const batchSize = 3; // Animate 3 cards at a time
+        
+        for (let i = 0; i < projectCards.length; i += batchSize) {
+            const batch = projectCards.slice(i, i + batchSize);
+            
+            projectTimeline.to(batch, {
                 opacity: 1,
                 y: 0,
+                scale: 1,
+                rotationX: 0,
                 duration: 0.8,
-                delay: i * 0.2,
-                ease: 'power2.out'
+                ease: 'power3.out',
+                stagger: {
+                    amount: 0.3,
+                    from: 'start',
+                    ease: 'power2.out'
+                }
+            }, i === 0 ? 0 : '-=0.4'); // Overlap batches slightly
+        }
+
+        // Enhanced individual card hover animations with better performance
+        projectCards.forEach((card, index) => {
+            const image = card.querySelector('img');
+            const techTags = card.querySelectorAll('.tech-tag');
+            
+            // Create hover timeline for each card
+            const hoverTl = gsap.timeline({ paused: true });
+            
+            hoverTl
+                .to(card, {
+                    scale: 1.05,
+                    rotationX: -2,
+                    rotationY: 2,
+                    z: 50,
+                    duration: 0.4,
+                    ease: 'power2.out'
+                }, 0)
+                .to(image, {
+                    scale: 1.1,
+                    duration: 0.4,
+                    ease: 'power2.out'
+                }, 0)
+                .to(techTags, {
+                    y: -5,
+                    duration: 0.3,
+                    ease: 'back.out(1.7)',
+                    stagger: 0.05
+                }, 0.1);
+            
+            // Mouse events with debouncing for performance
+            let hoverTimeout;
+            
+            card.addEventListener('mouseenter', () => {
+                clearTimeout(hoverTimeout);
+                hoverTl.play();
             });
+            
+            card.addEventListener('mouseleave', () => {
+                hoverTimeout = setTimeout(() => {
+                    hoverTl.reverse();
+                }, 50);
+            });
+            
+            // Add parallax effect on mouse move
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                
+                const deltaX = (e.clientX - centerX) / rect.width;
+                const deltaY = (e.clientY - centerY) / rect.height;
+                
+                gsap.to(card, {
+                    rotationX: deltaY * -10,
+                    rotationY: deltaX * 10,
+                    duration: 0.3,
+                    ease: 'power2.out',
+                    overwrite: 'auto'
+                });
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                gsap.to(card, {
+                    rotationX: 0,
+                    rotationY: 0,
+                    duration: 0.5,
+                    ease: 'power2.out'
+                });
+            });
+        });
+
+        // Add intersection observer for performance optimization
+        const observerOptions = {
+            root: null,
+            rootMargin: '100px',
+            threshold: 0.1
+        };
+        
+        const projectObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                } else {
+                    entry.target.classList.remove('in-view');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all project cards
+        projectCards.forEach(card => {
+            projectObserver.observe(card);
+        });
+
+        // Add scroll-triggered parallax for project images
+        projectCards.forEach((card, index) => {
+            const image = card.querySelector('img');
+            if (image) {
+                gsap.to(image, {
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top bottom',
+                        end: 'bottom top',
+                        scrub: 1,
+                        onUpdate: self => {
+                            // Only animate if card is in view for performance
+                            if (card.classList.contains('in-view')) {
+                                const progress = self.progress;
+                                gsap.set(image, {
+                                    y: (progress - 0.5) * 20,
+                                    scale: 1 + (Math.sin(progress * Math.PI) * 0.05)
+                                });
+                            }
+                        }
+                    }
+                });
+            }
         });
 
         // Certificates section animations
@@ -1071,13 +1249,23 @@
             });
         });
 
-        // Enhanced hover animations
-        document.querySelectorAll('.card').forEach(card => {
+        // Enhanced hover animations for non-project cards
+        document.querySelectorAll('.card:not(.project-card)').forEach(card => {
             card.addEventListener('mouseenter', () => {
-                gsap.to(card, { scale: 1.02, duration: 0.3, ease: 'power2.out' });
+                gsap.to(card, { 
+                    scale: 1.02, 
+                    y: -5,
+                    duration: 0.3, 
+                    ease: 'power2.out' 
+                });
             });
             card.addEventListener('mouseleave', () => {
-                gsap.to(card, { scale: 1, duration: 0.3, ease: 'power2.out' });
+                gsap.to(card, { 
+                    scale: 1, 
+                    y: 0,
+                    duration: 0.3, 
+                    ease: 'power2.out' 
+                });
             });
         });
 
