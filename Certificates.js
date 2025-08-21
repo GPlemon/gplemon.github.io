@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
     { path: 'data/Gabrielius Pocevicius_Python.pdf', title: 'Python Certificate', category: 'python' },
     { path: 'data/CertificateOfCompletion_Search Techniques for Web Developers.pdf', title: 'Search Techniques', category: 'development' },
     { path: 'data/CertificateOfCompletion_Essential New Skills in Software Engineering.pdf', title: 'Software Engineering Skills', category: 'development' },
+    { path: 'data/CertificateOfCompletion_Unboxing AI Build a Remote MCP Server from Zero to Deployed with OAuth.pdf', title: 'MCP Server Certificate', category: 'ai' },
   ];
 
   let loadedCount = 0;

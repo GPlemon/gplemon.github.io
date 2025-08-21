@@ -167,6 +167,8 @@
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- EmailJS for contact form functionality -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 
 <body class="leading-relaxed">
@@ -666,7 +668,18 @@
                 <!-- Contact Form -->
                 <div class="card p-8 rounded-2xl opacity-0" id="contact-form">
                     <h3 class="font-semibold mb-6">Send a Message</h3>
+                    <!-- Netlify form (hidden for bot detection) -->
+                    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+                        <input type="text" name="name" />
+                        <input type="email" name="email" />
+                        <textarea name="message"></textarea>
+                    </form>
+                    
                     <div class="space-y-6" id="contactForm">
+                        <!-- Honeypot field for bot protection -->
+                        <div style="display: none;">
+                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        </div>
                         <div>
                             <label for="name" class="block text-sm font-medium mb-2">Name</label>
                             <input type="text" id="name" name="name" required
@@ -766,52 +779,156 @@
         gsap.registerPlugin(ScrollTrigger);
 
         // Certificate data
-        const certificates = [
-            { path: 'data/UdacityCertificate.pdf', title: 'Udacity Certificate', category: 'education' },
-            { path: 'data/Coursera E4WZRUCIBAMB.pdf', title: 'Coursera Certificate', category: 'education' },
-            { path: 'data/CertificateOfCompletion_Master JavaScript.pdf', title: 'Master JavaScript', category: 'javascript' },
-            { path: 'data/CertificateOfCompletion_Career Essentials in Generative AI by Microsoft and LinkedIn.pdf', title: 'Generative AI Essentials', category: 'ai' },
-            { path: 'data/CertificateOfCompletion_Advanced Node.js.pdf', title: 'Advanced Node.js', category: 'node' },
-            { path: 'data/CertificateOfCompletion_CSS Essential Training.pdf', title: 'CSS Essential Training', category: 'css' },
-            { path: 'data/CertificateOfCompletion_EndtoEnd JavaScript Testing with Cypress.io.pdf', title: 'Cypress.io Testing', category: 'javascript' },
-            { path: 'data/CertificateOfCompletion_Ethical Hacking with JavaScript.pdf', title: 'Ethical Hacking', category: 'javascript' },
-            { path: 'data/CertificateOfCompletion_JavaScript Best Practices for Code Formatting.pdf', title: 'JS Code Formatting', category: 'javascript' },
-            { path: 'data/CertificateOfCompletion_JavaScript Best Practices for Data.pdf', title: 'JS Data Practices', category: 'javascript' },
-            { path: 'data/CertificateOfCompletion_JavaScript Security Essentials.pdf', title: 'JS Security', category: 'javascript' },
-            { path: 'data/CertificateOfCompletion_JavaScript TestDriven Development ES6.pdf', title: 'Test-Driven Development', category: 'javascript' },
-            { path: 'data/CertificateOfCompletion_Learning MongoDB.pdf', title: 'MongoDB', category: 'database' },
-            { path: 'data/CertificateOfCompletion_Node.js Design Patterns.pdf', title: 'Node.js Design Patterns', category: 'node' },
-            { path: 'data/CertificateOfCompletion_Responsive Layout.pdf', title: 'Responsive Layout', category: 'css' },
-            { path: 'data/Gabrielius Pocevicius_JavaScript.pdf', title: 'JavaScript Certificate', category: 'javascript' },
-            { path: 'data/Gabrielius Pocevicius_Python.pdf', title: 'Python Certificate', category: 'python' },
-            { path: 'data/CertificateOfCompletion_Search Techniques for Web Developers.pdf', title: 'Search Techniques', category: 'development' },
-            { path: 'data/CertificateOfCompletion_Essential New Skills in Software Engineering.pdf', title: 'Software Engineering Skills', category: 'development' }
-        ];
+    const certificates = [
+        { path: 'data/UdacityCertificate.pdf', title: 'Udacity Certificate', category: 'education' },
+        { path: 'data/Coursera E4WZRUCIBAMB.pdf', title: 'Coursera Certificate', category: 'education' },
+        { path: 'data/CertificateOfCompletion_Master JavaScript.pdf', title: 'Master JavaScript', category: 'javascript' },
+        { path: 'data/CertificateOfCompletion_Career Essentials in Generative AI by Microsoft and LinkedIn.pdf', title: 'Generative AI Essentials', category: 'ai' },
+        { path: 'data/CertificateOfCompletion_Advanced Node.js.pdf', title: 'Advanced Node.js', category: 'node' },
+        { path: 'data/CertificateOfCompletion_CSS Essential Training.pdf', title: 'CSS Essential Training', category: 'css' },
+        { path: 'data/CertificateOfCompletion_EndtoEnd JavaScript Testing with Cypress.io.pdf', title: 'Cypress.io Testing', category: 'javascript' },
+        { path: 'data/CertificateOfCompletion_Ethical Hacking with JavaScript.pdf', title: 'Ethical Hacking', category: 'javascript' },
+        { path: 'data/CertificateOfCompletion_JavaScript Best Practices for Code Formatting.pdf', title: 'JS Code Formatting', category: 'javascript' },
+        { path: 'data/CertificateOfCompletion_JavaScript Best Practices for Data.pdf', title: 'JS Data Practices', category: 'javascript' },
+        { path: 'data/CertificateOfCompletion_JavaScript Security Essentials.pdf', title: 'JS Security', category: 'javascript' },
+        { path: 'data/CertificateOfCompletion_JavaScript TestDriven Development ES6.pdf', title: 'Test-Driven Development', category: 'javascript' },
+        { path: 'data/CertificateOfCompletion_Learning MongoDB.pdf', title: 'MongoDB', category: 'database' },
+        { path: 'data/CertificateOfCompletion_Node.js Design Patterns.pdf', title: 'Node.js Design Patterns', category: 'node' },
+        { path: 'data/CertificateOfCompletion_Responsive Layout.pdf', title: 'Responsive Layout', category: 'css' },
+        { path: 'data/Gabrielius Pocevicius_JavaScript.pdf', title: 'JavaScript Certificate', category: 'javascript' },
+        { path: 'data/Gabrielius Pocevicius_Python.pdf', title: 'Python Certificate', category: 'python' },
+        { path: 'data/CertificateOfCompletion_Search Techniques for Web Developers.pdf', title: 'Search Techniques', category: 'development' },
+        { path: 'data/CertificateOfCompletion_Essential New Skills in Software Engineering.pdf', title: 'Software Engineering Skills', category: 'development' },
+        { path: 'data/CertificateOfCompletion_Unboxing AI Build a Remote MCP Server from Zero to Deployed with OAuth.pdf', title: 'MCP Server Certificate', category: 'ai' },
+        { path: 'data/CertificateOfCompletion_Economics Quantitative Demand Analysis.pdf',  title: 'Quantitative Demand Analysis', category:'education'}
+    ];
 
         let loadedCount = 0;
         const totalCerts = certificates.length;
         let currentFilter = 'all';
 
-        // Form submission handler
-        function handleFormSubmit() {
+        // Form submission handler - Multiple email service options
+        async function handleFormSubmit() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
             const button = document.querySelector('#contactForm button');
             const originalText = button.textContent;
+            
+            // Validate form
+            if (!name || !email || !message) {
+                alert('Please fill in all fields');
+                return;
+            }
             
             button.textContent = 'Sending...';
             button.disabled = true;
             
-            // Simulate form submission
-            setTimeout(() => {
+            try {
+                // Option 1: EmailJS (Recommended - No backend required)
+                await sendEmailWithEmailJS(name, email, message);
+                
+                // Option 2: Formspree (Alternative service)
+                // await sendEmailWithFormspree(name, email, message);
+                
+                // Option 3: Netlify Forms (if hosting on Netlify)
+                // await sendEmailWithNetlify(name, email, message);
+                
                 button.textContent = 'Message Sent!';
+                
+                // Reset form
                 setTimeout(() => {
-                    button.textContent = originalText;
-                    button.disabled = false;
-                    // Reset form
                     document.getElementById('name').value = '';
                     document.getElementById('email').value = '';
                     document.getElementById('message').value = '';
+                    button.textContent = originalText;
+                    button.disabled = false;
                 }, 2000);
-            }, 1000);
+                
+            } catch (error) {
+                console.error('Error sending email:', error);
+                button.textContent = 'Error - Try Again';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.disabled = false;
+                }, 3000);
+            }
+        }
+        
+        // EmailJS Implementation (Recommended)
+        async function sendEmailWithEmailJS(name, email, message) {
+            // You need to:
+            // 1. Sign up at https://www.emailjs.com/
+            // 2. Create an email service (Gmail, Outlook, etc.)
+            // 3. Create an email template
+            // 4. Replace the IDs below with your actual IDs
+            
+            const serviceID = 'service_63heqj5'; // Your EmailJS service ID
+            const templateID = 'template_mavsf06'; // Your EmailJS template ID
+            const publicKey = '1a0XajOl0aHeAdOiA'; // Your EmailJS public key
+            
+            const templateParams = {
+                name: name,        // This will populate {{name}} in your template
+                email: email,      // This will populate {{email}} in your template  
+                message: message   // This will populate {{message}} in your template
+            };
+            
+            // Check if EmailJS is loaded
+            if (typeof emailjs === 'undefined') {
+                throw new Error('EmailJS not loaded. Please add the EmailJS script.');
+            }
+            
+            return await emailjs.send(serviceID, templateID, templateParams, publicKey);
+        }
+        
+        // Formspree Implementation (Alternative)
+        async function sendEmailWithFormspree(name, email, message) {
+            // You need to:
+            // 1. Sign up at https://formspree.io/
+            // 2. Create a form and get your form ID
+            // 3. Replace YOUR_FORM_ID below
+            
+            const formspreeURL = 'https://formspree.io/f/YOUR_FORM_ID'; // Replace with your Formspree form ID
+            
+            const response = await fetch(formspreeURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    message: message
+                })
+            });
+            
+            if (!response.ok) {
+                throw new Error('Failed to send email via Formspree');
+            }
+            
+            return response.json();
+        }
+        
+        // Netlify Forms Implementation (if hosting on Netlify)
+        async function sendEmailWithNetlify(name, email, message) {
+            const response = await fetch('/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: new URLSearchParams({
+                    'form-name': 'contact',
+                    name: name,
+                    email: email,
+                    message: message
+                })
+            });
+            
+            if (!response.ok) {
+                throw new Error('Failed to send email via Netlify');
+            }
+            
+            return response;
         }
 
         // Certificate filtering
@@ -873,7 +990,7 @@
                         <div class="relative h-64 overflow-hidden">
                             <iframe class="cert-iframe" src="${cert.path}"></iframe>
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-transparent transform translate-y-full transition-transform duration-300 p-4 flex flex-col justify-end">
-                                <div class="text-black font-medium text-sm">${cert.title}</div>
+                                <div class="text-black font-medium text-sm" >${cert.title}</div>
                             </div>
                         </div>
                         <div class="p-4">
