@@ -528,12 +528,12 @@
                 <!-- Project 4 - Code Editor -->
                 <div class="card rounded-xl overflow-hidden opacity-0 project-card" tabindex="0">
                     <div class="h-48 overflow-hidden">
-                        <img src="data/projects/coder_rewrite.gif" alt="Code Editor" class="w-full h-full object-cover">
+                        <img src="data/projects/coder_rewrite.gif" alt="Analytics Dashboard" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
-                        <h3 class="font-semibold mb-2">Code Editor</h3>
+                        <h3 class="font-semibold mb-2">Analytics Dashboard</h3>
                         <p class="text-sm opacity-80 mb-4" style="color: var(--text-secondary);">
-                            Feature-rich code editor with syntax highlighting, auto-completion, and real-time collaboration capabilities.
+                            Feature-rich analytics dashboard with charts, data tables, and real-time injection capabilities.
                         </p>
                         <div class="flex flex-wrap gap-2">
                             <span class="tech-tag px-2 py-1 rounded text-xs">React</span>
@@ -835,38 +835,49 @@
         // Certificate data
 const certificates = [
     { path: 'data/UdacityCertificate.pdf', title: 'Udacity Certificate', category: 'education' },
-    { path: 'data/CertificateOfCompletion_Microsoft Azure AI Essentials Professional Certificate by Microsoft and LinkedIn.pdf', title: 'Microsoft Azure AI', category:'education'},
+    { path: 'data/CertificateOfCompletion_Microsoft Azure AI Essentials Professional Certificate by Microsoft and LinkedIn.pdf', title: 'Microsoft Azure AI', category: 'education' },
     { path: 'data/Coursera E4WZRUCIBAMB.pdf', title: 'Coursera Certificate', category: 'education' },
+    { path: 'data/Coursera Cert Data Engineering.pdf', title: 'Data Engineering', category: 'education' },
+    { path: 'data/CertificateOfCompletion_Economics Quantitative Demand Analysis.pdf', title: 'Quantitative Demand Analysis', category: 'education' },
+    { path: 'data/CertificateOfCompletion_Marketing Strategy Competitive Intelligence.pdf', title: 'Marketing', category: 'education' },
+    
+    // JavaScript Certificates
     { path: 'data/CertificateOfCompletion_Master JavaScript.pdf', title: 'Master JavaScript', category: 'javascript' },
-    { path: 'data/CertificateOfCompletion_Career Essentials in Generative AI by Microsoft and LinkedIn.pdf', title: 'Generative AI Essentials', category: 'ai' },
-    { path: 'data/CertificateOfCompletion_Advanced Node.js.pdf', title: 'Advanced Node.js', category: 'node' },
-    { path: 'data/CertificateOfCompletion_CSS Essential Training.pdf', title: 'CSS Essential Training', category: 'css' },
+    { path: 'data/Gabrielius Pocevicius_JavaScript.pdf', title: 'JavaScript Certificate', category: 'javascript' },
     { path: 'data/CertificateOfCompletion_EndtoEnd JavaScript Testing with Cypress.io.pdf', title: 'Cypress.io Testing', category: 'javascript' },
     { path: 'data/CertificateOfCompletion_Ethical Hacking with JavaScript.pdf', title: 'Ethical Hacking', category: 'javascript' },
     { path: 'data/CertificateOfCompletion_JavaScript Best Practices for Code Formatting.pdf', title: 'JS Code Formatting', category: 'javascript' },
     { path: 'data/CertificateOfCompletion_JavaScript Best Practices for Data.pdf', title: 'JS Data Practices', category: 'javascript' },
     { path: 'data/CertificateOfCompletion_JavaScript Security Essentials.pdf', title: 'JS Security', category: 'javascript' },
     { path: 'data/CertificateOfCompletion_JavaScript TestDriven Development ES6.pdf', title: 'Test-Driven Development', category: 'javascript' },
-    { path: 'data/CertificateOfCompletion_Learning MongoDB.pdf', title: 'MongoDB', category: 'database' },
+    
+    // Node.js Certificates
+    { path: 'data/CertificateOfCompletion_Advanced Node.js.pdf', title: 'Advanced Node.js', category: 'node' },
     { path: 'data/CertificateOfCompletion_Node.js Design Patterns.pdf', title: 'Node.js Design Patterns', category: 'node' },
+    { path: 'data/CertificateOfCompletion_Node.js Security.pdf', title: 'Node.js Security', category: 'node' },
+    
+    // CSS Certificates
+    { path: 'data/CertificateOfCompletion_CSS Essential Training.pdf', title: 'CSS Essential Training', category: 'css' },
     { path: 'data/CertificateOfCompletion_Responsive Layout.pdf', title: 'Responsive Layout', category: 'css' },
-    { path: 'data/Gabrielius Pocevicius_JavaScript.pdf', title: 'JavaScript Certificate', category: 'javascript' },
-    { path: 'data/Gabrielius Pocevicius_Python.pdf', title: 'Python Certificate', category: 'python' },
+    
+    // AI Certificates
+    { path: 'data/CertificateOfCompletion_Career Essentials in Generative AI by Microsoft and LinkedIn.pdf', title: 'Generative AI Essentials', category: 'ai' },
+    { path: 'data/CertificateOfCompletion_Unboxing AI Build a Remote MCP Server from Zero to Deployed with OAuth.pdf', title: 'MCP Server Certificate', category: 'ai' },
+    { path: 'data/CertificateOfCompletion_Artificial Intelligence Foundations Machine Learning.pdf', title: 'Machine Learning', category: 'ai' },
+    
+    // Development Certificates
     { path: 'data/CertificateOfCompletion_Search Techniques for Web Developers.pdf', title: 'Search Techniques', category: 'development' },
     { path: 'data/CertificateOfCompletion_Essential New Skills in Software Engineering.pdf', title: 'Software Engineering Skills', category: 'development' },
-    { path: 'data/CertificateOfCompletion_Unboxing AI Build a Remote MCP Server from Zero to Deployed with OAuth.pdf', title: 'MCP Server Certificate', category: 'ai' },
-    { path: 'data/CertificateOfCompletion_Economics Quantitative Demand Analysis.pdf', title: 'Quantitative Demand Analysis', category:'education'},
-    { path: 'data/CertificateOfCompletion_Unix Essential Training.pdf', title:'Unix Shell', category:'development'},
-    { path: 'data/CertificateOfCompletion_Artificial Intelligence Foundations Machine Learning.pdf', title:'Machine Learning', category:'ai'},
-    { path: 'data/CertificateOfCompletion_Marketing Strategy Competitive Intelligence.pdf', title:'Marketing', category:'education'},
-    
-    { path: 'data/Coursera Cert Data Engineering.pdf', title: 'Data Engineering', category: 'education' },
+    { path: 'data/CertificateOfCompletion_Unix Essential Training.pdf', title: 'Unix Shell', category: 'development' },
     { path: 'data/CertificateOfCompletion_Introduction to Career Skills in Software Development.pdf', title: 'Career Skills in Software Development', category: 'development' },
     { path: 'data/CertificateOfCompletion_Career Essentials in Software Development by Microsoft and LinkedIn.pdf', title: 'Career Essentials in Software Development', category: 'development' },
-    { path: 'data/CertificateOfCompletion_Node.js Security.pdf', title: 'Node.js Security', category: 'node' },
     { path: 'data/CertificateOfCompletion_Programming Foundations Software TestingQA.pdf', title: 'Software Testing & QA', category: 'development' },
     { path: 'data/CertificateOfCompletion_Programming Foundations Beyond the Fundamentals.pdf', title: 'Programming Beyond Fundamentals', category: 'development' },
-    { path: 'data/CertificateOfCompletion_Programming Foundations Fundamentals.pdf', title: 'Programming Fundamentals', category: 'development' }
+    { path: 'data/CertificateOfCompletion_Programming Foundations Fundamentals.pdf', title: 'Programming Fundamentals', category: 'development' },
+    
+    // Other Certificates
+    { path: 'data/CertificateOfCompletion_Learning MongoDB.pdf', title: 'MongoDB', category: 'database' },
+    { path: 'data/Gabrielius Pocevicius_Python.pdf', title: 'Python Certificate', category: 'python' }
 ];
 
         let loadedCount = 0;
